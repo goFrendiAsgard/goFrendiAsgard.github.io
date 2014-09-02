@@ -7,12 +7,28 @@
         <link href="/"/>
     
         
-    <updated>2014-09-01T10:09:44Z</updated>
+    <updated>2014-09-02T15:55:10Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
             <entry>
-            <title type="html">Hyde and Bootstrap</title>
+            <title type="html">Useful tricks for ubuntu user (especially me)</title>
+            <author><name></name></author>
+            <link href="/blog/useful_tricks_for_ubuntu_user.html"/>
+            <updated>2014-09-02T03:47:00Z</updated>
+            <published>2014-09-02T03:47:00Z</published>
+            <id>/blog/useful_tricks_for_ubuntu_user.html</id>
+                        <category   scheme="/blog/tags"
+                        term="personal"
+                        label="Personal" />
+            
+            <content type="html">
+                
+                &lt;p&gt;Ubuntu is my favorite linux distro.
+I can be a geek while still maintain my humanity&amp;nbsp;:)&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Hyde and Bootstrap (and github.io)</title>
             <author><name></name></author>
             <link href="/blog/hyde_and_bootstrap.html"/>
             <updated>2014-09-01T10:03:00Z</updated>
@@ -24,6 +40,7 @@
             
             <content type="html">
                 
-                &lt;p&gt;Just moving to&amp;nbsp;github.io&lt;/p&gt;            </content>
+                &lt;p&gt;My thought about hyde and bootstrap.
+Just moving to github.io&amp;nbsp;:)&lt;/p&gt;            </content>
         </entry>
     </feed>
