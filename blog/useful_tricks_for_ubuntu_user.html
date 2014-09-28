@@ -13,7 +13,8 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-        <link href="/media/css/bootstrap.css" rel="stylesheet">
+        <link href="/media/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/media/css/bootstrap.min.cosmo.css" rel="stylesheet">
     <link href="/media/css/offcanvas.css" rel="stylesheet">
 
     <style type="text/css">
@@ -54,7 +55,7 @@
 
   <body class="useful_tricks_for_ubuntu_user">
 
-    <div class="navbar navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
     <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -72,6 +73,8 @@
         <a href="/about.html">About</a>
     </li>    <li class="active">
         <a href="/blog">Blog</a>
+    </li>    <li >
+        <a href="/service.html">Service</a>
     </li>
       </ul>
     </div><!-- /.nav-collapse -->
@@ -80,6 +83,10 @@
 
         <div class="container" id="top">
       <article>
+
+<link rel="stylesheet" href="/highlight/styles/default.css">
+<script src="/hightlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 <h1>
     <a href="/blog/useful_tricks_for_ubuntu_user.html">
@@ -94,104 +101,133 @@
     <span class="badge"><a href="/blog/tags/personal.html">personal</a></span>
 </div>
 <hr>
-<p>Ubuntu is my favorite linux distro.
-I can be a geek while still maintain my humanity&nbsp;:)</p>
-<p><strong>Disclaimer:</strong> This tricks might not be suitable for everyone (and honestly I don&#8217;t care if they does&#8217;t suitable for&nbsp;you)</p>
-<h1>Install several&nbsp;softwares</h1>
+
+Ubuntu is my favorite linux distro.
+It let me to be a geek while still maintain my humanity :)
+<h1 id="install-several-softwares">Install several&nbsp;softwares</h1>
 <p>The good thing about using ubuntu (and any other linux distribution) is you don&#8217;t need to remember what button should be clicked when installing your&nbsp;softwares.</p>
-<pre><code>sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-sudo apt-get update
-sudo apt-get install apache2 apache2-mpm-prefork apache2-utils libapache2-mod-php5 libapr1 libaprutil1 libdbd-mysql-perl libdbi-perl libnet-daemon-perl libplrpc-perl libpq5 mysql-client-5.5 mysql-common mysql-server mysql-server-5.5 php5-common php5-mysql php5-curl phpmyadmin python-numpy python-matplotlib ipython openjdk-7-jdk netbeans eclipse cheese shutter lazarus gimp inkscape chromium-browser git python-setuptools python-pip python-pygame python-opengl python-gst0.10 python-enchant gstreamer0.10-plugins-good python-dev  build-essential libgl1-mesa-dev libgles2-mesa-dev zlib1g-dev nmap wireshark lynx tree vim lyx filezilla blender oracle-java7-installer gparted unetbootin wine bind9 dnsutil curl aircrack-ng reaver
-sudo pip install --upgrade cython 
-sudo pip install --upgrade kivy
-sudo pip install --upgrade scikit-learn
-sudo pip install --upgrade simpy
-sudo pip install --upgrade sympy
-</code></pre>
-<h1>Add wildcard to local domain&nbsp;(gofrendi.dev)</h1>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">webupd8team</span><span class="o">/</span><span class="n">java</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">software</span><span class="o">-</span><span class="n">properties</span>
+<span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">ubuntugis</span><span class="o">/</span><span class="n">ubuntugis</span><span class="o">-</span><span class="n">unstable</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">apache2</span> <span class="n">apache2</span><span class="o">-</span><span class="n">mpm</span><span class="o">-</span><span class="n">prefork</span> <span class="n">apache2</span><span class="o">-</span><span class="n">utils</span> <span class="n">libapache2</span><span class="o">-</span><span class="n">mod</span><span class="o">-</span><span class="n">php5</span> <span class="n">libapr1</span> <span class="n">libaprutil1</span> <span class="n">libdbd</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="n">perl</span> <span class="n">libdbi</span><span class="o">-</span><span class="n">perl</span> <span class="n">libnet</span><span class="o">-</span><span class="n">daemon</span><span class="o">-</span><span class="n">perl</span> <span class="n">libplrpc</span><span class="o">-</span><span class="n">perl</span> <span class="n">libpq5</span> <span class="n">mysql</span><span class="o">-</span><span class="n">client</span><span class="o">-</span><span class="mf">5.5</span> <span class="n">mysql</span><span class="o">-</span><span class="n">common</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="mf">5.5</span> <span class="n">php5</span><span class="o">-</span><span class="n">common</span> <span class="n">php5</span><span class="o">-</span><span class="n">mysql</span> <span class="n">php5</span><span class="o">-</span><span class="n">curl</span> <span class="n">phpmyadmin</span> <span class="n">python</span><span class="o">-</span><span class="n">numpy</span> <span class="n">python</span><span class="o">-</span><span class="n">matplotlib</span> <span class="n">ipython</span> <span class="n">openjdk</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">jdk</span> <span class="n">netbeans</span> <span class="n">eclipse</span> <span class="n">cheese</span> <span class="n">shutter</span> <span class="n">lazarus</span> <span class="n">gimp</span> <span class="n">inkscape</span> <span class="n">chromium</span><span class="o">-</span><span class="n">browser</span> <span class="n">git</span> <span class="n">python</span><span class="o">-</span><span class="n">setuptools</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span> <span class="n">python</span><span class="o">-</span><span class="n">pygame</span> <span class="n">python</span><span class="o">-</span><span class="n">opengl</span> <span class="n">python</span><span class="o">-</span><span class="n">gst0</span><span class="mf">.10</span> <span class="n">python</span><span class="o">-</span><span class="n">enchant</span> <span class="n">gstreamer0</span><span class="mf">.10</span><span class="o">-</span><span class="n">plugins</span><span class="o">-</span><span class="n">good</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span>  <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">libgl1</span><span class="o">-</span><span class="n">mesa</span><span class="o">-</span><span class="n">dev</span> <span class="n">libgles2</span><span class="o">-</span><span class="n">mesa</span><span class="o">-</span><span class="n">dev</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">nmap</span> <span class="n">wireshark</span> <span class="n">lynx</span> <span class="n">tree</span> <span class="n">vim</span> <span class="n">lyx</span> <span class="n">filezilla</span> <span class="n">blender</span> <span class="n">oracle</span><span class="o">-</span><span class="n">java7</span><span class="o">-</span><span class="n">installer</span> <span class="n">gparted</span> <span class="n">unetbootin</span> <span class="n">wine</span> <span class="n">bind9</span> <span class="n">dnsutil</span> <span class="n">curl</span> <span class="n">aircrack</span><span class="o">-</span><span class="n">ng</span> <span class="n">reaver</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">cython</span> 
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">kivy</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">simpy</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">sympy</span>
+</pre></div>
+
+
+<h1 id="add-wildcard-to-local-domain-gofrendidev">Add wildcard to local domain&nbsp;(gofrendi.dev)</h1>
 <p>I like to be able to access my local machine as <code>gofrendi.dev</code>. My project No-<span class="caps">CMS</span> has a multisite feature, so that it will be great to test wheter <code>somedomain.gofrendi.dev</code> is works as&nbsp;expected.</p>
 <ul>
 <li>
 <p>Add&nbsp;zone</p>
-<pre><code>sudo nano /etc/bind/named.conf.local
-</code></pre>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bind</span><span class="o">/</span><span class="n">named</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">local</span>
+</pre></div>
+
+
 <p>add&nbsp;this:</p>
-<pre><code>zone "gofrendi.dev" {
-    type master;
-    file "/etc/bind/db.gofrendi.dev";
-};
-</code></pre>
+<div class="codehilite"><pre><span class="n">zone</span> <span class="s">&quot;gofrendi.dev&quot;</span> <span class="p">{</span>
+    <span class="n">type</span> <span class="n">master</span><span class="p">;</span>
+    <span class="n">file</span> <span class="s">&quot;/etc/bind/db.gofrendi.dev&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+
+
 </li>
 <li>
 <p>Add&nbsp;db</p>
-<pre><code>sudo nano /etc/bind/db.gofrendi.dev
-</code></pre>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bind</span><span class="o">/</span><span class="n">db</span><span class="p">.</span><span class="n">gofrendi</span><span class="p">.</span><span class="n">dev</span>
+</pre></div>
+
+
 <p>add&nbsp;this:</p>
-<pre><code>;
-; BIND data file for local loopback interface
-;
-$TTL    604800
-@   IN  SOA localhost. root.localhost. (
-                  2     ; Serial
-             604800     ; Refresh
-              86400     ; Retry
-            2419200     ; Expire
-             604800 )   ; Negative Cache TTL
-;
-@   IN  NS  localhost.
-@   IN  A   127.0.0.1
-*   IN  A   127.0.0.1
-</code></pre>
+<div class="codehilite"><pre><span class="p">;</span>
+<span class="p">;</span> <span class="n"><span class="caps">BIND</span></span> <span class="n">data</span> <span class="n">file</span> <span class="k">for</span> <span class="n">local</span> <span class="n">loopback</span> <span class="n">interface</span>
+<span class="p">;</span>
+<span class="err">$</span><span class="n"><span class="caps">TTL</span></span>    <span class="mi">604800</span>
+<span class="err">@</span>   <span class="n"><span class="caps">IN</span></span>  <span class="n"><span class="caps">SOA</span></span> <span class="n">localhost</span><span class="p">.</span> <span class="n">root</span><span class="p">.</span><span class="n">localhost</span><span class="p">.</span> <span class="p">(</span>
+                  <span class="mi">2</span>     <span class="p">;</span> <span class="n">Serial</span>
+             <span class="mi">604800</span>     <span class="p">;</span> <span class="n">Refresh</span>
+              <span class="mi">86400</span>     <span class="p">;</span> <span class="n">Retry</span>
+            <span class="mi">2419200</span>     <span class="p">;</span> <span class="n">Expire</span>
+             <span class="mi">604800</span> <span class="p">)</span>   <span class="p">;</span> <span class="n">Negative</span> <span class="n">Cache</span> <span class="n"><span class="caps">TTL</span></span>
+<span class="p">;</span>
+<span class="err">@</span>   <span class="n"><span class="caps">IN</span></span>  <span class="n"><span class="caps">NS</span></span>  <span class="n">localhost</span><span class="p">.</span>
+<span class="err">@</span>   <span class="n"><span class="caps">IN</span></span>  <span class="n">A</span>   <span class="mf">127.0.0.1</span>
+<span class="o">*</span>   <span class="n"><span class="caps">IN</span></span>  <span class="n">A</span>   <span class="mf">127.0.0.1</span>
+</pre></div>
+
+
 </li>
 <li>
 <p>Add localhost as primary&nbsp;<span class="caps">NS</span></p>
-<pre><code>sudo nano /etc/resolv.conf
-</code></pre>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">resolv</span><span class="p">.</span><span class="n">conf</span>
+</pre></div>
+
+
 <p>modify to&nbsp;this:</p>
-<pre><code># Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)
-#     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN
-nameserver 127.0.0.1
-nameserver 127.0.1.1
-</code></pre>
+<div class="codehilite"><pre><span class="cp"># Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)</span>
+<span class="cp">#     <span class="caps">DO</span> <span class="caps">NOT</span> <span class="caps">EDIT</span> <span class="caps">THIS</span> <span class="caps">FILE</span> <span class="caps">BY</span> <span class="caps">HAND</span> -- <span class="caps">YOUR</span> <span class="caps">CHANGES</span> <span class="caps">WILL</span> <span class="caps">BE</span> <span class="caps">OVERWRITTEN</span></span>
+<span class="n">nameserver</span> <span class="mf">127.0.0.1</span>
+<span class="n">nameserver</span> <span class="mf">127.0.1.1</span>
+</pre></div>
+
+
 </li>
 <li>
 <p>Restart&nbsp;bind</p>
-<pre><code>sudo /etc/init.d/bind9 restart
-</code></pre>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">bind9</span> <span class="n">restart</span>
+</pre></div>
+
+
 </li>
 </ul>
-<h1>Install nodejs (Download&nbsp;first)</h1>
-<pre><code>sudo tar --strip-components 1 -xzf /home/gofrendi/Downloads/node-v0.10.26-linux-x86.tar.gz
-</code></pre>
-<h1>Install&nbsp;composer</h1>
-<pre><code>sudo curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
-</code></pre>
-<h1>Change virtualbox resolution (for windows 8.1&nbsp;guest)</h1>
-<pre><code>vboxmanage setextradata "windows" CustomVideoMode1 1366x768x32
-</code></pre>
-<h1>Install&nbsp;Haskell</h1>
-<pre><code>sudo apt-get install ghc alex cabal-install happy libghc-cgi-dev libghc-fgl-dev libghc-glut-dev libghc-haskell-src-dev libghc-html-dev libghc-http-dev libghc-hunit-dev libghc-mtl-dev libghc-network-dev libghc-opengl-dev libghc-parallel-dev libghc-parsec3-dev  libghc-quickcheck2-dev libghc-regex-base-dev libghc-regex-compat-dev  libghc-regex-posix-dev libghc-stm-dev libghc-syb-dev  libghc-text-dev  libghc-transformers-dev  libghc-xhtml-dev libghc-zlib-dev
-</code></pre>
-<h1>Enable&nbsp;dvd</h1>
-<pre><code>sudo /usr/share/doc/libdvdread4/install-css.sh
-</code></pre>
-<h1>Change default&nbsp;application</h1>
-<pre><code>sudo gedit /usr/share/applications/defaults.list
-sudo gedit /etc/gnome/share/defaults.list
-</code></pre>
-<h1>Use Newest&nbsp;wine</h1>
-<pre><code>https://www.winehq.org/download/ubuntu
-</code></pre></article>
+<h1 id="install-nodejs-download-first">Install nodejs (Download&nbsp;first)</h1>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">tar</span> <span class="o">--</span><span class="n">strip</span><span class="o">-</span><span class="n">components</span> <span class="mi">1</span> <span class="o">-</span><span class="n">xzf</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">gofrendi</span><span class="o">/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">node</span><span class="o">-</span><span class="n">v0</span><span class="mf">.10.26</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+</pre></div>
+
+
+<h1 id="install-composer">Install&nbsp;composer</h1>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">curl</span> <span class="o">-</span><span class="n">sS</span> <span class="n">https</span><span class="o">:</span><span class="c1">//getcomposer.org/installer | php</span>
+<span class="n">sudo</span> <span class="n">mv</span> <span class="n">composer</span><span class="p">.</span><span class="n">phar</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">composer</span>
+</pre></div>
+
+
+<h1 id="change-virtualbox-resolution-for-windows-81-guest">Change virtualbox resolution (for windows 8.1&nbsp;guest)</h1>
+<div class="codehilite"><pre><span class="n">vboxmanage</span> <span class="n">setextradata</span> <span class="s">&quot;windows&quot;</span> <span class="n">CustomVideoMode1</span> <span class="mi">1366</span><span class="n">x768x32</span>
+</pre></div>
+
+
+<h1 id="install-haskell">Install&nbsp;Haskell</h1>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ghc</span> <span class="n">alex</span> <span class="n">cabal</span><span class="o">-</span><span class="n">install</span> <span class="n">happy</span> <span class="n">libghc</span><span class="o">-</span><span class="n">cgi</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">fgl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">glut</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">haskell</span><span class="o">-</span><span class="n">src</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">html</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">http</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">hunit</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">mtl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">network</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">opengl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">parallel</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">parsec3</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libghc</span><span class="o">-</span><span class="n">quickcheck2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">regex</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">regex</span><span class="o">-</span><span class="n">compat</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libghc</span><span class="o">-</span><span class="n">regex</span><span class="o">-</span><span class="n">posix</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">stm</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">syb</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libghc</span><span class="o">-</span><span class="n">text</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libghc</span><span class="o">-</span><span class="n">transformers</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libghc</span><span class="o">-</span><span class="n">xhtml</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">zlib</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+
+
+<h1 id="enable-dvd">Enable&nbsp;dvd</h1>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">libdvdread4</span><span class="o">/</span><span class="n">install</span><span class="o">-</span><span class="n">css</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+
+
+<h1 id="change-default-application">Change default&nbsp;application</h1>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">applications</span><span class="o">/</span><span class="n">defaults</span><span class="p">.</span><span class="n">list</span>
+<span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">gnome</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">defaults</span><span class="p">.</span><span class="n">list</span>
+</pre></div>
+
+
+<h1 id="use-newest-wine">Use Newest&nbsp;wine</h1>
+<div class="codehilite"><pre><span class="nl">https:</span><span class="c1">//www.winehq.org/download/ubuntu</span>
+</pre></div>
+</article>
 
 
 <div class="btn-group">
 <button type="button" class="btn btn-default"><a href="/blog">Back to list</a></button>
 
 
-<button type="button" class="btn btn-default"><a href="/blog/hyde_and_bootstrap.html" title="Hyde and Bootstrap (and github.io)">
+<button type="button" class="btn btn-default"><a href="/blog/hyde_and_bootstrap.html" title="Hyde and Bootstrap">
     Next
 </a>
 </button>
@@ -220,7 +256,7 @@ sudo gedit /etc/gnome/share/defaults.list
      
 
                     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/media/js/libs/jquery-1.10.1.min.js">\x3C/script>')</script>
+    <script>window.jQuery || document.write('<script src="/media/js/libs/jquery.min.js">\x3C/script>')</script>
     
         <script src="/media/js/libs/bootstrap.min.js"></script>
         <script src="/media/js/libs/offcanvas.js"></script>

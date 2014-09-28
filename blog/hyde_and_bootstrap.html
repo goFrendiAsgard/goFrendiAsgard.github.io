@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
         <meta charset="">
-    <title>Hyde and Bootstrap (and github.io) | Go Frendi's Personal Website</title>
+    <title>Hyde and Bootstrap | Go Frendi's Personal Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hyde and Bootstrap.
 ">
@@ -13,7 +13,8 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-        <link href="/media/css/bootstrap.css" rel="stylesheet">
+        <link href="/media/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/media/css/bootstrap.min.cosmo.css" rel="stylesheet">
     <link href="/media/css/offcanvas.css" rel="stylesheet">
 
     <style type="text/css">
@@ -54,7 +55,7 @@
 
   <body class="hyde_and_bootstrap">
 
-    <div class="navbar navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
     <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -72,6 +73,8 @@
         <a href="/about.html">About</a>
     </li>    <li class="active">
         <a href="/blog">Blog</a>
+    </li>    <li >
+        <a href="/service.html">Service</a>
     </li>
       </ul>
     </div><!-- /.nav-collapse -->
@@ -81,9 +84,13 @@
         <div class="container" id="top">
       <article>
 
+<link rel="stylesheet" href="/highlight/styles/default.css">
+<script src="/hightlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 <h1>
     <a href="/blog/hyde_and_bootstrap.html">
-        Hyde and Bootstrap (and github.io)
+        Hyde and Bootstrap
     </a>
 </h1>
 <time datetime="2014-09-01">
@@ -94,21 +101,24 @@
     <span class="badge"><a href="/blog/tags/thoughts.html">thoughts</a></span>
 </div>
 <hr>
-<p>My thought about hyde and bootstrap.
-Just moving to github.io&nbsp;:)</p>
+
+My thought about hyde and bootstrap.
+Just moving to github.io :)
 <p>Github provide a very good platform to have your own static page. Using static page means that you don&#8217;t need to think&nbsp;about:</p>
 <ul>
 <li>database</li>
 <li>server&nbsp;setting</li>
 <li>security</li>
 </ul>
-<p>However, write a static page also means that you need to code the banner, links etc repetitively.
+<p>However, write a static page also means that you need to code the banner, links etc repetitively.<br />
 Fortunately, we have hyde (github recommend jekyll, but I am a Python guy). By using hyde, you can enjoy the advantage of jinja&nbsp;template.</p>
-<p>As a boiler-plate, I use <a href="https://github.com/auzigog/hyde-bootstrap">hyde-bootstrap</a> which was created by auzigog.
+<p>As a boiler-plate, I use <a href="https://github.com/auzigog/hyde-bootstrap">hyde-bootstrap</a> which was created by auzigog.<br />
 It is quiete intuitive and pretty easy to&nbsp;follow.</p>
 <p>Oh, did I say that you don&#8217;t need to write <span class="caps">HTML</span> to get <span class="caps">HTML</span>? Yes, you can use markdown syntax in&nbsp;hyde.</p>
-<p>I can&#8217;t wait to hack around, look for any possibility to make this website cooler.
-Right now, I&#8217;ve just add disqus to every post in my blog. This is cool&nbsp;:)</p></article>
+<p>I can&#8217;t wait to hack around, look for any possibility to make this website cooler.<br />
+Right now, I&#8217;ve just add disqus to every post in my blog. This is cool&nbsp;:)</p>
+
+</article>
 
 
 <div class="btn-group">
@@ -144,7 +154,7 @@ Right now, I&#8217;ve just add disqus to every post in my blog. This is cool&nbs
      
 
                     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/media/js/libs/jquery-1.10.1.min.js">\x3C/script>')</script>
+    <script>window.jQuery || document.write('<script src="/media/js/libs/jquery.min.js">\x3C/script>')</script>
     
         <script src="/media/js/libs/bootstrap.min.js"></script>
         <script src="/media/js/libs/offcanvas.js"></script>
