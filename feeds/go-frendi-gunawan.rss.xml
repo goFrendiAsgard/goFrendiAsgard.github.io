@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go Frendi's Personal Web</title><link>/</link><description>Python, Math, Life, and Me</description><atom:link href="/feeds/go-frendi-gunawan.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 04 Dec 2014 00:00:00 +0700</lastBuildDate><item><title>Hello world</title><link>/blog/2014/12/04/helloworld/</link><description>&lt;hr /&gt;
+
+
+&lt;p&gt;Just move to pelican :)
+&lt;/p&gt;
+&lt;p&gt;Pelican is a very great static web generator. It even allow you to write things in IPython-Notebook.
+Just simply write your articles and attach this whenever you want:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;notebook&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ipython&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ipynb&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is the example:&lt;/p&gt;
+&lt;p&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Following is a simple python code&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell vbox"&gt;
+&lt;div class="input hbox"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[3]:
+&lt;/div&gt;
+&lt;div class="input_area box-flex1"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello world&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="vbox output_wrapper"&gt;
+&lt;div class="output vbox"&gt;
+
+
+&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="box-flex1 output_subarea output_stream output_stdout"&gt;
+&lt;pre&gt;
+Hello world
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now, I am playing with &lt;span class="math"&gt;\(L_AT_EX\)&lt;/span&gt;, cool huh? Next, let me show you a sine graph&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell vbox"&gt;
+&lt;div class="input hbox"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[14]:
+&lt;/div&gt;
+&lt;div class="input_area box-flex1"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;fig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;ax&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fig&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_subplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="vbox output_wrapper"&gt;
+&lt;div class="output vbox"&gt;
+
+
+&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="box-flex1 output_subarea output_display_data"&gt;
+
+
+&lt;img src="data:image/png;base64,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
+"&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Thu, 04 Dec 2014 00:00:00 +0700</pubDate><guid>tag:,2014-12-04:blog/2014/12/04/helloworld/</guid></item><item><title>Home</title><link>/blog/2014/12/04/home/</link><description>&lt;hr /&gt;
+&lt;h2&gt;Me&lt;/h2&gt;
+&lt;p&gt;My name is Go Frendi Gunawan. an intelligent being living in Malang, Jawa Timur, Indonesia, Earth, Solar System.&lt;/p&gt;
+&lt;p&gt;I work as a lecturer at &lt;a href="http://stiki.ac.id/"&gt;STIKI Malang&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I like to code. My favorite programming language is Python, but I'm not stop there. 
+Right now, I try to learn scala and find out what functional-programming really is.
+I can also speak PHP, javascript, pascal, C, java, English, and Bahasa.&lt;/p&gt;
+&lt;p&gt;I also like computer science. My favorite topic is data mining, machine learning, and a bit software engineering.
+Sometime I also like to have light discussion related to philosophy and quantum-physics (minus the rocket science).&lt;/p&gt;
+&lt;p&gt;When not busy with my job, I usually like to code aimlessly, look for new thing related to computer, watch "Big bang theory" or some anime. Join free course on openedx or udacity (but soon get bored and never finish any course). And not to mention, trolling around.&lt;/p&gt;
+&lt;p&gt;You can contact me by mail at &lt;strong&gt;gofrendiasgard@gmail.com&lt;/strong&gt; or by phone at &lt;strong&gt;+6289 680 868 343&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Projects&lt;/h2&gt;
+&lt;p&gt;Most of my code are "hello-world" in any language/framework and usually end up as junks.&lt;/p&gt;
+&lt;p&gt;Here are some of my projects that I can proud of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;No-CMS&lt;/strong&gt; (&lt;a href="https://github.com/goFrendiAsgard/No-CMS"&gt;code&lt;/a&gt;, &lt;a href="http://getnocms.com"&gt;demo&lt;/a&gt; )&lt;/p&gt;
+&lt;p&gt;No-CMS is a free CodeIgniter based CMS framework. I made it when codeigniter was popular and PHP was my favorite language.
+Now CodeIgniter is no longer as popular as before, and PHP is no longer my favorite language. However, No-CMS is still functional.
+I use No-CMS for majority of my project. It is open source and so customizable. Also, it has module-generator, something that really proud of.
+It makes developer's life (at least my life) easier.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Kokoropy&lt;/strong&gt; (&lt;a href="https://github.com/goFrendiAsgard/kokoropy"&gt;code&lt;/a&gt;, &lt;a href="http://kokoropy.herokuapp.com"&gt;demo&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;This one is my "ideal" web-framework, built in Python (and bottle py). 
+I don't have any chance yet to try kokoropy in real-world, but in my imaginary-world, it is going to be the best framework ever.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;csv2db.py&lt;/strong&gt; (&lt;a href="https://github.com/goFrendiAsgard/csv2db.py"&gt;code&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;csv2db.py is a simple python framework to import any readable format csv into database. This can even detect &lt;code&gt;one-to-many&lt;/code&gt; relationship&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;gogenpy&lt;/strong&gt; (&lt;a href="https://github.com/goFrendiAsgard/gogenpy"&gt;code&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Gogenpy stands for "Go Frendi Genetics Algorithm in Python".&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;puribundamalang.com&lt;/strong&gt; (&lt;a href="http://puribundamalang.com"&gt;demo&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;A Website for Puri Bunda Maternity Hospital.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;blogid.me&lt;/strong&gt; (&lt;a href="http://blogid.me"&gt;demo&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Free blogging platform.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;goblock&lt;/strong&gt; (&lt;a href="https://github.com/goFrendiAsgard/goblock"&gt;code&lt;/a&gt;, &lt;a href="https://gofrendiasgard.github.io/goblock"&gt;demo&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Research&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://jurnal.stiki.ac.id/index.php/smatika1/article/view/3"&gt;Nordrassil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://jiki.cs.ui.ac.id/index.php/jiki/article/download/197/114"&gt;Grammatical Evolution for Feature Extraction in Local Tresholding Problem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://jurnal.itats.ac.id/grammatical-evolution-untuk-ekstraksi-fitur-dengan-pengukuran-multi-fitness/"&gt;Grammatical Evolution for Feature Extraction with Multi-Fitness Measurement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/goFrendiAsgard/myresearch/blob/master/snasti.pdf?raw=true"&gt;Tatami Grammatical Evolution for Feature Extraction with Multi-Fitness Measurement&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Thu, 04 Dec 2014 00:00:00 +0700</pubDate><guid>tag:,2014-12-04:blog/2014/12/04/home/</guid></item><item><title>Ubuntu tricks</title><link>/blog/2014/12/04/ubuntu/</link><description>&lt;hr /&gt;
+
+
+&lt;p&gt;Ubuntu tricks for and from me
+&lt;/p&gt;
+&lt;h2&gt;Install several softwares&lt;/h2&gt;
+&lt;p&gt;The good thing about using ubuntu (and any other linux distribution) is you don't need to remember what button should be clicked when installing your softwares.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;webupd8team&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;java&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;software&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;properties&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;ubuntugis&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubuntugis&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;unstable&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;apache2&lt;/span&gt; &lt;span class="n"&gt;apache2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mpm&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;prefork&lt;/span&gt; &lt;span class="n"&gt;apache2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;utils&lt;/span&gt; &lt;span class="n"&gt;libapache2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mod&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;php5&lt;/span&gt; &lt;span class="n"&gt;libapr1&lt;/span&gt; &lt;span class="n"&gt;libaprutil1&lt;/span&gt; &lt;span class="n"&gt;libdbd&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;perl&lt;/span&gt; &lt;span class="n"&gt;libdbi&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;perl&lt;/span&gt; &lt;span class="n"&gt;libnet&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;daemon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;perl&lt;/span&gt; &lt;span class="n"&gt;libplrpc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;perl&lt;/span&gt; &lt;span class="n"&gt;libpq5&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;5.5&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;common&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;5.5&lt;/span&gt; &lt;span class="n"&gt;php5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;common&lt;/span&gt; &lt;span class="n"&gt;php5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt; &lt;span class="n"&gt;php5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;curl&lt;/span&gt; &lt;span class="n"&gt;phpmyadmin&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;ipython&lt;/span&gt; &lt;span class="n"&gt;openjdk&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;jdk&lt;/span&gt; &lt;span class="n"&gt;netbeans&lt;/span&gt; &lt;span class="n"&gt;eclipse&lt;/span&gt; &lt;span class="n"&gt;cheese&lt;/span&gt; &lt;span class="n"&gt;shutter&lt;/span&gt; &lt;span class="n"&gt;lazarus&lt;/span&gt; &lt;span class="n"&gt;gimp&lt;/span&gt; &lt;span class="n"&gt;inkscape&lt;/span&gt; &lt;span class="n"&gt;chromium&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;browser&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;setuptools&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pygame&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;opengl&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gst0&lt;/span&gt;&lt;span class="mf"&gt;.10&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;enchant&lt;/span&gt; &lt;span class="n"&gt;gstreamer0&lt;/span&gt;&lt;span class="mf"&gt;.10&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;plugins&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;good&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;  &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;essential&lt;/span&gt; &lt;span class="n"&gt;libgl1&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mesa&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libgles2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mesa&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;zlib1g&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;nmap&lt;/span&gt; &lt;span class="n"&gt;wireshark&lt;/span&gt; &lt;span class="n"&gt;lynx&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="n"&gt;vim&lt;/span&gt; &lt;span class="n"&gt;lyx&lt;/span&gt; &lt;span class="n"&gt;filezilla&lt;/span&gt; &lt;span class="n"&gt;blender&lt;/span&gt; &lt;span class="n"&gt;oracle&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;java7&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;installer&lt;/span&gt; &lt;span class="n"&gt;gparted&lt;/span&gt; &lt;span class="n"&gt;unetbootin&lt;/span&gt; &lt;span class="n"&gt;wine&lt;/span&gt; &lt;span class="n"&gt;bind9&lt;/span&gt; &lt;span class="n"&gt;dnsutil&lt;/span&gt; &lt;span class="n"&gt;curl&lt;/span&gt; &lt;span class="n"&gt;aircrack&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ng&lt;/span&gt; &lt;span class="n"&gt;reaver&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;cython&lt;/span&gt; 
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;kivy&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;scikit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;learn&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;simpy&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;sympy&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Add wildcard to local domain (gofrendi.dev)&lt;/h2&gt;
+&lt;p&gt;I like to be able to access my local machine as &lt;code&gt;gofrendi.dev&lt;/code&gt;. My project No-CMS has a multisite feature, so that it will be great to test wheter &lt;code&gt;somedomain.gofrendi.dev&lt;/code&gt; is works as expected.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Add zone&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;nano&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bind&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;named&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;add this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;zone&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;gofrendi.dev&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/etc/bind/db.gofrendi.dev&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add db&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;nano&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bind&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gofrendi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;add this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;BIND&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;local&lt;/span&gt; &lt;span class="n"&gt;loopback&lt;/span&gt; &lt;span class="n"&gt;interface&lt;/span&gt;
+&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;TTL&lt;/span&gt;    &lt;span class="mi"&gt;604800&lt;/span&gt;
+&lt;span class="err"&gt;@&lt;/span&gt;   &lt;span class="n"&gt;IN&lt;/span&gt;  &lt;span class="n"&gt;SOA&lt;/span&gt; &lt;span class="n"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+                  &lt;span class="mi"&gt;2&lt;/span&gt;     &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Serial&lt;/span&gt;
+             &lt;span class="mi"&gt;604800&lt;/span&gt;     &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Refresh&lt;/span&gt;
+              &lt;span class="mi"&gt;86400&lt;/span&gt;     &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Retry&lt;/span&gt;
+            &lt;span class="mi"&gt;2419200&lt;/span&gt;     &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Expire&lt;/span&gt;
+             &lt;span class="mi"&gt;604800&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;   &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Negative&lt;/span&gt; &lt;span class="n"&gt;Cache&lt;/span&gt; &lt;span class="n"&gt;TTL&lt;/span&gt;
+&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="err"&gt;@&lt;/span&gt;   &lt;span class="n"&gt;IN&lt;/span&gt;  &lt;span class="n"&gt;NS&lt;/span&gt;  &lt;span class="n"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="err"&gt;@&lt;/span&gt;   &lt;span class="n"&gt;IN&lt;/span&gt;  &lt;span class="n"&gt;A&lt;/span&gt;   &lt;span class="mf"&gt;127.0.0.1&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;   &lt;span class="n"&gt;IN&lt;/span&gt;  &lt;span class="n"&gt;A&lt;/span&gt;   &lt;span class="mf"&gt;127.0.0.1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add localhost as primary NS&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;nano&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;resolv&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;modify to this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)&lt;/span&gt;
+&lt;span class="cp"&gt;#     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN&lt;/span&gt;
+&lt;span class="n"&gt;nameserver&lt;/span&gt; &lt;span class="mf"&gt;127.0.0.1&lt;/span&gt;
+&lt;span class="n"&gt;nameserver&lt;/span&gt; &lt;span class="mf"&gt;127.0.1.1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Restart bind&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;init&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bind9&lt;/span&gt; &lt;span class="n"&gt;restart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Install nodejs (Download first)&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;tar&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;components&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;xzf&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gofrendi&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Downloads&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v0&lt;/span&gt;&lt;span class="mf"&gt;.10.26&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x86&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gz&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Install composer&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;curl&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;sS&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//getcomposer.org/installer | php&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;mv&lt;/span&gt; &lt;span class="n"&gt;composer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;phar&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;composer&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Change virtualbox resolution (for windows 8.1 guest)&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;vboxmanage&lt;/span&gt; &lt;span class="n"&gt;setextradata&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;windows&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;CustomVideoMode1&lt;/span&gt; &lt;span class="mi"&gt;1366&lt;/span&gt;&lt;span class="n"&gt;x768x32&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Install Haskell&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;ghc&lt;/span&gt; &lt;span class="n"&gt;alex&lt;/span&gt; &lt;span class="n"&gt;cabal&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;happy&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cgi&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fgl&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;glut&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;haskell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hunit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mtl&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;network&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;opengl&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;parallel&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;parsec3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;  &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickcheck2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;regex&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;base&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;regex&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;compat&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;  &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;regex&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;posix&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;stm&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;syb&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;  &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;  &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;transformers&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;  &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;xhtml&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libghc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;zlib&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Enable dvd&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;libdvdread4&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Change default application&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;gedit&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;applications&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;defaults&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;gedit&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gnome&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;defaults&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Use Newest wine&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nl"&gt;https:&lt;/span&gt;&lt;span class="c1"&gt;//www.winehq.org/download/ubuntu&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Windows 8 virtualbox&lt;/h2&gt;
+&lt;p&gt;When installing windows 8 in virtual box, never forget to add guest addition and do this to make resolutin better:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;VBoxManage&lt;/span&gt; &lt;span class="n"&gt;setextradata&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;windows 8&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;CustomVideoMode1&lt;/span&gt; &lt;span class="mi"&gt;1366&lt;/span&gt;&lt;span class="n"&gt;x768x32&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Remove unused kernel&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;dpkg&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-*&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;sed&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;/^&lt;/span&gt;&lt;span class="n"&gt;ii&lt;/span&gt;&lt;span class="o"&gt;/!&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;$(uname -r | sed &amp;quot;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="p"&gt;(.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;)&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;/^&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="err"&gt;*/\&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;/!&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;xargs&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;purge&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Thu, 04 Dec 2014 00:00:00 +0700</pubDate><guid>tag:,2014-12-04:blog/2014/12/04/ubuntu/</guid></item></channel></rss>
