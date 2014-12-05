@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Go Frendi's Personal Web - Articles by Go Frendi Gunawan</title>
+  <title>Arduino + Sonar Sensor + LED</title>
   <meta name="author" content="Go Frendi Gunawan">
 
   <link href="/atom.xml" type="application/atom+xml" rel="alternate"
@@ -1623,75 +1623,100 @@ jQuery(document).ready(function($) {
 </ul></nav>
   <div id="main">
     <div id="content">
-<div class="blog-index">
-  		<article>
+<div>
+  <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">
-        <a href="/blog/2014/12/05/arduino/">Arduino + Sonar Sensor + LED</a>
-      </h1>
+      <h1 class="entry-title">Arduino + Sonar Sensor + LED</h1>
       <p class="meta"><time datetime="2014-12-05T00:00:00+07:00" pubdate>Dec 05, 2014</time></p>
 </header>
 
-  <div class="entry-content">
+  <div class="entry-content"><hr />
+
 
 <p>I have just play up with arduino, HC-SR04 sonar sensor.
+</p>
+<p>Thanks to project board and arduino. Nowaday, anyone can build their own robot easily.
+There are many instruction to do that in <a href="http://www.instructables.com/tag/type-id/category-technology/channel-arduino/">instructables</a>
+Very cool, just do exactly as the instruction and you can make your very own high-tech toys.</p>
+<p>As a newbie, today I try to play around with HC-SR04 sonar sensor. I plan to build a very simple robot that can detect obstacle by using sonar.
+I use LED since DC Motor is a bit complicated and dangerous for newbie (I mean you can damage the arduino board itself if you set it wrong).
+So, my current prototype robot doesn't able to move anywhere.</p>
+<p>Here is my prototype robot in action:
+<div class="videobox">
+                <iframe width="640" height="390"
+                        src='http://www.youtube.com/v/woXSY94KMFw'
+                        frameborder='0'
+                        webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+                </iframe>
+            </div></p>
+<p>Basically it will detect any obstacle less than 20 cm in front of the sonar sensor, and will turn off one of the LED.
+Let's think LED as motor. If you have 2 motors, and one of them is switched off, you will get your robot turn it's direction.</p>
+<p>The schema is as follows:
+<img src="../../../../../images/gunvarrel-02.png"></p>
+<p>HC-SR04 will operate under 5 volt voltage. Thus, I simply connect 5 volt VCC from arduino board to VCC pin of HC-SR04.</p>
+<p>HC-SR04 also has another 3 pins. GND that should be connected to arduino's ground, ECHO, and TRIG.
+Whenever you send 3 volt to ECHO, HC-SR04 will emmit ultrasonic wave. You can catch the echo by read on ECHO pin.</p>
+<p>Pin 1-13 in arduino has 3 volt voltage. However, the LED should only accept 2 volt. This is why you need a resistor.</p>
+<p>Here is the code:</p>
+<div class="highlight"><pre>    <span class="cm">/*</span>
+<span class="cm">     * Gunvarrel v 0.0.2</span>
+<span class="cm">     * Purpose: To emulate simple sonar robot</span>
+<span class="cm">     * Description: Far from perfect. I use LED instead of motor</span>
+<span class="cm">     * Author: Go Frendi Gunawan</span>
+<span class="cm">     */</span>
+    <span class="kt">int</span> <span class="n">left_motor</span>   <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>  <span class="c1">// left  motor</span>
+    <span class="kt">int</span> <span class="n">right_motor</span>  <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>  <span class="c1">// right motor</span>
+    <span class="kt">int</span> <span class="n">sonar_trig</span>   <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>   <span class="c1">// sonar trigger</span>
+    <span class="kt">int</span> <span class="n">sonar_echo</span>   <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>   <span class="c1">// sonar echo</span>
+
+    <span class="kt">void</span> <span class="nf">setup</span><span class="p">(){</span>
+      <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+      <span class="n">pinMode</span><span class="p">(</span><span class="n">left_motor</span><span class="p">,</span>   <span class="n">OUTPUT</span><span class="p">);</span>
+      <span class="n">pinMode</span><span class="p">(</span><span class="n">right_motor</span><span class="p">,</span>  <span class="n">OUTPUT</span><span class="p">);</span>
+      <span class="n">pinMode</span><span class="p">(</span><span class="n">sonar_trig</span><span class="p">,</span>   <span class="n">OUTPUT</span><span class="p">);</span>
+      <span class="n">pinMode</span><span class="p">(</span><span class="n">sonar_echo</span><span class="p">,</span>   <span class="n">INPUT</span> <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">straight</span><span class="p">(){</span>
+      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">left_motor</span><span class="p">,</span>  <span class="n">HIGH</span><span class="p">);</span>
+      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">right_motor</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+      <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">turn</span><span class="p">(){</span>
+      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">left_motor</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">right_motor</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+      <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
+      <span class="c1">// shout out</span>
+      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">sonar_trig</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">sonar_trig</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+      <span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">sonar_trig</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+      <span class="c1">// listen</span>
+      <span class="kt">int</span> <span class="n">duration</span> <span class="o">=</span> <span class="n">pulseIn</span><span class="p">(</span><span class="n">sonar_echo</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+      <span class="kt">int</span> <span class="n">distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">duration</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">29.1</span><span class="p">;</span>
+      <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">distance</span><span class="p">);</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">distance</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">){</span>
+        <span class="n">turn</span><span class="p">();</span>
+      <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="n">straight</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Go Frendi Gunawan</span>
+  </span>
+<time datetime="2014-12-05T00:00:00+07:00" pubdate>Dec 05, 2014</time></p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="/blog/2014/12/05/arduino/" data-via="gofrendiasgard" data-counturl="/blog/2014/12/05/arduino/" >Tweet</a>
+  <div class="g-plusone" data-size="medium"></div>
+</div>    </footer>
+  </article>
+
 </div>
-  <footer>
-    <a rel="full-article" href="/blog/2014/12/05/arduino/">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/blog/2014/12/04/helloworld/">Hello world</a>
-      </h1>
-      <p class="meta"><time datetime="2014-12-04T00:00:00+07:00" pubdate>Dec 04, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>Just move to pelican :)
-</div>
-  <footer>
-    <a rel="full-article" href="/blog/2014/12/04/helloworld/">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/blog/2014/12/04/home/">Home</a>
-      </h1>
-      <p class="meta"><time datetime="2014-12-04T00:00:00+07:00" pubdate>Dec 04, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>About me
-</div>
-  <footer>
-    <a rel="full-article" href="/blog/2014/12/04/home/">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="/blog/2014/12/04/ubuntu/">Ubuntu tricks</a>
-      </h1>
-      <p class="meta"><time datetime="2014-12-04T00:00:00+07:00" pubdate>Dec 04, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>Ubuntu tricks for and from me
-</div>
-  <footer>
-    <a rel="full-article" href="/blog/2014/12/04/ubuntu/">Read On &crarr;</a>
-  </footer>
-  		</article>
-<div class="pagination">
-
-  <br />
-</div></div>
 <aside class="sidebar">
   <section>
     <h1>Recent Posts</h1>

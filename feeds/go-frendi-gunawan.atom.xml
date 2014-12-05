@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Go Frendi's Personal Web</title><link href="/" rel="alternate"></link><link href="/feeds/go-frendi-gunawan.atom.xml" rel="self"></link><id>/</id><updated>2014-12-04T00:00:00+07:00</updated><entry><title>Hello world</title><link href="/blog/2014/12/04/helloworld/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/helloworld/</id><summary type="html">&lt;hr /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Go Frendi's Personal Web</title><link href="/" rel="alternate"></link><link href="/feeds/go-frendi-gunawan.atom.xml" rel="self"></link><id>/</id><updated>2014-12-05T00:00:00+07:00</updated><entry><title>Arduino + Sonar Sensor + LED</title><link href="/blog/2014/12/05/arduino/" rel="alternate"></link><updated>2014-12-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-05:blog/2014/12/05/arduino/</id><summary type="html">&lt;hr /&gt;
+
+
+&lt;p&gt;I have just play up with arduino, HC-SR04 sonar sensor.
+&lt;/p&gt;
+&lt;p&gt;Thanks to project board and arduino. Nowaday, anyone can build their own robot easily.
+There are many instruction to do that in &lt;a href="http://www.instructables.com/tag/type-id/category-technology/channel-arduino/"&gt;instructables&lt;/a&gt;
+Very cool, just do exactly as the instruction and you can make your very own high-tech toys.&lt;/p&gt;
+&lt;p&gt;As a newbie, today I try to play around with HC-SR04 sonar sensor. I plan to build a very simple robot that can detect obstacle by using sonar.
+I use LED since DC Motor is a bit complicated and dangerous for newbie (I mean you can damage the arduino board itself if you set it wrong).
+So, my current prototype robot doesn't able to move anywhere.&lt;/p&gt;
+&lt;p&gt;Here is my prototype robot in action:
+&lt;div class="videobox"&gt;
+                &lt;iframe width="640" height="390"
+                        src='http://www.youtube.com/v/woXSY94KMFw'
+                        frameborder='0'
+                        webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;
+                &lt;/iframe&gt;
+            &lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Basically it will detect any obstacle less than 20 cm in front of the sonar sensor, and will turn off one of the LED.
+Let's think LED as motor. If you have 2 motors, and one of them is switched off, you will get your robot turn it's direction.&lt;/p&gt;
+&lt;p&gt;The schema is as follows:
+&lt;img src="../../../../../images/gunvarrel-02.png"&gt;&lt;/p&gt;
+&lt;p&gt;HC-SR04 will operate under 5 volt voltage. Thus, I simply connect 5 volt VCC from arduino board to VCC pin of HC-SR04.&lt;/p&gt;
+&lt;p&gt;HC-SR04 also has another 3 pins. GND that should be connected to arduino's ground, ECHO, and TRIG.
+Whenever you send 3 volt to ECHO, HC-SR04 will emmit ultrasonic wave. You can catch the echo by read on ECHO pin.&lt;/p&gt;
+&lt;p&gt;Pin 1-13 in arduino has 3 volt voltage. However, the LED should only accept 2 volt. This is why you need a resistor.&lt;/p&gt;
+&lt;p&gt;Here is the code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="cm"&gt;/*&lt;/span&gt;
+&lt;span class="cm"&gt;     * Gunvarrel v 0.0.2&lt;/span&gt;
+&lt;span class="cm"&gt;     * Purpose: To emulate simple sonar robot&lt;/span&gt;
+&lt;span class="cm"&gt;     * Description: Far from perfect. I use LED instead of motor&lt;/span&gt;
+&lt;span class="cm"&gt;     * Author: Go Frendi Gunawan&lt;/span&gt;
+&lt;span class="cm"&gt;     */&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;left_motor&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;// left  motor&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;right_motor&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c1"&gt;// right motor&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;sonar_trig&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;   &lt;span class="c1"&gt;// sonar trigger&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;sonar_echo&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;   &lt;span class="c1"&gt;// sonar echo&lt;/span&gt;
+
+    &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+      &lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9600&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;left_motor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;   &lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;right_motor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sonar_trig&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;   &lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sonar_echo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;   &lt;span class="n"&gt;INPUT&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;straight&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+      &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;left_motor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="n"&gt;HIGH&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;right_motor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HIGH&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;turn&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+      &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;left_motor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;LOW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;right_motor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HIGH&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+      &lt;span class="c1"&gt;// shout out&lt;/span&gt;
+      &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sonar_trig&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;LOW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sonar_trig&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HIGH&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;delayMicroseconds&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sonar_trig&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;LOW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="c1"&gt;// listen&lt;/span&gt;
+      &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;duration&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pulseIn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sonar_echo&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HIGH&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;distance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;duration&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mf"&gt;29.1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+        &lt;span class="n"&gt;turn&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+      &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;straight&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+      &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Hello world</title><link href="/blog/2014/12/04/helloworld/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/helloworld/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;Just move to pelican :)
@@ -262,6 +336,10 @@ ybCwExGZDAs7EZHJsLATEZnM/wMCQmHuftwMPwAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Home</title><link href="/blog/2014/12/04/home/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/home/</id><summary type="html">&lt;hr /&gt;
+
+
+&lt;p&gt;About me
+&lt;/p&gt;
 &lt;h2&gt;Me&lt;/h2&gt;
 &lt;p&gt;My name is Go Frendi Gunawan. an intelligent being living in Malang, Jawa Timur, Indonesia, Earth, Solar System.&lt;/p&gt;
 &lt;p&gt;I work as a lecturer at &lt;a href="http://stiki.ac.id/"&gt;STIKI Malang&lt;/a&gt;.&lt;/p&gt;
