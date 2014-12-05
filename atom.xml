@@ -20,8 +20,8 @@ So, my current prototype robot doesn't able to move anywhere.&lt;/p&gt;
             &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Basically it will detect any obstacle less than 20 cm in front of the sonar sensor, and will turn off one of the LED.
 Let's think LED as motor. If you have 2 motors, and one of them is switched off, you will get your robot turn it's direction.&lt;/p&gt;
-&lt;p&gt;The schema is as follows:
-&lt;img src="../../../../../images/gunvarrel-02.png"&gt;&lt;/p&gt;
+&lt;p&gt;The schema is as follows:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../../images/gunvarrel-02.png"&gt;&lt;/p&gt;
 &lt;p&gt;HC-SR04 will operate under 5 volt voltage. Thus, I simply connect 5 volt VCC from arduino board to VCC pin of HC-SR04.&lt;/p&gt;
 &lt;p&gt;HC-SR04 also has another 3 pins. GND that should be connected to arduino's ground, ECHO, and TRIG.
 Whenever you send 3 volt to ECHO, HC-SR04 will emmit ultrasonic wave. You can catch the echo by read on ECHO pin.&lt;/p&gt;
