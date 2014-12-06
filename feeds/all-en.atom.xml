@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Go Frendi's Personal Web</title><link href="/" rel="alternate"></link><link href="/feeds/all-en.atom.xml" rel="self"></link><id>/</id><updated>2014-12-05T00:00:00+07:00</updated><entry><title>Arduino + Sonar Sensor + LED</title><link href="/blog/2014/12/05/arduino/" rel="alternate"></link><updated>2014-12-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-05:blog/2014/12/05/arduino/</id><summary type="html">&lt;hr /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Go Frendi's Personal Web</title><link href="https://gofrendiasgard.github.io/" rel="alternate"></link><link href="/feeds/all-en.atom.xml" rel="self"></link><id>https://gofrendiasgard.github.io/</id><updated>2014-12-05T00:00:00+07:00</updated><entry><title>Arduino + Sonar Sensor + LED</title><link href="https://gofrendiasgard.github.io/blog/2014/12/05/arduino/" rel="alternate"></link><updated>2014-12-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-05:blog/2014/12/05/arduino/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;I have just play up with arduino, HC-SR04 sonar sensor.
@@ -21,7 +21,7 @@ So, my current prototype robot doesn't able to move anywhere.&lt;/p&gt;
 &lt;p&gt;Basically it will detect any obstacle less than 20 cm in front of the sonar sensor, and will turn off one of the LED.
 Let's think LED as motor. If you have 2 motors, and one of them is switched off, you will get your robot turn it's direction.&lt;/p&gt;
 &lt;p&gt;The schema is as follows:&lt;/p&gt;
-&lt;p&gt;&lt;img src="../../../../../images/gunvarrel-02.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/gunvarrel-02.png"&gt;&lt;/p&gt;
 &lt;p&gt;HC-SR04 will operate under 5 volt voltage. Thus, I simply connect 5 volt VCC from arduino board to VCC pin of HC-SR04.&lt;/p&gt;
 &lt;p&gt;HC-SR04 also has another 3 pins. GND that should be connected to arduino's ground, ECHO, and TRIG.
 Whenever you send 3 volt to ECHO, HC-SR04 will emmit ultrasonic wave. You can catch the echo by read on ECHO pin.&lt;/p&gt;
@@ -73,7 +73,7 @@ Whenever you send 3 volt to ECHO, HC-SR04 will emmit ultrasonic wave. You can ca
         &lt;span class="n"&gt;straight&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
       &lt;span class="p"&gt;}&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Hello world</title><link href="/blog/2014/12/04/helloworld/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/helloworld/</id><summary type="html">&lt;hr /&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Hello world</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/helloworld/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/helloworld/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;Just move to pelican :)
@@ -335,7 +335,7 @@ ybCwExGZDAs7EZHJsLATEZnM/wMCQmHuftwMPwAAAABJRU5ErkJggg==
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Home</title><link href="/blog/2014/12/04/home/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/home/</id><summary type="html">&lt;hr /&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Home</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/home/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/home/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;About me
@@ -392,7 +392,7 @@ I don't have any chance yet to try kokoropy in real-world, but in my imaginary-w
 &lt;li&gt;&lt;a href="http://jiki.cs.ui.ac.id/index.php/jiki/article/download/197/114"&gt;Grammatical Evolution for Feature Extraction in Local Tresholding Problem&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://jurnal.itats.ac.id/grammatical-evolution-untuk-ekstraksi-fitur-dengan-pengukuran-multi-fitness/"&gt;Grammatical Evolution for Feature Extraction with Multi-Fitness Measurement&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/goFrendiAsgard/myresearch/blob/master/snasti.pdf?raw=true"&gt;Tatami Grammatical Evolution for Feature Extraction with Multi-Fitness Measurement&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>Ubuntu tricks</title><link href="/blog/2014/12/04/ubuntu/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/ubuntu/</id><summary type="html">&lt;hr /&gt;
+&lt;/ul&gt;</summary></entry><entry><title>Ubuntu tricks</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/ubuntu/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/ubuntu/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;Ubuntu tricks for and from me
