@@ -1,5 +1,292 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Go Frendi's Personal Web</title><link href="https://gofrendiasgard.github.io/" rel="alternate"></link><link href="/atom.xml" rel="self"></link><id>https://gofrendiasgard.github.io/</id><updated>2014-12-05T00:00:00+07:00</updated><entry><title>Arduino + Sonar Sensor + LED</title><link href="https://gofrendiasgard.github.io/blog/2014/12/05/arduino/" rel="alternate"></link><updated>2014-12-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-05:blog/2014/12/05/arduino/</id><summary type="html">&lt;hr /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Go Frendi's Personal Web</title><link href="https://gofrendiasgard.github.io/" rel="alternate"></link><link href="/atom.xml" rel="self"></link><id>https://gofrendiasgard.github.io/</id><updated>2014-12-07T00:00:00+07:00</updated><entry><title>Giving Presentation by Using IPython Notebook</title><link href="https://gofrendiasgard.github.io/blog/2014/12/07/ipython/" rel="alternate"></link><updated>2014-12-07T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-07:blog/2014/12/07/ipython/</id><summary type="html">&lt;hr /&gt;
+
+
+&lt;p&gt;IPython Notebook for presentation.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Everyone know that IPython Notebook is very cool. It allows you to write some text in Markdown &amp;amp; $L_AT_EX$ format beautifully next to your code, next to the output of the code. All in one page.&lt;/p&gt;
+&lt;p&gt;It will be even cooler if we can do presentation by using IPython Notebook? But is it even possible?
+Yes it is possible. Today I&amp;#39;ll show you how.&lt;/p&gt;
+&lt;p&gt;First of all, if you are using ubuntu 14.04 or below like I do, and you install IPython through synaptic or apt (&lt;code&gt;sudo apt-get install ipython ipython-notebook&lt;/code&gt;), then you must end up with IPython 1.2.1. This is not a very good news, since the current newest stable version of IPython is 2.x. Therefore you need to upgrade.&lt;/p&gt;
+&lt;p&gt;The easiest way to upgrade your IPython is by adding this repository: (&lt;a href="https://launchpad.net/~jtaylor/+archive/ubuntu/ipython)[https://launchpad.net/~jtaylor/+archive/ubuntu/ipython"&gt;https://launchpad.net/~jtaylor/+archive/ubuntu/ipython)[https://launchpad.net/~jtaylor/+archive/ubuntu/ipython&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;Ubuntu 14.04 doesn&amp;#39;t come up with synaptic package manager. I prefer to use synaptic, so I do this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install synaptic
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After installing synaptic, you can launch it (using unity dashboard, you can just type synaptic in search bar) and click &lt;code&gt;Settings | Repositories&lt;/code&gt;. A new pop up window will be appeared. Choose &lt;code&gt;Other Software&lt;/code&gt; and add this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ppa:jtaylor/ipython
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will add &lt;code&gt;IPython&lt;/code&gt; repository managed by &lt;code&gt;jtaylor&lt;/code&gt; which is newer than official ubuntu version.&lt;/p&gt;
+&lt;p&gt;Now you can update &lt;code&gt;ipython&lt;/code&gt;, &lt;code&gt;ipython-common&lt;/code&gt;, and &lt;code&gt;ipython-notebook&lt;/code&gt; from the synaptic, or simply type this in your shell prompt:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get upgrade ipython ipython-common ipython-notebook
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Cool, now you have the newer stable version of IPython. Type &lt;code&gt;ipython notebook&lt;/code&gt; and notice that several things has been changed.&lt;/p&gt;
+&lt;p&gt;Now, let&amp;#39;s add presentation mode to IPython.&lt;/p&gt;
+&lt;p&gt;The first step is you need to know where is your IPython configuration directory. Type this in your notebook.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[1]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;profile_dir&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_ipython&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;profile_dir&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;location&lt;/span&gt;
+&lt;span class="n"&gt;profile_dir&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
+    Out[1]:&lt;/div&gt;
+
+
+&lt;div class="output_text output_subarea output_pyout"&gt;
+&lt;pre&gt;
+u&amp;apos;/home/gofrendi/.ipython/profile_default&amp;apos;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;After knowing your configuration directory, now you need to clone ipython-notebook-extensions from github and put it on &lt;code&gt;static/custom&lt;/code&gt; inside your configuration directory.&lt;/p&gt;
+&lt;p&gt;To do this, first backup the existing &lt;code&gt;static/custom&lt;/code&gt; directory, then do &lt;code&gt;git-clone&lt;/code&gt; and checkout to &lt;code&gt;2.x&lt;/code&gt; branch as follow:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; We need to checkout to 2.x branch since we use IPython 2.1 from the repository we have installed earlier.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[3]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="n"&gt;tgt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;profile_dir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;static&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;custom&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;!&lt;/span&gt;git clone https://github.com/ipython-contrib/IPython-notebook-extensions.git &lt;span class="nv"&gt;$tgt&lt;/span&gt;
+&lt;span class="o"&gt;!&lt;/span&gt;git checkout 2.x
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+Cloning into &amp;apos;/home/gofrendi/.ipython/profile_default/static/custom&amp;apos;...
+remote: Counting objects: 1390, done.[K
+remote: Total 1390 (delta 0), reused 0 (delta 0)[K
+Receiving objects: 100% (1390/1390), 3.13 MiB | 159.00 KiB/s, done.
+Resolving deltas: 100% (701/701), done.
+Checking connectivity... done.
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;After cloning completed, you should have several files and folders inside &lt;code&gt;/static/custom&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[4]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;cd&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;tgt&lt;/span&gt;
+&lt;span class="o"&gt;!&lt;/span&gt;ls
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+/home/gofrendi/.ipython/profile_default/static/custom
+COPYING.rst	   publishing  slidemode  testing    wiki-images
+custom.example.js  README.md   styling	  usability
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now, you need to make a new &lt;code&gt;custom.js&lt;/code&gt;. Run this script and it is done.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[1]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="k"&gt;writefile&lt;/span&gt; &lt;span class="n"&gt;custom&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;
+&lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;strict&lt;/span&gt; &lt;span class="n"&gt;javascript&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;fails&lt;/span&gt;
+&lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;ambiguous&lt;/span&gt; &lt;span class="n"&gt;syntax&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot;using strict&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;do&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;use&lt;/span&gt; &lt;span class="n"&gt;notebook&lt;/span&gt; &lt;span class="n"&gt;loaded&lt;/span&gt;  &lt;span class="n"&gt;event&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;triggerd&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;
+&lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;revert&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;checkpoint&lt;/span&gt; &lt;span class="n"&gt;but&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;allow&lt;/span&gt; &lt;span class="n"&gt;extesnsion&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;loaded&lt;/span&gt;
+&lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;late&lt;/span&gt; &lt;span class="n"&gt;enough&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;work&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="o"&gt;//&lt;/span&gt;
+
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;IPython&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;events&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;app_initialized.NotebookApp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+
+
+    &lt;span class="o"&gt;/**&lt;/span&gt;  &lt;span class="n"&gt;Use&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="nb"&gt;file&lt;/span&gt; &lt;span class="n"&gt;relative&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;static&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="nb"&gt;dir&lt;/span&gt; &lt;span class="n"&gt;without&lt;/span&gt; &lt;span class="n"&gt;leading&lt;/span&gt; &lt;span class="n"&gt;slash&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt;
+     &lt;span class="o"&gt;*&lt;/span&gt;  &lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+     &lt;span class="o"&gt;*&lt;/span&gt;  &lt;span class="n"&gt;Link&lt;/span&gt; &lt;span class="n"&gt;directly&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="nb"&gt;file&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+     &lt;span class="o"&gt;*&lt;/span&gt;
+     &lt;span class="o"&gt;*&lt;/span&gt;  &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;require&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="n"&gt;contains&lt;/span&gt; &lt;span class="n"&gt;several&lt;/span&gt; &lt;span class="n"&gt;modules&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;needed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+     &lt;span class="o"&gt;**/&lt;/span&gt;
+
+    &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;custom/noscroll&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+    &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;custom/clean_start&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;custom/toggle_all_line_number&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;custom/gist_it&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+
+    &lt;span class="o"&gt;/**&lt;/span&gt;
+     &lt;span class="o"&gt;*&lt;/span&gt;  &lt;span class="n"&gt;Link&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;entrypoint&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;extesnsion&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;folder&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+     &lt;span class="o"&gt;*&lt;/span&gt;  &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;consistent&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;commonjs&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;entrypoint&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;
+     &lt;span class="o"&gt;*&lt;/span&gt;  &lt;span class="n"&gt;here&lt;/span&gt; &lt;span class="n"&gt;youcan&lt;/span&gt; &lt;span class="n"&gt;also&lt;/span&gt; &lt;span class="n"&gt;trigger&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;custom&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;load&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;do&lt;/span&gt; &lt;span class="n"&gt;extra&lt;/span&gt;
+     &lt;span class="o"&gt;*&lt;/span&gt;  &lt;span class="n"&gt;action&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;needed&lt;/span&gt;
+     &lt;span class="o"&gt;**/&lt;/span&gt;
+     &lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;custom/slidemode/main&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;slidemode&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="o"&gt;//&lt;/span&gt;     &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;do&lt;/span&gt; &lt;span class="n"&gt;stuff&lt;/span&gt;
+     &lt;span class="p"&gt;})&lt;/span&gt;
+
+&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+Overwriting custom.js
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Restart your IPython Notebook session, and you will see a new button in the most-right-side of your toolbar. You can click the button to switch to presentation mode.&lt;/p&gt;
+&lt;p&gt;Before switch to presentation mode, you should change your &lt;code&gt;Cell Toolbar&lt;/code&gt; into Slideshow, so you can have the full control of your slide behavior (i.e: which one is slide and which one is subslide). Try to change your cells into &lt;code&gt;slide&lt;/code&gt; and have fun.&lt;/p&gt;
+&lt;p&gt;Now, you can do presentation without any need of &lt;code&gt;microsoft power point&lt;/code&gt; or &lt;code&gt;libre office impress&lt;/code&gt;. Cool :)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary></entry><entry><title>Arduino + Sonar Sensor + LED</title><link href="https://gofrendiasgard.github.io/blog/2014/12/05/arduino/" rel="alternate"></link><updated>2014-12-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-05:blog/2014/12/05/arduino/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;I have just play up with arduino, HC-SR04 sonar sensor.
@@ -73,7 +360,7 @@ Whenever you send 3 volt to ECHO, HC-SR04 will emmit ultrasonic wave. You can ca
         &lt;span class="n"&gt;straight&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
       &lt;span class="p"&gt;}&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Hello world</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/helloworld/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/helloworld/</id><summary type="html">&lt;hr /&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Hello world</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/helloworld,%20ipython/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/helloworld, ipython/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;Just move to pelican :)
@@ -86,27 +373,35 @@ Just simply write your articles and attach this whenever you want:&lt;/p&gt;
 
 &lt;p&gt;This is the example:&lt;/p&gt;
 &lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Following is a simple python code&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
 In&amp;nbsp;[3]:
 &lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello world&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div class="vbox output_wrapper"&gt;
-&lt;div class="output vbox"&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
 
 
-&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="box-flex1 output_subarea output_stream output_stdout"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
 Hello world
 
@@ -118,15 +413,22 @@ Hello world
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Now, I am playing with &lt;span class="math"&gt;\(L_AT_EX\)&lt;/span&gt;, cool huh? Next, let me show you a sine graph&lt;/p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell vbox"&gt;
-&lt;div class="input hbox"&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now, I am playing with $L_AT_EX$, cool huh? Next, let me show you a sine graph&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
 In&amp;nbsp;[14]:
 &lt;/div&gt;
-&lt;div class="input_area box-flex1"&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
 
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
@@ -143,15 +445,16 @@ In&amp;nbsp;[14]:
 
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div class="vbox output_wrapper"&gt;
-&lt;div class="output vbox"&gt;
-
-
-&lt;div class="hbox output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="box-flex1 output_subarea output_display_data"&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
 
 
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_png output_subarea "&gt;
 &lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXYAAAD/CAYAAADllv3BAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XlYVVXbBvAbAXEE08zMBktSc0rLKZzAOYlyyjnR0Bwq
 Lcm3t/RLM9NCE4c0x9Cw1JwoNXNIkRQccxZFTa1My1Lh4ADI2d8fT/Jqop557b3P/bsurkIO59wR
@@ -327,15 +630,46 @@ pUqVUpzKPklJSWjWrNldH+fx+YR27dph3bp1aNCgAQD5ZjEqHz3eKnwHY8aMQXp6OkaNGpU31756
 9WoUMsjVNx07dkSvXr3QpEkT5OTkYNKkSQgICFAdy2tERUWhd+/eaNy4MQD5u2ukH6zh4eFISkpC
 3bp1YbVaMW3aNMP9HU5LS0OFChXu+jhuUCIiMhnj/LglIiKbsLATEZkMCzsRkcmwsBMRmQwLOxGR
 ybCwExGZDAs7EZHJsLATEZnM/wMCQmHuftwMPwAAAABJRU5ErkJggg==
-"&gt;
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Home</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/home/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/home/</id><summary type="html">&lt;hr /&gt;
+&lt;/div&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary></entry><entry><title>Home</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/home/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/home/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;About me

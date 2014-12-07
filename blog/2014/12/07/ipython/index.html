@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ubuntu tricks</title>
+  <title>Giving Presentation by Using IPython Notebook</title>
   <meta name="author" content="Go Frendi Gunawan">
 
   <link href="/atom.xml" type="application/atom+xml" rel="alternate"
@@ -1755,142 +1755,268 @@ jQuery(document).ready(function($) {
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">Ubuntu tricks</h1>
-      <p class="meta"><time datetime="2014-12-04T00:00:00+07:00" pubdate>Dec 04, 2014</time></p>
+      <h1 class="entry-title">Giving Presentation by Using IPython Notebook</h1>
+      <p class="meta"><time datetime="2014-12-07T00:00:00+07:00" pubdate>Dec 07, 2014</time></p>
 </header>
 
   <div class="entry-content"><hr />
 
 
-<p>Ubuntu tricks for and from me
+<p>IPython Notebook for presentation.
 </p>
-<h2>Install several softwares</h2>
-<p>The good thing about using ubuntu (and any other linux distribution) is you don't need to remember what button should be clicked when installing your softwares.</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">webupd8team</span><span class="o">/</span><span class="n">java</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">software</span><span class="o">-</span><span class="n">properties</span>
-<span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">ubuntugis</span><span class="o">/</span><span class="n">ubuntugis</span><span class="o">-</span><span class="n">unstable</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">apache2</span> <span class="n">apache2</span><span class="o">-</span><span class="n">mpm</span><span class="o">-</span><span class="n">prefork</span> <span class="n">apache2</span><span class="o">-</span><span class="n">utils</span> <span class="n">libapache2</span><span class="o">-</span><span class="n">mod</span><span class="o">-</span><span class="n">php5</span> <span class="n">libapr1</span> <span class="n">libaprutil1</span> <span class="n">libdbd</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="n">perl</span> <span class="n">libdbi</span><span class="o">-</span><span class="n">perl</span> <span class="n">libnet</span><span class="o">-</span><span class="n">daemon</span><span class="o">-</span><span class="n">perl</span> <span class="n">libplrpc</span><span class="o">-</span><span class="n">perl</span> <span class="n">libpq5</span> <span class="n">mysql</span><span class="o">-</span><span class="n">client</span><span class="o">-</span><span class="mf">5.5</span> <span class="n">mysql</span><span class="o">-</span><span class="n">common</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="mf">5.5</span> <span class="n">php5</span><span class="o">-</span><span class="n">common</span> <span class="n">php5</span><span class="o">-</span><span class="n">mysql</span> <span class="n">php5</span><span class="o">-</span><span class="n">curl</span> <span class="n">phpmyadmin</span> <span class="n">python</span><span class="o">-</span><span class="n">numpy</span> <span class="n">python</span><span class="o">-</span><span class="n">matplotlib</span> <span class="n">ipython</span> <span class="n">openjdk</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">jdk</span> <span class="n">netbeans</span> <span class="n">eclipse</span> <span class="n">cheese</span> <span class="n">shutter</span> <span class="n">lazarus</span> <span class="n">gimp</span> <span class="n">inkscape</span> <span class="n">chromium</span><span class="o">-</span><span class="n">browser</span> <span class="n">git</span> <span class="n">python</span><span class="o">-</span><span class="n">setuptools</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span> <span class="n">python</span><span class="o">-</span><span class="n">pygame</span> <span class="n">python</span><span class="o">-</span><span class="n">opengl</span> <span class="n">python</span><span class="o">-</span><span class="n">gst0</span><span class="mf">.10</span> <span class="n">python</span><span class="o">-</span><span class="n">enchant</span> <span class="n">gstreamer0</span><span class="mf">.10</span><span class="o">-</span><span class="n">plugins</span><span class="o">-</span><span class="n">good</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span>  <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">libgl1</span><span class="o">-</span><span class="n">mesa</span><span class="o">-</span><span class="n">dev</span> <span class="n">libgles2</span><span class="o">-</span><span class="n">mesa</span><span class="o">-</span><span class="n">dev</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">nmap</span> <span class="n">wireshark</span> <span class="n">lynx</span> <span class="n">tree</span> <span class="n">vim</span> <span class="n">lyx</span> <span class="n">filezilla</span> <span class="n">blender</span> <span class="n">oracle</span><span class="o">-</span><span class="n">java7</span><span class="o">-</span><span class="n">installer</span> <span class="n">gparted</span> <span class="n">unetbootin</span> <span class="n">wine</span> <span class="n">bind9</span> <span class="n">dnsutil</span> <span class="n">curl</span> <span class="n">aircrack</span><span class="o">-</span><span class="n">ng</span> <span class="n">reaver</span>
-<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">cython</span> 
-<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">kivy</span>
-<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
-<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">simpy</span>
-<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">sympy</span>
+<p>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Everyone know that IPython Notebook is very cool. It allows you to write some text in Markdown &amp; $L_AT_EX$ format beautifully next to your code, next to the output of the code. All in one page.</p>
+<p>It will be even cooler if we can do presentation by using IPython Notebook? But is it even possible?
+Yes it is possible. Today I&#39;ll show you how.</p>
+<p>First of all, if you are using ubuntu 14.04 or below like I do, and you install IPython through synaptic or apt (<code>sudo apt-get install ipython ipython-notebook</code>), then you must end up with IPython 1.2.1. This is not a very good news, since the current newest stable version of IPython is 2.x. Therefore you need to upgrade.</p>
+<p>The easiest way to upgrade your IPython is by adding this repository: (<a href="https://launchpad.net/~jtaylor/+archive/ubuntu/ipython)[https://launchpad.net/~jtaylor/+archive/ubuntu/ipython">https://launchpad.net/~jtaylor/+archive/ubuntu/ipython)[https://launchpad.net/~jtaylor/+archive/ubuntu/ipython</a>]</p>
+<p>Ubuntu 14.04 doesn&#39;t come up with synaptic package manager. I prefer to use synaptic, so I do this:</p>
+<pre><code>sudo apt-get install synaptic
+</code></pre><p>After installing synaptic, you can launch it (using unity dashboard, you can just type synaptic in search bar) and click <code>Settings | Repositories</code>. A new pop up window will be appeared. Choose <code>Other Software</code> and add this:</p>
+<pre><code>ppa:jtaylor/ipython
+</code></pre><p>This will add <code>IPython</code> repository managed by <code>jtaylor</code> which is newer than official ubuntu version.</p>
+<p>Now you can update <code>ipython</code>, <code>ipython-common</code>, and <code>ipython-notebook</code> from the synaptic, or simply type this in your shell prompt:</p>
+<pre><code>sudo apt-get upgrade ipython ipython-common ipython-notebook
+</code></pre><p>Cool, now you have the newer stable version of IPython. Type <code>ipython notebook</code> and notice that several things has been changed.</p>
+<p>Now, let&#39;s add presentation mode to IPython.</p>
+<p>The first step is you need to know where is your IPython configuration directory. Type this in your notebook.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">profile_dir</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">profile_dir</span><span class="o">.</span><span class="n">location</span>
+<span class="n">profile_dir</span>
 </pre></div>
 
+</div>
+</div>
+</div>
 
-<h2>Add wildcard to local domain (gofrendi.dev)</h2>
-<p>I like to be able to access my local machine as <code>gofrendi.dev</code>. My project No-CMS has a multisite feature, so that it will be great to test wheter <code>somedomain.gofrendi.dev</code> is works as expected.</p>
-<ul>
-<li>
-<p>Add zone</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bind</span><span class="o">/</span><span class="n">named</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">local</span>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[1]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+u&apos;/home/gofrendi/.ipython/profile_default&apos;
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After knowing your configuration directory, now you need to clone ipython-notebook-extensions from github and put it on <code>static/custom</code> inside your configuration directory.</p>
+<p>To do this, first backup the existing <code>static/custom</code> directory, then do <code>git-clone</code> and checkout to <code>2.x</code> branch as follow:</p>
+<p><strong>Note:</strong> We need to checkout to 2.x branch since we use IPython 2.1 from the repository we have installed earlier.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">tgt</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">profile_dir</span><span class="p">,</span> <span class="s">&#39;static&#39;</span><span class="p">,</span> <span class="s">&#39;custom&#39;</span><span class="p">)</span>
+<span class="o">!</span>git clone https://github.com/ipython-contrib/IPython-notebook-extensions.git <span class="nv">$tgt</span>
+<span class="o">!</span>git checkout 2.x
 </pre></div>
 
+</div>
+</div>
+</div>
 
-<p>add this:</p>
-<div class="highlight"><pre><span class="n">zone</span> <span class="s">&quot;gofrendi.dev&quot;</span> <span class="p">{</span>
-    <span class="n">type</span> <span class="n">master</span><span class="p">;</span>
-    <span class="n">file</span> <span class="s">&quot;/etc/bind/db.gofrendi.dev&quot;</span><span class="p">;</span>
-<span class="p">};</span>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Cloning into &apos;/home/gofrendi/.ipython/profile_default/static/custom&apos;...
+remote: Counting objects: 1390, done.[K
+remote: Total 1390 (delta 0), reused 0 (delta 0)[K
+Receiving objects: 100% (1390/1390), 3.13 MiB | 159.00 KiB/s, done.
+Resolving deltas: 100% (701/701), done.
+Checking connectivity... done.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After cloning completed, you should have several files and folders inside <code>/static/custom</code></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[4]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">cd</span> <span class="err">$</span><span class="n">tgt</span>
+<span class="o">!</span>ls
 </pre></div>
 
+</div>
+</div>
+</div>
 
-</li>
-<li>
-<p>Add db</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bind</span><span class="o">/</span><span class="n">db</span><span class="p">.</span><span class="n">gofrendi</span><span class="p">.</span><span class="n">dev</span>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+/home/gofrendi/.ipython/profile_default/static/custom
+COPYING.rst	   publishing  slidemode  testing    wiki-images
+custom.example.js  README.md   styling	  usability
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, you need to make a new <code>custom.js</code>. Run this script and it is done.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">writefile</span> <span class="n">custom</span><span class="o">.</span><span class="n">js</span>
+<span class="o">//</span> <span class="n">we</span> <span class="n">want</span> <span class="n">strict</span> <span class="n">javascript</span> <span class="n">that</span> <span class="n">fails</span>
+<span class="o">//</span> <span class="n">on</span> <span class="n">ambiguous</span> <span class="n">syntax</span>
+<span class="s">&quot;using strict&quot;</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">use</span> <span class="n">notebook</span> <span class="n">loaded</span>  <span class="n">event</span> <span class="k">as</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">re</span><span class="o">-</span><span class="n">triggerd</span> <span class="n">on</span>
+<span class="o">//</span> <span class="n">revert</span> <span class="n">to</span> <span class="n">checkpoint</span> <span class="n">but</span> <span class="n">this</span> <span class="n">allow</span> <span class="n">extesnsion</span> <span class="n">to</span> <span class="n">be</span> <span class="n">loaded</span>
+<span class="o">//</span> <span class="n">late</span> <span class="n">enough</span> <span class="n">to</span> <span class="n">work</span><span class="o">.</span>
+<span class="o">//</span>
+
+<span class="err">$</span><span class="p">([</span><span class="n">IPython</span><span class="o">.</span><span class="n">events</span><span class="p">])</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s">&#39;app_initialized.NotebookApp&#39;</span><span class="p">,</span> <span class="n">function</span><span class="p">(){</span>
+
+
+    <span class="o">/**</span>  <span class="n">Use</span> <span class="n">path</span> <span class="n">to</span> <span class="n">js</span> <span class="nb">file</span> <span class="n">relative</span> <span class="n">to</span> <span class="o">/</span><span class="n">static</span><span class="o">/</span> <span class="nb">dir</span> <span class="n">without</span> <span class="n">leading</span> <span class="n">slash</span><span class="p">,</span> <span class="ow">or</span>
+     <span class="o">*</span>  <span class="n">js</span> <span class="n">extension</span><span class="o">.</span>
+     <span class="o">*</span>  <span class="n">Link</span> <span class="n">directly</span> <span class="n">to</span> <span class="nb">file</span> <span class="ow">is</span> <span class="n">js</span> <span class="n">extension</span><span class="o">.</span>
+     <span class="o">*</span>
+     <span class="o">*</span>  <span class="n">first</span> <span class="n">argument</span> <span class="n">of</span> <span class="n">require</span> <span class="ow">is</span> <span class="n">a</span> <span class="o">**</span><span class="nb">list</span><span class="o">**</span> <span class="n">that</span> <span class="n">can</span> <span class="n">contains</span> <span class="n">several</span> <span class="n">modules</span> <span class="k">if</span> <span class="n">needed</span><span class="o">.</span>
+     <span class="o">**/</span>
+
+    <span class="o">//</span> <span class="n">require</span><span class="p">([</span><span class="s">&#39;custom/noscroll&#39;</span><span class="p">]);</span>
+    <span class="o">//</span> <span class="n">require</span><span class="p">([</span><span class="s">&#39;custom/clean_start&#39;</span><span class="p">])</span>
+    <span class="o">//</span> <span class="n">require</span><span class="p">([</span><span class="s">&#39;custom/toggle_all_line_number&#39;</span><span class="p">])</span>
+    <span class="o">//</span> <span class="n">require</span><span class="p">([</span><span class="s">&#39;custom/gist_it&#39;</span><span class="p">]);</span>
+
+    <span class="o">/**</span>
+     <span class="o">*</span>  <span class="n">Link</span> <span class="n">to</span> <span class="n">entrypoint</span> <span class="k">if</span> <span class="n">extesnsion</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">folder</span><span class="o">.</span>
+     <span class="o">*</span>  <span class="n">to</span> <span class="n">be</span> <span class="n">consistent</span> <span class="k">with</span> <span class="n">commonjs</span> <span class="n">module</span><span class="p">,</span> <span class="n">the</span> <span class="n">entrypoint</span> <span class="ow">is</span> <span class="n">main</span><span class="o">.</span><span class="n">js</span>
+     <span class="o">*</span>  <span class="n">here</span> <span class="n">youcan</span> <span class="n">also</span> <span class="n">trigger</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">function</span> <span class="n">on</span> <span class="n">load</span> <span class="n">that</span> <span class="n">will</span> <span class="n">do</span> <span class="n">extra</span>
+     <span class="o">*</span>  <span class="n">action</span> <span class="k">with</span> <span class="n">the</span> <span class="n">module</span> <span class="k">if</span> <span class="n">needed</span>
+     <span class="o">**/</span>
+     <span class="n">require</span><span class="p">([</span><span class="s">&#39;custom/slidemode/main&#39;</span><span class="p">],</span><span class="n">function</span><span class="p">(</span><span class="n">slidemode</span><span class="p">){</span>
+    <span class="o">//</span>     <span class="o">//</span> <span class="n">do</span> <span class="n">stuff</span>
+     <span class="p">})</span>
+
+<span class="p">});</span>
 </pre></div>
 
+</div>
+</div>
+</div>
 
-<p>add this:</p>
-<div class="highlight"><pre><span class="p">;</span>
-<span class="p">;</span> <span class="n">BIND</span> <span class="n">data</span> <span class="n">file</span> <span class="k">for</span> <span class="n">local</span> <span class="n">loopback</span> <span class="n">interface</span>
-<span class="p">;</span>
-<span class="err">$</span><span class="n">TTL</span>    <span class="mi">604800</span>
-<span class="err">@</span>   <span class="n">IN</span>  <span class="n">SOA</span> <span class="n">localhost</span><span class="p">.</span> <span class="n">root</span><span class="p">.</span><span class="n">localhost</span><span class="p">.</span> <span class="p">(</span>
-                  <span class="mi">2</span>     <span class="p">;</span> <span class="n">Serial</span>
-             <span class="mi">604800</span>     <span class="p">;</span> <span class="n">Refresh</span>
-              <span class="mi">86400</span>     <span class="p">;</span> <span class="n">Retry</span>
-            <span class="mi">2419200</span>     <span class="p">;</span> <span class="n">Expire</span>
-             <span class="mi">604800</span> <span class="p">)</span>   <span class="p">;</span> <span class="n">Negative</span> <span class="n">Cache</span> <span class="n">TTL</span>
-<span class="p">;</span>
-<span class="err">@</span>   <span class="n">IN</span>  <span class="n">NS</span>  <span class="n">localhost</span><span class="p">.</span>
-<span class="err">@</span>   <span class="n">IN</span>  <span class="n">A</span>   <span class="mf">127.0.0.1</span>
-<span class="o">*</span>   <span class="n">IN</span>  <span class="n">A</span>   <span class="mf">127.0.0.1</span>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Overwriting custom.js
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Restart your IPython Notebook session, and you will see a new button in the most-right-side of your toolbar. You can click the button to switch to presentation mode.</p>
+<p>Before switch to presentation mode, you should change your <code>Cell Toolbar</code> into Slideshow, so you can have the full control of your slide behavior (i.e: which one is slide and which one is subslide). Try to change your cells into <code>slide</code> and have fun.</p>
+<p>Now, you can do presentation without any need of <code>microsoft power point</code> or <code>libre office impress</code>. Cool :)</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb">
 </pre></div>
 
+</div>
+</div>
+</div>
 
-</li>
-<li>
-<p>Add localhost as primary NS</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">resolv</span><span class="p">.</span><span class="n">conf</span>
-</pre></div>
-
-
-<p>modify to this:</p>
-<div class="highlight"><pre><span class="cp"># Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)</span>
-<span class="cp">#     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN</span>
-<span class="n">nameserver</span> <span class="mf">127.0.0.1</span>
-<span class="n">nameserver</span> <span class="mf">127.0.1.1</span>
-</pre></div>
-
-
-</li>
-<li>
-<p>Restart bind</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">bind9</span> <span class="n">restart</span>
-</pre></div>
-
-
-</li>
-</ul>
-<h2>Install nodejs (Download first)</h2>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">tar</span> <span class="o">--</span><span class="n">strip</span><span class="o">-</span><span class="n">components</span> <span class="mi">1</span> <span class="o">-</span><span class="n">xzf</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">gofrendi</span><span class="o">/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">node</span><span class="o">-</span><span class="n">v0</span><span class="mf">.10.26</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
-</pre></div>
-
-
-<h2>Install composer</h2>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">curl</span> <span class="o">-</span><span class="n">sS</span> <span class="n">https</span><span class="o">:</span><span class="c1">//getcomposer.org/installer | php</span>
-<span class="n">sudo</span> <span class="n">mv</span> <span class="n">composer</span><span class="p">.</span><span class="n">phar</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">composer</span>
-</pre></div>
-
-
-<h2>Change virtualbox resolution (for windows 8.1 guest)</h2>
-<div class="highlight"><pre><span class="n">vboxmanage</span> <span class="n">setextradata</span> <span class="s">&quot;windows&quot;</span> <span class="n">CustomVideoMode1</span> <span class="mi">1366</span><span class="n">x768x32</span>
-</pre></div>
-
-
-<h2>Install Haskell</h2>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ghc</span> <span class="n">alex</span> <span class="n">cabal</span><span class="o">-</span><span class="n">install</span> <span class="n">happy</span> <span class="n">libghc</span><span class="o">-</span><span class="n">cgi</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">fgl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">glut</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">haskell</span><span class="o">-</span><span class="n">src</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">html</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">http</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">hunit</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">mtl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">network</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">opengl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">parallel</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">parsec3</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libghc</span><span class="o">-</span><span class="n">quickcheck2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">regex</span><span class="o">-</span><span class="n">base</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">regex</span><span class="o">-</span><span class="n">compat</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libghc</span><span class="o">-</span><span class="n">regex</span><span class="o">-</span><span class="n">posix</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">stm</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">syb</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libghc</span><span class="o">-</span><span class="n">text</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libghc</span><span class="o">-</span><span class="n">transformers</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libghc</span><span class="o">-</span><span class="n">xhtml</span><span class="o">-</span><span class="n">dev</span> <span class="n">libghc</span><span class="o">-</span><span class="n">zlib</span><span class="o">-</span><span class="n">dev</span>
-</pre></div>
-
-
-<h2>Enable dvd</h2>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">libdvdread4</span><span class="o">/</span><span class="n">install</span><span class="o">-</span><span class="n">css</span><span class="p">.</span><span class="n">sh</span>
-</pre></div>
-
-
-<h2>Change default application</h2>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">applications</span><span class="o">/</span><span class="n">defaults</span><span class="p">.</span><span class="n">list</span>
-<span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">gnome</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">defaults</span><span class="p">.</span><span class="n">list</span>
-</pre></div>
-
-
-<h2>Use Newest wine</h2>
-<div class="highlight"><pre><span class="nl">https:</span><span class="c1">//www.winehq.org/download/ubuntu</span>
-</pre></div>
-
-
-<h2>Windows 8 virtualbox</h2>
-<p>When installing windows 8 in virtual box, never forget to add guest addition and do this to make resolutin better:</p>
-<div class="highlight"><pre><span class="n">VBoxManage</span> <span class="n">setextradata</span> <span class="s">&quot;windows 8&quot;</span> <span class="n">CustomVideoMode1</span> <span class="mi">1366</span><span class="n">x768x32</span>
-</pre></div>
-
-
-<h2>Remove unused kernel</h2>
-<div class="highlight"><pre><span class="n">dpkg</span> <span class="o">-</span><span class="n">l</span> <span class="err">&#39;</span><span class="n">linux</span><span class="o">-*</span><span class="err">&#39;</span> <span class="o">|</span> <span class="n">sed</span> <span class="err">&#39;</span><span class="o">/^</span><span class="n">ii</span><span class="o">/!</span><span class="n">d</span><span class="p">;</span><span class="o">/</span><span class="err">&#39;</span><span class="s">&quot;$(uname -r | sed &quot;</span><span class="n">s</span><span class="o">/</span><span class="err">\</span><span class="p">(.</span><span class="o">*</span><span class="err">\</span><span class="p">)</span><span class="o">-</span><span class="err">\</span><span class="p">([</span><span class="o">^</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="err">\</span><span class="o">+</span><span class="err">\</span><span class="p">)</span><span class="o">/</span><span class="err">\</span><span class="mi">1</span><span class="o">/</span><span class="s">&quot;)&quot;</span><span class="err">&#39;</span><span class="o">/</span><span class="n">d</span><span class="p">;</span><span class="n">s</span><span class="o">/^</span><span class="p">[</span><span class="o">^</span> <span class="p">]</span><span class="o">*</span> <span class="p">[</span><span class="o">^</span> <span class="p">]</span><span class="o">*</span> <span class="err">\</span><span class="p">([</span><span class="o">^</span> <span class="p">]</span><span class="o">*</span><span class="err">\</span><span class="p">).</span><span class="err">*/\</span><span class="mi">1</span><span class="o">/</span><span class="p">;</span><span class="o">/</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">/!</span><span class="n">d</span><span class="err">&#39;</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">purge</span>
-</pre></div><script type= "text/javascript">
+</div></p><script type= "text/javascript">
     if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
         var mathjaxscript = document.createElement('script');
         mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -1926,8 +2052,8 @@ jQuery(document).ready(function($) {
   <span class="byline author vcard">
     Posted by <span class="fn">Go Frendi Gunawan</span>
   </span>
-<time datetime="2014-12-04T00:00:00+07:00" pubdate>Dec 04, 2014</time></p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://gofrendiasgard.github.io/blog/2014/12/04/ubuntu/" data-via="gofrendiasgard" data-counturl="gofrendiasgard.github.io/blog/2014/12/04/ubuntu/" >Tweet</a>
+<time datetime="2014-12-07T00:00:00+07:00" pubdate>Dec 07, 2014</time></p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://gofrendiasgard.github.io/blog/2014/12/07/ipython/" data-via="gofrendiasgard" data-counturl="gofrendiasgard.github.io/blog/2014/12/07/ipython/" >Tweet</a>
   <div class="g-plusone" data-size="medium"></div>
     <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
 </div>    </footer>
@@ -2025,9 +2151,9 @@ jQuery(document).ready(function($) {
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'gofrendiasgardgithubio';
-          var disqus_identifier = '/blog/2014/12/04/ubuntu/';
-          var disqus_url = 'https://gofrendiasgard.github.io/blog/2014/12/04/ubuntu/';
-          var disqus_title = 'Ubuntu tricks';
+          var disqus_identifier = '/blog/2014/12/07/ipython/';
+          var disqus_url = 'https://gofrendiasgard.github.io/blog/2014/12/07/ipython/';
+          var disqus_title = 'Giving Presentation by Using IPython Notebook';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
