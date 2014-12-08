@@ -1785,8 +1785,18 @@ Let's think LED as motor. If you have 2 motors, and one of them is switched off,
 <p>HC-SR04 will operate under 5 volt voltage. Thus, I simply connect 5 volt VCC from arduino board to VCC pin of HC-SR04.</p>
 <p>HC-SR04 also has another 3 pins. GND that should be connected to arduino's ground, ECHO, and TRIG.
 Whenever you send 3 volt to ECHO, HC-SR04 will emmit ultrasonic wave. You can catch the echo by read on ECHO pin.</p>
-<p>Pin 1-13 in arduino has 3 volt voltage. However, the LED should only accept 2 volt. This is why you need a resistor.</p>
-<p>Here is the code:</p>
+<p>Pin 1-13 in arduino has 3 volt voltage and 0.03 ampere current. However, the LED should only accept 2 volt. 
+This is why you need a 100 ohm resistor. Please take a look at these calculations:</p>
+<p>$V_{Total} = V_{LED} + V_{Resistor}$</p>
+<p>$5 volt = 2 volt + V_{Resistor}$</p>
+<p>$V_{Resistor} = 1 volt$</p>
+<p>Since $V = I * R$, then</p>
+<p>$R_{Resistor} = \frac{V_{Resistor}}{I}$</p>
+<p>$R_{Resistor} = \frac{1 volt}{0.03 ampere}$</p>
+<p>$R_{Resistor} = 100 \Omega$</p>
+<p>It is really worth for anyone who want to mess up with electronics stuff to know about <code>Kirchoff Voltage Law</code> and <code>Kirchoff Current Law</code>.
+Those two laws are not usually discussed in any instructables.</p>
+<p>And here is the code:</p>
 <div class="highlight"><pre>    <span class="cm">/*</span>
 <span class="cm">     * Gunvarrel v 0.0.2</span>
 <span class="cm">     * Purpose: To emulate simple sonar robot</span>
@@ -1833,7 +1843,37 @@ Whenever you send 3 volt to ECHO, HC-SR04 will emmit ultrasonic wave. You can ca
         <span class="n">straight</span><span class="p">();</span>
       <span class="p">}</span>
     <span class="p">}</span>
-</pre></div></div>
+</pre></div><script type= "text/javascript">
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+</script>
+</div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">

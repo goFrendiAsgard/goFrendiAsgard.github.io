@@ -14,7 +14,8 @@
 &lt;p&gt;It will be even cooler if we can do presentation by using IPython Notebook? But is it even possible?
 Yes it is possible. Today I&amp;#39;ll show you how.&lt;/p&gt;
 &lt;p&gt;First of all, if you are using ubuntu 14.04 or below like I do, and you install IPython through synaptic or apt (&lt;code&gt;sudo apt-get install ipython ipython-notebook&lt;/code&gt;), then you must end up with IPython 1.2.1. This is not a very good news, since the current newest stable version of IPython is 2.x. Therefore you need to upgrade.&lt;/p&gt;
-&lt;p&gt;The easiest way to upgrade your IPython is by adding this repository: (&lt;a href="https://launchpad.net/~jtaylor/+archive/ubuntu/ipython)[https://launchpad.net/~jtaylor/+archive/ubuntu/ipython"&gt;https://launchpad.net/~jtaylor/+archive/ubuntu/ipython)[https://launchpad.net/~jtaylor/+archive/ubuntu/ipython&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;The easiest way to upgrade your IPython is by adding this repository: 
+&lt;a href="https://launchpad.net/~jtaylor/+archive/ubuntu/ipython"&gt;https://launchpad.net/~jtaylor/+archive/ubuntu/ipython&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Ubuntu 14.04 doesn&amp;#39;t come up with synaptic package manager. I prefer to use synaptic, so I do this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt-get install synaptic
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After installing synaptic, you can launch it (using unity dashboard, you can just type synaptic in search bar) and click &lt;code&gt;Settings | Repositories&lt;/code&gt;. A new pop up window will be appeared. Choose &lt;code&gt;Other Software&lt;/code&gt; and add this:&lt;/p&gt;
@@ -242,21 +243,7 @@ Overwriting custom.js
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
+&lt;img src="/images/ipython-presentation.png"&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
     if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
         var mathjaxscript = document.createElement('script');
         mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -312,8 +299,18 @@ Let's think LED as motor. If you have 2 motors, and one of them is switched off,
 &lt;p&gt;HC-SR04 will operate under 5 volt voltage. Thus, I simply connect 5 volt VCC from arduino board to VCC pin of HC-SR04.&lt;/p&gt;
 &lt;p&gt;HC-SR04 also has another 3 pins. GND that should be connected to arduino's ground, ECHO, and TRIG.
 Whenever you send 3 volt to ECHO, HC-SR04 will emmit ultrasonic wave. You can catch the echo by read on ECHO pin.&lt;/p&gt;
-&lt;p&gt;Pin 1-13 in arduino has 3 volt voltage. However, the LED should only accept 2 volt. This is why you need a resistor.&lt;/p&gt;
-&lt;p&gt;Here is the code:&lt;/p&gt;
+&lt;p&gt;Pin 1-13 in arduino has 3 volt voltage and 0.03 ampere current. However, the LED should only accept 2 volt. 
+This is why you need a 100 ohm resistor. Please take a look at these calculations:&lt;/p&gt;
+&lt;p&gt;$V_{Total} = V_{LED} + V_{Resistor}$&lt;/p&gt;
+&lt;p&gt;$5 volt = 2 volt + V_{Resistor}$&lt;/p&gt;
+&lt;p&gt;$V_{Resistor} = 1 volt$&lt;/p&gt;
+&lt;p&gt;Since $V = I * R$, then&lt;/p&gt;
+&lt;p&gt;$R_{Resistor} = \frac{V_{Resistor}}{I}$&lt;/p&gt;
+&lt;p&gt;$R_{Resistor} = \frac{1 volt}{0.03 ampere}$&lt;/p&gt;
+&lt;p&gt;$R_{Resistor} = 100 \Omega$&lt;/p&gt;
+&lt;p&gt;It is really worth for anyone who want to mess up with electronics stuff to know about &lt;code&gt;Kirchoff Voltage Law&lt;/code&gt; and &lt;code&gt;Kirchoff Current Law&lt;/code&gt;.
+Those two laws are not usually discussed in any instructables.&lt;/p&gt;
+&lt;p&gt;And here is the code:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="cm"&gt;/*&lt;/span&gt;
 &lt;span class="cm"&gt;     * Gunvarrel v 0.0.2&lt;/span&gt;
 &lt;span class="cm"&gt;     * Purpose: To emulate simple sonar robot&lt;/span&gt;
@@ -360,7 +357,37 @@ Whenever you send 3 volt to ECHO, HC-SR04 will emmit ultrasonic wave. You can ca
         &lt;span class="n"&gt;straight&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
       &lt;span class="p"&gt;}&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Hello world</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/helloworld,%20ipython/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/helloworld, ipython/</id><summary type="html">&lt;hr /&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary></entry><entry><title>Hello world</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/helloworld,%20ipython/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/helloworld, ipython/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;Just move to pelican :)
