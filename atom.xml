@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Go Frendi's Personal Web</title><link href="https://gofrendiasgard.github.io/" rel="alternate"></link><link href="/atom.xml" rel="self"></link><id>https://gofrendiasgard.github.io/</id><updated>2014-12-07T00:00:00+07:00</updated><entry><title>Giving Presentation by Using IPython Notebook</title><link href="https://gofrendiasgard.github.io/blog/2014/12/07/ipython/" rel="alternate"></link><updated>2014-12-07T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-07:blog/2014/12/07/ipython/</id><summary type="html">&lt;hr /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Go Frendi's Personal Web</title><link href="/" rel="alternate"></link><link href="/atom.xml" rel="self"></link><id>/</id><updated>2014-12-07T00:00:00+07:00</updated><entry><title>Giving Presentation by Using IPython Notebook</title><link href="/blog/2014/12/07/ipython/" rel="alternate"></link><updated>2014-12-07T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-07:blog/2014/12/07/ipython/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;IPython Notebook for presentation.
@@ -273,7 +273,7 @@ Overwriting custom.js
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</summary></entry><entry><title>Arduino + Sonar Sensor + LED</title><link href="https://gofrendiasgard.github.io/blog/2014/12/05/arduino/" rel="alternate"></link><updated>2014-12-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-05:blog/2014/12/05/arduino/</id><summary type="html">&lt;hr /&gt;
+</summary></entry><entry><title>Arduino + Sonar Sensor + LED</title><link href="/blog/2014/12/05/arduino/" rel="alternate"></link><updated>2014-12-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-05:blog/2014/12/05/arduino/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;I have just play up with arduino, HC-SR04 sonar sensor.
@@ -387,7 +387,7 @@ Those two laws are not usually discussed in any instructables.&lt;/p&gt;
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</summary></entry><entry><title>Hello world</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/helloworld,%20ipython/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/helloworld, ipython/</id><summary type="html">&lt;hr /&gt;
+</summary></entry><entry><title>Hello world</title><link href="/blog/2014/12/04/helloworld,%20ipython/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/helloworld, ipython/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;Just move to pelican :)
@@ -696,17 +696,17 @@ ybCwExGZDAs7EZHJsLATEZnM/wMCQmHuftwMPwAAAABJRU5ErkJggg==
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</summary></entry><entry><title>Home</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/home/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/home/</id><summary type="html">&lt;hr /&gt;
-
-
-&lt;p&gt;About me
-&lt;/p&gt;
+</summary></entry><entry><title>Home</title><link href="/blog/2014/12/04/home/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/home/</id><summary type="html">&lt;hr /&gt;
 &lt;h2&gt;Me&lt;/h2&gt;
+
+
 &lt;p&gt;My name is Go Frendi Gunawan. an intelligent being living in Malang, Jawa Timur, Indonesia, Earth, Solar System.&lt;/p&gt;
 &lt;p&gt;I work as a lecturer at &lt;a href="http://stiki.ac.id/"&gt;STIKI Malang&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I like to code. My favorite programming language is Python, but I'm not stop there. 
 Right now, I try to learn scala and find out what functional-programming really is.
 I can also speak PHP, javascript, pascal, C, java, English, and Bahasa.&lt;/p&gt;
+
+
 &lt;p&gt;I also like computer science. My favorite topic is data mining, machine learning, and a bit software engineering.
 Sometime I also like to have light discussion related to philosophy and quantum-physics (minus the rocket science).&lt;/p&gt;
 &lt;p&gt;When not busy with my job, I usually like to code aimlessly, look for new thing related to computer, watch "Big bang theory" or some anime. Join free course on openedx or udacity (but soon get bored and never finish any course). And not to mention, trolling around.&lt;/p&gt;
@@ -753,13 +753,11 @@ I don't have any chance yet to try kokoropy in real-world, but in my imaginary-w
 &lt;li&gt;&lt;a href="http://jiki.cs.ui.ac.id/index.php/jiki/article/download/197/114"&gt;Grammatical Evolution for Feature Extraction in Local Tresholding Problem&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://jurnal.itats.ac.id/grammatical-evolution-untuk-ekstraksi-fitur-dengan-pengukuran-multi-fitness/"&gt;Grammatical Evolution for Feature Extraction with Multi-Fitness Measurement&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/goFrendiAsgard/myresearch/blob/master/snasti.pdf?raw=true"&gt;Tatami Grammatical Evolution for Feature Extraction with Multi-Fitness Measurement&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>Ubuntu tricks</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/ubuntu/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/ubuntu/</id><summary type="html">&lt;hr /&gt;
-
-
-&lt;p&gt;Ubuntu tricks for and from me
-&lt;/p&gt;
+&lt;/ul&gt;</summary></entry><entry><title>Ubuntu tricks</title><link href="/blog/2014/12/04/ubuntu/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/ubuntu/</id><summary type="html">&lt;hr /&gt;
 &lt;h2&gt;Install several softwares&lt;/h2&gt;
-&lt;p&gt;The good thing about using ubuntu (and any other linux distribution) is you don't need to remember what button should be clicked when installing your softwares.&lt;/p&gt;
+&lt;p&gt;
+The good thing about using ubuntu (and any other linux distribution) is you don't need to remember what button should be clicked when installing your softwares.
+&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;webupd8team&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;java&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;software&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;properties&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;ubuntugis&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubuntugis&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;unstable&lt;/span&gt;

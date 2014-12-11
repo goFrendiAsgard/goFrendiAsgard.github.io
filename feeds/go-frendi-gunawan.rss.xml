@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go Frendi's Personal Web</title><link>https://gofrendiasgard.github.io/</link><description>Python, Math, Life, and Me</description><atom:link href="/feeds/go-frendi-gunawan.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 07 Dec 2014 00:00:00 +0700</lastBuildDate><item><title>Giving Presentation by Using IPython Notebook</title><link>https://gofrendiasgard.github.io/blog/2014/12/07/ipython/</link><description>&lt;hr /&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go Frendi's Personal Web</title><link>/</link><description>Python, Math, Life, and Me</description><atom:link href="/feeds/go-frendi-gunawan.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 07 Dec 2014 00:00:00 +0700</lastBuildDate><item><title>Giving Presentation by Using IPython Notebook</title><link>/blog/2014/12/07/ipython/</link><description>&lt;hr /&gt;
 
 
 &lt;p&gt;IPython Notebook for presentation.
@@ -273,7 +273,7 @@ Overwriting custom.js
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Sun, 07 Dec 2014 00:00:00 +0700</pubDate><guid>tag:gofrendiasgard.github.io,2014-12-07:blog/2014/12/07/ipython/</guid></item><item><title>Arduino + Sonar Sensor + LED</title><link>https://gofrendiasgard.github.io/blog/2014/12/05/arduino/</link><description>&lt;hr /&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Sun, 07 Dec 2014 00:00:00 +0700</pubDate><guid>tag:,2014-12-07:blog/2014/12/07/ipython/</guid></item><item><title>Arduino + Sonar Sensor + LED</title><link>/blog/2014/12/05/arduino/</link><description>&lt;hr /&gt;
 
 
 &lt;p&gt;I have just play up with arduino, HC-SR04 sonar sensor.
@@ -387,7 +387,7 @@ Those two laws are not usually discussed in any instructables.&lt;/p&gt;
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Fri, 05 Dec 2014 00:00:00 +0700</pubDate><guid>tag:gofrendiasgard.github.io,2014-12-05:blog/2014/12/05/arduino/</guid></item><item><title>Hello world</title><link>https://gofrendiasgard.github.io/blog/2014/12/04/helloworld,%20ipython/</link><description>&lt;hr /&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Fri, 05 Dec 2014 00:00:00 +0700</pubDate><guid>tag:,2014-12-05:blog/2014/12/05/arduino/</guid></item><item><title>Hello world</title><link>/blog/2014/12/04/helloworld,%20ipython/</link><description>&lt;hr /&gt;
 
 
 &lt;p&gt;Just move to pelican :)
@@ -696,17 +696,17 @@ ybCwExGZDAs7EZHJsLATEZnM/wMCQmHuftwMPwAAAABJRU5ErkJggg==
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Thu, 04 Dec 2014 00:00:00 +0700</pubDate><guid>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/helloworld, ipython/</guid></item><item><title>Home</title><link>https://gofrendiasgard.github.io/blog/2014/12/04/home/</link><description>&lt;hr /&gt;
-
-
-&lt;p&gt;About me
-&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Thu, 04 Dec 2014 00:00:00 +0700</pubDate><guid>tag:,2014-12-04:blog/2014/12/04/helloworld, ipython/</guid></item><item><title>Home</title><link>/blog/2014/12/04/home/</link><description>&lt;hr /&gt;
 &lt;h2&gt;Me&lt;/h2&gt;
+
+
 &lt;p&gt;My name is Go Frendi Gunawan. an intelligent being living in Malang, Jawa Timur, Indonesia, Earth, Solar System.&lt;/p&gt;
 &lt;p&gt;I work as a lecturer at &lt;a href="http://stiki.ac.id/"&gt;STIKI Malang&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I like to code. My favorite programming language is Python, but I'm not stop there. 
 Right now, I try to learn scala and find out what functional-programming really is.
 I can also speak PHP, javascript, pascal, C, java, English, and Bahasa.&lt;/p&gt;
+
+
 &lt;p&gt;I also like computer science. My favorite topic is data mining, machine learning, and a bit software engineering.
 Sometime I also like to have light discussion related to philosophy and quantum-physics (minus the rocket science).&lt;/p&gt;
 &lt;p&gt;When not busy with my job, I usually like to code aimlessly, look for new thing related to computer, watch "Big bang theory" or some anime. Join free course on openedx or udacity (but soon get bored and never finish any course). And not to mention, trolling around.&lt;/p&gt;
@@ -753,13 +753,11 @@ I don't have any chance yet to try kokoropy in real-world, but in my imaginary-w
 &lt;li&gt;&lt;a href="http://jiki.cs.ui.ac.id/index.php/jiki/article/download/197/114"&gt;Grammatical Evolution for Feature Extraction in Local Tresholding Problem&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://jurnal.itats.ac.id/grammatical-evolution-untuk-ekstraksi-fitur-dengan-pengukuran-multi-fitness/"&gt;Grammatical Evolution for Feature Extraction with Multi-Fitness Measurement&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/goFrendiAsgard/myresearch/blob/master/snasti.pdf?raw=true"&gt;Tatami Grammatical Evolution for Feature Extraction with Multi-Fitness Measurement&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Thu, 04 Dec 2014 00:00:00 +0700</pubDate><guid>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/home/</guid></item><item><title>Ubuntu tricks</title><link>https://gofrendiasgard.github.io/blog/2014/12/04/ubuntu/</link><description>&lt;hr /&gt;
-
-
-&lt;p&gt;Ubuntu tricks for and from me
-&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Thu, 04 Dec 2014 00:00:00 +0700</pubDate><guid>tag:,2014-12-04:blog/2014/12/04/home/</guid></item><item><title>Ubuntu tricks</title><link>/blog/2014/12/04/ubuntu/</link><description>&lt;hr /&gt;
 &lt;h2&gt;Install several softwares&lt;/h2&gt;
-&lt;p&gt;The good thing about using ubuntu (and any other linux distribution) is you don't need to remember what button should be clicked when installing your softwares.&lt;/p&gt;
+&lt;p&gt;
+The good thing about using ubuntu (and any other linux distribution) is you don't need to remember what button should be clicked when installing your softwares.
+&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;webupd8team&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;java&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;software&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;properties&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;ubuntugis&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubuntugis&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;unstable&lt;/span&gt;
@@ -914,4 +912,4 @@ I don't have any chance yet to try kokoropy in real-world, but in my imaginary-w
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Thu, 04 Dec 2014 00:00:00 +0700</pubDate><guid>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/ubuntu/</guid></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Thu, 04 Dec 2014 00:00:00 +0700</pubDate><guid>tag:,2014-12-04:blog/2014/12/04/ubuntu/</guid></item></channel></rss>
