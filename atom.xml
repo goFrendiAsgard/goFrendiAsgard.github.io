@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Go Frendi's Personal Web</title><link href="/" rel="alternate"></link><link href="/atom.xml" rel="self"></link><id>/</id><updated>2014-12-07T00:00:00+07:00</updated><entry><title>Giving Presentation by Using IPython Notebook</title><link href="/blog/2014/12/07/ipython/" rel="alternate"></link><updated>2014-12-07T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-07:blog/2014/12/07/ipython/</id><summary type="html">&lt;hr /&gt;
-
-
-&lt;p&gt;IPython Notebook for presentation.
-&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Go Frendi's Personal Web</title><link href="https://gofrendiasgard.github.io/" rel="alternate"></link><link href="/atom.xml" rel="self"></link><id>https://gofrendiasgard.github.io/</id><updated>2014-12-07T00:00:00+07:00</updated><entry><title>Giving Presentation by Using IPython Notebook</title><link href="https://gofrendiasgard.github.io/blog/2014/12/07/ipython/" rel="alternate"></link><updated>2014-12-07T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-07:blog/2014/12/07/ipython/</id><summary type="html">&lt;hr /&gt;
 &lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
@@ -273,21 +269,20 @@ Overwriting custom.js
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</summary></entry><entry><title>Arduino + Sonar Sensor + LED</title><link href="/blog/2014/12/05/arduino/" rel="alternate"></link><updated>2014-12-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-05:blog/2014/12/05/arduino/</id><summary type="html">&lt;hr /&gt;
+</summary></entry><entry><title>Arduino + Sonar Sensor + LED</title><link href="https://gofrendiasgard.github.io/blog/2014/12/05/arduino/" rel="alternate"></link><updated>2014-12-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-05:blog/2014/12/05/arduino/</id><summary type="html">&lt;hr /&gt;
 
 
-&lt;p&gt;I have just play up with arduino, HC-SR04 sonar sensor.
-&lt;/p&gt;
 &lt;p&gt;Thanks to project board and arduino. Nowaday, anyone can build their own robot easily.
 There are many instruction to do that in &lt;a href="http://www.instructables.com/tag/type-id/category-technology/channel-arduino/"&gt;instructables&lt;/a&gt;
-Very cool, just do exactly as the instruction and you can make your very own high-tech toys.&lt;/p&gt;
+Very cool, just do exactly as the instruction and you can make your very own high-tech toys.
+&lt;/p&gt;
 &lt;p&gt;As a newbie, today I try to play around with HC-SR04 sonar sensor. I plan to build a very simple robot that can detect obstacle by using sonar.
 I use LED since DC Motor is a bit complicated and dangerous for newbie (I mean you can damage the arduino board itself if you set it wrong).
 So, my current prototype robot doesn't able to move anywhere.&lt;/p&gt;
 &lt;p&gt;Here is my prototype robot in action:
 &lt;div class="videobox"&gt;
                 &lt;iframe width="640" height="390"
-                        src='http://www.youtube.com/v/woXSY94KMFw'
+                        src='//www.youtube.com/v/woXSY94KMFw'
                         frameborder='0'
                         webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;
                 &lt;/iframe&gt;
@@ -387,7 +382,7 @@ Those two laws are not usually discussed in any instructables.&lt;/p&gt;
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</summary></entry><entry><title>Hello world</title><link href="/blog/2014/12/04/helloworld,%20ipython/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/helloworld, ipython/</id><summary type="html">&lt;hr /&gt;
+</summary></entry><entry><title>Hello world</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/helloworld,%20ipython/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/helloworld, ipython/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;Just move to pelican :)
@@ -696,7 +691,7 @@ ybCwExGZDAs7EZHJsLATEZnM/wMCQmHuftwMPwAAAABJRU5ErkJggg==
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</summary></entry><entry><title>Home</title><link href="/blog/2014/12/04/home/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/home/</id><summary type="html">&lt;hr /&gt;
+</summary></entry><entry><title>Home</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/home/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/home/</id><summary type="html">&lt;hr /&gt;
 &lt;h2&gt;Me&lt;/h2&gt;
 
 
@@ -753,7 +748,90 @@ I don't have any chance yet to try kokoropy in real-world, but in my imaginary-w
 &lt;li&gt;&lt;a href="http://jiki.cs.ui.ac.id/index.php/jiki/article/download/197/114"&gt;Grammatical Evolution for Feature Extraction in Local Tresholding Problem&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://jurnal.itats.ac.id/grammatical-evolution-untuk-ekstraksi-fitur-dengan-pengukuran-multi-fitness/"&gt;Grammatical Evolution for Feature Extraction with Multi-Fitness Measurement&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/goFrendiAsgard/myresearch/blob/master/snasti.pdf?raw=true"&gt;Tatami Grammatical Evolution for Feature Extraction with Multi-Fitness Measurement&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>Ubuntu tricks</title><link href="/blog/2014/12/04/ubuntu/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:,2014-12-04:blog/2014/12/04/ubuntu/</id><summary type="html">&lt;hr /&gt;
+&lt;/ul&gt;</summary></entry><entry><title>Hello world</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/python/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/python/</id><summary type="html">&lt;hr /&gt;
+
+
+&lt;p&gt;Some guys in stackoverflow said that most of people who think they need singleton are actually never need it.
+But that's what they said. Sometime you really need singleton to ensure that there is only one instance of your object.
+&lt;/p&gt;
+&lt;p&gt;Today I want to share how to make singleton pattern in Python. This approach doesn't use decorator, just a class and a function.&lt;/p&gt;
+&lt;p&gt;Please take a look at these codes:&lt;/p&gt;
+&lt;h2&gt;Singleton.py&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;__instance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;None&lt;/span&gt;
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__instance&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__instance&lt;/span&gt;
+        &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__instance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;self&lt;/span&gt;
+
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="nl"&gt;try:&lt;/span&gt;
+        &lt;span class="n"&gt;instance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;except&lt;/span&gt; &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;instance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;instance&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Different from a common way, we don't initialize an object like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;my_obj&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;my name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;but, we initialize an object this way:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;my_obj&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;my name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;make_instance&lt;/code&gt; will check whether the &lt;code&gt;__instance&lt;/code&gt; in &lt;code&gt;Singleton&lt;/code&gt; is exists or not.
+&lt;code&gt;__instance&lt;/code&gt; is a class property. It is shared through all instance of &lt;code&gt;Singleton&lt;/code&gt;.
+This can ensure that we will only have one single instance of &lt;code&gt;Singleton&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Let's try this by making 3 different files&lt;/p&gt;
+&lt;h2&gt;a.py&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;singleton&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;
+
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;agumon&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;b.py&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;singleton&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;
+
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;birdramon&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;c.py&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;singleton&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;
+&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
+&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;
+
+&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;chakumon&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you run &lt;code&gt;c.py&lt;/code&gt;, you will get this result:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;singleton&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Singleton&lt;/span&gt; &lt;span class="n"&gt;instance&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0xb71e806c&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;singleton&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Singleton&lt;/span&gt; &lt;span class="n"&gt;instance&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0xb71e806c&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;singleton&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Singleton&lt;/span&gt; &lt;span class="n"&gt;instance&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0xb71e806c&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;agumon&lt;/span&gt; &lt;span class="n"&gt;agumon&lt;/span&gt; &lt;span class="n"&gt;agumon&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It's works, &lt;code&gt;a&lt;/code&gt;,&lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; is exactly refer to the same object.
+If you really want to change the &lt;code&gt;name&lt;/code&gt; property, you can do this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;chakumon&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and it will affect &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt; as well since they refer to the same object as &lt;code&gt;c&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Okay, great. Singleton works. But why do you need something tricky like this?
+In my case, I have a problem when trying to split several sql-alchemy models into different file and ensure that they have
+the same &lt;code&gt;engine&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You might not need it in near time. There are special cases that can be solved with singleton.
+Right now, you can have a peace in your mind that singleton approach in Python is possible.&lt;/p&gt;</summary></entry><entry><title>Ubuntu tricks</title><link href="https://gofrendiasgard.github.io/blog/2014/12/04/ubuntu/" rel="alternate"></link><updated>2014-12-04T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-04:blog/2014/12/04/ubuntu/</id><summary type="html">&lt;hr /&gt;
 &lt;h2&gt;Install several softwares&lt;/h2&gt;
 &lt;p&gt;
 The good thing about using ubuntu (and any other linux distribution) is you don't need to remember what button should be clicked when installing your softwares.

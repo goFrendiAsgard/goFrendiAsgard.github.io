@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Go Frendi's Personal Web</title>
+  <title>Hello world</title>
   <meta name="author" content="Go Frendi Gunawan">
 
   <link href="/atom.xml" type="application/atom+xml" rel="alternate"
@@ -1752,9 +1752,114 @@ jQuery(document).ready(function($) {
 </ul></nav>
   <div id="main">
     <div id="content">
-<ul>
-    <li><a href="https://gofrendiasgard.github.io/category/misc.html">misc</a></li>
-</ul>
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Hello world</h1>
+      <p class="meta"><time datetime="2014-12-04T00:00:00+07:00" pubdate>Dec 04, 2014</time></p>
+</header>
+
+  <div class="entry-content"><hr />
+
+
+<p>Some guys in stackoverflow said that most of people who think they need singleton are actually never need it.
+But that's what they said. Sometime you really need singleton to ensure that there is only one instance of your object.
+</p>
+<p>Today I want to share how to make singleton pattern in Python. This approach doesn't use decorator, just a class and a function.</p>
+<p>Please take a look at these codes:</p>
+<h2>Singleton.py</h2>
+<div class="highlight"><pre><span class="n">class</span> <span class="n">Singleton</span><span class="o">:</span>
+    <span class="n">__instance</span> <span class="o">=</span> <span class="n">None</span>
+    <span class="n">def</span> <span class="n">__init__</span><span class="p">(</span> <span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="n">Singleton</span><span class="p">.</span><span class="n">__instance</span><span class="o">:</span>
+            <span class="n">raise</span> <span class="n">Singleton</span><span class="p">.</span><span class="n">__instance</span>
+        <span class="n">Singleton</span><span class="p">.</span><span class="n">__instance</span> <span class="o">=</span> <span class="n">self</span>
+
+<span class="n">def</span> <span class="n">make_instance</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="err">&#39;&#39;</span> <span class="p">)</span><span class="o">:</span>
+    <span class="nl">try:</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">except</span> <span class="n">Singleton</span><span class="p">,</span> <span class="n">s</span><span class="o">:</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="n">s</span>
+    <span class="k">return</span> <span class="n">instance</span>
+</pre></div>
+
+
+<p>Different from a common way, we don't initialize an object like this:</p>
+<div class="highlight"><pre><span class="n">my_obj</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">(</span><span class="s">&quot;my name&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>but, we initialize an object this way:</p>
+<div class="highlight"><pre><span class="n">my_obj</span> <span class="o">=</span> <span class="n">make_instance</span><span class="p">(</span><span class="s">&quot;my name&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>make_instance</code> will check whether the <code>__instance</code> in <code>Singleton</code> is exists or not.
+<code>__instance</code> is a class property. It is shared through all instance of <code>Singleton</code>.
+This can ensure that we will only have one single instance of <code>Singleton</code>.</p>
+<p>Let's try this by making 3 different files</p>
+<h2>a.py</h2>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">singleton</span> <span class="n">import</span> <span class="n">make_instance</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">make_instance</span><span class="p">(</span><span class="err">&#39;</span><span class="n">agumon</span><span class="err">&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2>b.py</h2>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">singleton</span> <span class="n">import</span> <span class="n">make_instance</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">make_instance</span><span class="p">(</span><span class="err">&#39;</span><span class="n">birdramon</span><span class="err">&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2>c.py</h2>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">singleton</span> <span class="n">import</span> <span class="n">make_instance</span>
+<span class="n">from</span> <span class="n">a</span> <span class="n">import</span> <span class="n">a</span>
+<span class="n">from</span> <span class="n">b</span> <span class="n">import</span> <span class="n">b</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">make_instance</span><span class="p">(</span><span class="err">&#39;</span><span class="n">chakumon</span><span class="err">&#39;</span><span class="p">)</span>
+
+<span class="n">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">c</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+
+
+<p>If you run <code>c.py</code>, you will get this result:</p>
+<div class="highlight"><pre><span class="o">&lt;</span><span class="n">singleton</span><span class="p">.</span><span class="n">Singleton</span> <span class="n">instance</span> <span class="n">at</span> <span class="mh">0xb71e806c</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">singleton</span><span class="p">.</span><span class="n">Singleton</span> <span class="n">instance</span> <span class="n">at</span> <span class="mh">0xb71e806c</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">singleton</span><span class="p">.</span><span class="n">Singleton</span> <span class="n">instance</span> <span class="n">at</span> <span class="mh">0xb71e806c</span><span class="o">&gt;</span>
+<span class="n">agumon</span> <span class="n">agumon</span> <span class="n">agumon</span>
+</pre></div>
+
+
+<p>It's works, <code>a</code>,<code>b</code>, and <code>c</code> is exactly refer to the same object.
+If you really want to change the <code>name</code> property, you can do this:</p>
+<div class="highlight"><pre><span class="n">c</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">chakumon</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<p>and it will affect <code>a</code> and <code>b</code> as well since they refer to the same object as <code>c</code>.</p>
+<p>Okay, great. Singleton works. But why do you need something tricky like this?
+In my case, I have a problem when trying to split several sql-alchemy models into different file and ensure that they have
+the same <code>engine</code>.</p>
+<p>You might not need it in near time. There are special cases that can be solved with singleton.
+Right now, you can have a peace in your mind that singleton approach in Python is possible.</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Go Frendi Gunawan</span>
+  </span>
+<time datetime="2014-12-04T00:00:00+07:00" pubdate>Dec 04, 2014</time></p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://gofrendiasgard.github.io/blog/2014/12/04/python/" data-via="gofrendiasgard" data-counturl="gofrendiasgard.github.io/blog/2014/12/04/python/" >Tweet</a>
+  <div class="g-plusone" data-size="medium"></div>
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+</div>    </footer>
+  </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
+</div>
 <aside class="sidebar">
   <section>
     <h1>Recent Posts</h1>
@@ -1842,6 +1947,9 @@ jQuery(document).ready(function($) {
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'gofrendiasgardgithubio';
+          var disqus_identifier = '/blog/2014/12/04/python/';
+          var disqus_url = 'https://gofrendiasgard.github.io/blog/2014/12/04/python/';
+          var disqus_title = 'Hello world';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
