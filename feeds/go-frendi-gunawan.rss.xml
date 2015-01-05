@@ -366,7 +366,7 @@ which such a content:&lt;/p&gt;
 &lt;p&gt;&lt;img src="/images/kokoropy-new.png"&gt;&lt;/p&gt;
 &lt;p&gt;More complex form with rich variation of column type and relationship:&lt;/p&gt;
 &lt;p&gt;&lt;img src="/images/kokoropy-village.png"&gt;&lt;/p&gt;
-&lt;p&gt;~~&lt;strong&gt;PS:&lt;/strong&gt; Sorry, the richtext area only able to receive ascii character at the moment. I've just realized this when making the screenshot. But I'll fix it soon~~&lt;/p&gt;
+&lt;p&gt;-[&lt;strong&gt;PS:&lt;/strong&gt; Sorry, the richtext area only able to receive ascii character at the moment. I've just realized this when making the screenshot. But I'll fix it soon]&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;EDIT:&lt;/strong&gt; Has been fixed by now (2015-01-05 17:09)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Mon, 05 Jan 2015 00:00:00 +0700</pubDate><guid>tag:gofrendiasgard.github.io,2015-01-05:blog/2015/01/05/python/</guid></item><item><title>Singleton</title><link>https://gofrendiasgard.github.io/blog/2014/12/11/python/</link><description>&lt;hr /&gt;
 
 
