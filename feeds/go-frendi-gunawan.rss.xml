@@ -1,5 +1,373 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go Frendi's Personal Web</title><link>https://gofrendiasgard.github.io/</link><description>Python, Math, Life, and Me</description><atom:link href="/feeds/go-frendi-gunawan.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 11 Dec 2014 00:00:00 +0700</lastBuildDate><item><title>Singleton</title><link>https://gofrendiasgard.github.io/blog/2014/12/11/python/</link><description>&lt;hr /&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go Frendi's Personal Web</title><link>https://gofrendiasgard.github.io/</link><description>Python, Math, Life, and Me</description><atom:link href="/feeds/go-frendi-gunawan.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 05 Jan 2015 00:00:00 +0700</lastBuildDate><item><title>Kokoropy</title><link>https://gofrendiasgard.github.io/blog/2015/01/05/python/</link><description>&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt;  kokoropy is still on development stage.&lt;/p&gt;
+
+
+&lt;p&gt;Ruby on Rails is a great web framework written in Ruby. 
+I like how it automate things so that people can just focus on the creative things.
+Python has django, pyramid and web2py which are also excellent web framework. 
+In this article I'll discuss about kokoropy, a web framework based on bottle.
+&lt;/p&gt;
+&lt;p&gt;In Japanese, Kokoro means heart. Kokoropy is a web framework of my heart. 
+I start to develop kokoropy on November 2012, approximately 2 years ago.&lt;/p&gt;
+&lt;p&gt;At the begining, kokoropy was highly influenced by &lt;code&gt;CodeIgniter&lt;/code&gt; + &lt;code&gt;HMVC&lt;/code&gt;. 
+But as I know more things, kokoropy moves in it's own direction.&lt;/p&gt;
+&lt;p&gt;I believe that code should be short, simple, readable, yet explicit. 
+Kokoropy's goal is to make such a thing possible.
+You can download kokoropy from github repository here: 
+&lt;a href="https://github.com/goFrendiAsgard/kokoropy"&gt;https://github.com/goFrendiAsgard/kokoropy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After download kokoropy, you can start the server by executing this command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;rossian&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Once the server has been started, you can access &lt;code&gt;http://localhost:8080&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can stop the server by pressing &lt;code&gt;Ctrl + C&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;rossian.py&lt;/h1&gt;
+&lt;p&gt;To make everything simpler, I made a management script named &lt;code&gt;rossian.py&lt;/code&gt;. 
+It allows you to do some crucial things like run the server, or even generate your application skeleton.
+There is a sad story about the the name. Rossian is the name of my ex-girlfriend.
+As she will always have a place in my heart, &lt;code&gt;rossian.py&lt;/code&gt; will also have a special place in kokoropy.&lt;/p&gt;
+&lt;h1&gt;Generate application&lt;/h1&gt;
+&lt;p&gt;Let's forget the sad story, and discuss about the fun thing.
+Computer Programmers are lazy being. They hate to do the same thing over and over again. They like challenges and adventures.
+Create Insert-Update-Delete things are repetitive yet crucial tasks.
+It is going to be fun if we have someone (or something) do those tasks for us, and leave us with more intelligent-challenging task.&lt;/p&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;p&gt;If you don't have too much time to read, or just want to figure out what's going on in the rest of the article,
+the resume is you can make a working database application without even touch the database or code anything.
+Just do this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make a file named &lt;code&gt;demo.txt&lt;/code&gt; inside your kokoropy folder, and paste this:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;demo&lt;/span&gt;
+        &lt;span class="n"&gt;village&lt;/span&gt;
+            &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;
+            &lt;span class="nl"&gt;clan:&lt;/span&gt;&lt;span class="n"&gt;clan&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;one&lt;/span&gt;
+            &lt;span class="nl"&gt;created:&lt;/span&gt;&lt;span class="n"&gt;DateTime&lt;/span&gt;
+            &lt;span class="nl"&gt;level:&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;
+            &lt;span class="nl"&gt;active:&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;
+            &lt;span class="nl"&gt;photo:&lt;/span&gt;&lt;span class="n"&gt;Image&lt;/span&gt;
+            &lt;span class="nl"&gt;friends:&lt;/span&gt;&lt;span class="n"&gt;village&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;
+            &lt;span class="nl"&gt;commodities:&lt;/span&gt;&lt;span class="n"&gt;resource&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;ordered&lt;/span&gt;
+            &lt;span class="nl"&gt;villagers:&lt;/span&gt;&lt;span class="n"&gt;villager&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;one&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;
+            &lt;span class="nl"&gt;important_structure:&lt;/span&gt;&lt;span class="n"&gt;structure&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;one&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;ordered&lt;/span&gt;
+            &lt;span class="nl"&gt;description:&lt;/span&gt;&lt;span class="n"&gt;RichText&lt;/span&gt;
+            &lt;span class="nl"&gt;some_code:&lt;/span&gt;&lt;span class="n"&gt;PythonCode&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;clan&lt;/span&gt;
+            &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;resource&lt;/span&gt;
+            &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;villager&lt;/span&gt;
+            &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;structure&lt;/span&gt;
+            &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Generate the application by typing &lt;code&gt;python rossian.py scaffold-crud demo.txt&lt;/code&gt; in your command prompt&lt;/li&gt;
+&lt;li&gt;Run the server by typing &lt;code&gt;python rossian.py start&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Open your browser and visit &lt;code&gt;http://localhost:8080/demo&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;You have your application, scroll down the the last section to see the generated application in action.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Define application structure&lt;/h2&gt;
+&lt;p&gt;Kokoropy allows you to generate high-quality codes just by using some simple command.
+First you need to define your database structure. Make a file named &lt;code&gt;demo.txt&lt;/code&gt;, and write your database schema as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;demo&lt;/span&gt;
+        &lt;span class="n"&gt;village&lt;/span&gt;
+            &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;
+            &lt;span class="nl"&gt;clan:&lt;/span&gt;&lt;span class="n"&gt;clan&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;one&lt;/span&gt;
+            &lt;span class="nl"&gt;created:&lt;/span&gt;&lt;span class="n"&gt;DateTime&lt;/span&gt;
+            &lt;span class="nl"&gt;level:&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;
+            &lt;span class="nl"&gt;active:&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;
+            &lt;span class="nl"&gt;photo:&lt;/span&gt;&lt;span class="n"&gt;Image&lt;/span&gt;
+            &lt;span class="nl"&gt;friends:&lt;/span&gt;&lt;span class="n"&gt;village&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;
+            &lt;span class="nl"&gt;commodities:&lt;/span&gt;&lt;span class="n"&gt;resource&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;ordered&lt;/span&gt;
+            &lt;span class="nl"&gt;villagers:&lt;/span&gt;&lt;span class="n"&gt;villager&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;one&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;
+            &lt;span class="nl"&gt;important_structure:&lt;/span&gt;&lt;span class="n"&gt;structure&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;one&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;ordered&lt;/span&gt;
+            &lt;span class="nl"&gt;description:&lt;/span&gt;&lt;span class="n"&gt;RichText&lt;/span&gt;
+            &lt;span class="nl"&gt;some_code:&lt;/span&gt;&lt;span class="n"&gt;PythonCode&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;clan&lt;/span&gt;
+            &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;resource&lt;/span&gt;
+            &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;villager&lt;/span&gt;
+            &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;structure&lt;/span&gt;
+            &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;At the first line, you define a new application named &lt;code&gt;demo&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;There will be several tables in your application:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;village&lt;/li&gt;
+&lt;li&gt;clan&lt;/li&gt;
+&lt;li&gt;resource&lt;/li&gt;
+&lt;li&gt;villager&lt;/li&gt;
+&lt;li&gt;structure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Each table definition are separated by &lt;code&gt;,&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Next to each table definition, there are field definitions of the respective table.&lt;/p&gt;
+&lt;p&gt;Take a look at this part:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="p"&gt;(...)&lt;/span&gt;
+    &lt;span class="n"&gt;structure&lt;/span&gt;
+        &lt;span class="nl"&gt;name:&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It means that &lt;code&gt;structure&lt;/code&gt; table has a column named &lt;code&gt;name&lt;/code&gt; which is &lt;code&gt;String&lt;/code&gt;. The size of the column is &lt;code&gt;50&lt;/code&gt;.
+Pretty simple right? There are some column type recognized by the generator:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String&lt;/li&gt;
+&lt;li&gt;Integer&lt;/li&gt;
+&lt;li&gt;Float&lt;/li&gt;
+&lt;li&gt;Date&lt;/li&gt;
+&lt;li&gt;DateTime&lt;/li&gt;
+&lt;li&gt;Boolean&lt;/li&gt;
+&lt;li&gt;Text&lt;/li&gt;
+&lt;li&gt;Upload&lt;/li&gt;
+&lt;li&gt;Image&lt;/li&gt;
+&lt;li&gt;RichTex&lt;/li&gt;
+&lt;li&gt;HTMLCode&lt;/li&gt;
+&lt;li&gt;PythonCode&lt;/li&gt;
+&lt;li&gt;JSCode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Beside those column types, you can also define relationship with other table.
+Relationship has &lt;code&gt;field-name:other-table:relation-type&lt;/code&gt; format. 
+You can add &lt;code&gt;:ordered&lt;/code&gt; for many-to-many and one-to-many relation if row order does matter.&lt;/p&gt;
+&lt;p&gt;For example, look at this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;village&lt;/span&gt;
+        &lt;span class="p"&gt;(...)&lt;/span&gt;
+        &lt;span class="nl"&gt;clan:&lt;/span&gt;&lt;span class="n"&gt;clan&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;one&lt;/span&gt;
+        &lt;span class="nl"&gt;commodities:&lt;/span&gt;&lt;span class="n"&gt;resource&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;ordered&lt;/span&gt;
+        &lt;span class="nl"&gt;villagers:&lt;/span&gt;&lt;span class="n"&gt;villager&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;one&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;many&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;village&lt;/code&gt; table has &lt;code&gt;many-to-one&lt;/code&gt; relationship with &lt;code&gt;clan&lt;/code&gt; table.
+This means that a village is belong to just a clan, while a clan can has several villages.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;village&lt;/code&gt; table has &lt;code&gt;many-to-many&lt;/code&gt; relationship with &lt;code&gt;commodities&lt;/code&gt; table.
+This means that that a village can has many resource as their commodity. 
+However the same resource can be owned by several villages as their commodity.
+The &lt;code&gt;:ordered&lt;/code&gt; is also added to the relationship definition. This means that commodities order does matter.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;village&lt;/code&gt; table also has one-to-many relationship with &lt;code&gt;villager&lt;/code&gt; table.
+This means that a villager is only belong to one village, while a village can has several villagers.&lt;/p&gt;
+&lt;h2&gt;Generate the application&lt;/h2&gt;
+&lt;p&gt;To generate the application, you just need to execute this command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;rossian&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;scaffold&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;crud&lt;/span&gt; &lt;span class="n"&gt;demo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;rossian.py&lt;/code&gt; will make a &lt;code&gt;application/demo&lt;/code&gt; folder for you. Let's peek a bit.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/kokoropy-structure.png"&gt;&lt;/p&gt;
+&lt;p&gt;The simplest generated models is &lt;code&gt;applications/demo/models/clan.py&lt;/code&gt;. The content is as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;kokoropy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DB_Model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Ordered_DB_Model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;or_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;and_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ForeignKey&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;relationship&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;\
+        &lt;span class="n"&gt;backref&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;association_proxy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;creator_maker&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fk_column&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;one_to_many&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;many_to_one&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lookup_proxy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;\
+        &lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Float&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DateTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Upload&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Option&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;RichText&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Code&lt;/span&gt;
+    &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;_config&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;metadata&lt;/span&gt;
+
+    &lt;span class="n"&gt;DB_Model&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;metadata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;metadata&lt;/span&gt;
+
+    &lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Clan&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;DB_Model&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;__session__&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;session&lt;/span&gt;
+        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Fields&lt;/span&gt; &lt;span class="n"&gt;Declarations&lt;/span&gt;
+        &lt;span class="n"&gt;name&lt;/span&gt;                 &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pretty straight forward, you have a &lt;code&gt;Clan&lt;/code&gt; class with &lt;code&gt;name&lt;/code&gt; property which is a column.&lt;/p&gt;
+&lt;p&gt;Village models is a bit more complex since it has a lot of relationship with other tables.
+This is the content of &lt;code&gt;applications/demo/models/village.py&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;kokoropy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DB_Model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Ordered_DB_Model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;or_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;and_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ForeignKey&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;relationship&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;\
+        &lt;span class="n"&gt;backref&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;association_proxy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;creator_maker&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fk_column&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;one_to_many&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;many_to_one&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;lookup_proxy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;\
+        &lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Float&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DateTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Upload&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Option&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;RichText&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Code&lt;/span&gt;
+    &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;_config&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;metadata&lt;/span&gt;
+
+    &lt;span class="n"&gt;DB_Model&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;metadata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;metadata&lt;/span&gt;
+
+    &lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Village&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;DB_Model&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;__session__&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;session&lt;/span&gt;
+        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Excluded&lt;/span&gt; &lt;span class="n"&gt;Columns&lt;/span&gt;
+        &lt;span class="n"&gt;__detail_excluded_shown_column__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;quot;village_friends&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;left_village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;quot;village_commodities&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="n"&gt;__detail_excluded_form_column__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;quot;village_friends&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;left_village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;quot;village_commodities&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;Labels&lt;/span&gt;
+        &lt;span class="n"&gt;__column_label__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;quot;village_friends&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Friends&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;quot;village_commodities&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Commodities&amp;quot;&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Detail&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;Labels&lt;/span&gt;
+        &lt;span class="n"&gt;__detail_column_label__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;quot;village_friends&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                    &lt;span class="s"&gt;&amp;quot;right_village&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Village&amp;quot;&lt;/span&gt;
+                &lt;span class="p"&gt;}&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Fields&lt;/span&gt; &lt;span class="n"&gt;Declarations&lt;/span&gt;
+        &lt;span class="n"&gt;name&lt;/span&gt;                 &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="n"&gt;fk_clan&lt;/span&gt;              &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fk_column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;clan._real_id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;clan&lt;/span&gt;                 &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;many_to_one&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Clan&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Village.fk_clan&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;created&lt;/span&gt;              &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;DateTime&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;level&lt;/span&gt;                &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;active&lt;/span&gt;               &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;photo&lt;/span&gt;                &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Upload&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;is_image&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;True&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="n"&gt;village_friends&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;one_to_many&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Village_Friends&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Village_Friends.fk_left_village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;friends&lt;/span&gt;              &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lookup_proxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;village_friends&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Village_Friends.right_village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;village_commodities&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;one_to_many&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Village_Commodities&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Village_Commodities.fk_village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;commodities&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lookup_proxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;village_commodities&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Village_Commodities.resource&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;villagers&lt;/span&gt;            &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;one_to_many&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Villager&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Villager.fk_village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;important_structure&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;one_to_many&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Structure&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Structure.fk_village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;description&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RichText&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;some_code&lt;/span&gt;            &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Code&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;language&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;python&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Village_Friends&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;DB_Model&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;__session__&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;session&lt;/span&gt;
+        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Fields&lt;/span&gt; &lt;span class="n"&gt;Declarations&lt;/span&gt;
+        &lt;span class="n"&gt;fk_left_village&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fk_column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;village._real_id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;fk_right_village&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fk_column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;village._real_id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;left_village&lt;/span&gt;         &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;many_to_one&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Village_Friends.fk_left_village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;right_village&lt;/span&gt;        &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;many_to_one&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Village_Friends.fk_right_village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Village_Commodities&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Ordered_DB_Model&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;__session__&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;session&lt;/span&gt;
+        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Fields&lt;/span&gt; &lt;span class="n"&gt;Declarations&lt;/span&gt;
+        &lt;span class="n"&gt;fk_village&lt;/span&gt;           &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fk_column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;village._real_id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;fk_resource&lt;/span&gt;          &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fk_column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;resource._real_id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;village&lt;/span&gt;              &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;many_to_one&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Village_Commodities.fk_village&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;resource&lt;/span&gt;             &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;many_to_one&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Resource&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Village_Commodities.fk_resource&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are familiar with &lt;code&gt;sqlalchemy&lt;/code&gt;, you can see that the syntax is a bit shorter since I have make some shortcut.
+For example &lt;code&gt;fk_column("village._real_id")&lt;/code&gt; is a shortcut for &lt;code&gt;Column(Integer, foreign_keys="village._real_id")&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;__detail_excluded_shown_column__&lt;/code&gt; and other properties started with double-underscore are used to deal with presentation of &lt;code&gt;one-to-many&lt;/code&gt; relationship field.&lt;/p&gt;
+&lt;p&gt;Now let's see at the controller. The controller's code is very simple. For example, look at &lt;code&gt;applications/demo/controllers/clan.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;kokoropy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;controller&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Crud_Controller&lt;/span&gt;
+    &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;_all&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Clan&lt;/span&gt;
+
+    &lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Clan_Controller&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Crud_Controller&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;__model__&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Clan&lt;/span&gt;
+
+    &lt;span class="n"&gt;Clan_Controller&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;publish_route&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Lastly, let's see at the view. All of views generated will use &lt;code&gt;applications/demo/views/base.html&lt;/code&gt; as their base.
+So, if you want to change the header or footer of all views, this is the file to be edited.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;shortcut icon&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt;&lt;span class="nv"&gt;BASE_URL&lt;/span&gt;&lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="s"&gt;index/assets/favicon.ico&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;charset=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;viewport&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;content=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;content=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;get&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;_description&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;A web page&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;meta&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;author&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;content=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;get&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;_author&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;You&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="nv"&gt;JQUI_BOOTSTRAP_STYLE&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;title&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;get&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;_title&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Your Application&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+            &lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt; &lt;span class="nv"&gt;style&lt;/span&gt; &lt;span class="cp"&gt;%}{%&lt;/span&gt; &lt;span class="k"&gt;endblock&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;container&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;role=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;header&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class="nt"&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Your Application Title&lt;span class="nt"&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+                &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+                &lt;span class="c"&gt;&amp;lt;!-- content --&amp;gt;&lt;/span&gt;
+                &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt;  &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;layout-content&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="nv"&gt;base&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;
+                    &lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt; &lt;span class="nv"&gt;content&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;No content&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endblock&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;
+                &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+                &lt;span class="c"&gt;&amp;lt;!-- footer --&amp;gt;&lt;/span&gt;
+                &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;footer&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+                  &lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;&lt;span class="ni"&gt;&amp;amp;copy;&lt;/span&gt; Yourself&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+                &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+            &lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="nv"&gt;JQUI_BOOTSTRAP_SCRIPT&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;
+            &lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt; &lt;span class="nv"&gt;script&lt;/span&gt; &lt;span class="cp"&gt;%}{%&lt;/span&gt; &lt;span class="k"&gt;endblock&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;rossian.py&lt;/code&gt; doesn't generate per-table views for you. However, if you want to change the view of any of your table, you can do &lt;code&gt;python rossian.py scaffold-view APPLICATION-NAME table-name [view]&lt;/code&gt;
+Replace &lt;code&gt;[view]&lt;/code&gt; with one of these verbs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create&lt;/li&gt;
+&lt;li&gt;delete&lt;/li&gt;
+&lt;li&gt;destroy&lt;/li&gt;
+&lt;li&gt;edit&lt;/li&gt;
+&lt;li&gt;list&lt;/li&gt;
+&lt;li&gt;new&lt;/li&gt;
+&lt;li&gt;remove&lt;/li&gt;
+&lt;li&gt;search&lt;/li&gt;
+&lt;li&gt;show&lt;/li&gt;
+&lt;li&gt;trash&lt;/li&gt;
+&lt;li&gt;untrash&lt;/li&gt;
+&lt;li&gt;update&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;or leave it blank to let &lt;code&gt;rossian.py&lt;/code&gt; scaffold all the views.&lt;/p&gt;
+&lt;p&gt;For example, &lt;code&gt;python rossian.py scaffold-view demo clan show&lt;/code&gt; will make &lt;code&gt;rossian.py&lt;/code&gt; create &lt;code&gt;applications/demo/views/clan/show.html&lt;/code&gt;
+which such a content:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="c"&gt;% rebase(&amp;#39;demo/views/base&amp;#39;) if base_view is None else rebase(base_view)&lt;/span&gt;
+    &lt;span class="c"&gt;% if clan is not None:&lt;/span&gt;
+    &lt;span class="c"&gt;%   clan.generate_detail_view()&lt;/span&gt;
+    &lt;span class="c"&gt;% end&lt;/span&gt;
+
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="c"&gt;% block style %}&lt;/span&gt;
+        &lt;span class="c"&gt;% if clan is not None:&lt;/span&gt;
+            &lt;span class="p"&gt;{{&lt;/span&gt;! &lt;span class="n"&gt;clan&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;generated_css&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compiled&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;
+        &lt;span class="c"&gt;% end&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="c"&gt;% endblock %}&lt;/span&gt;
+
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="c"&gt;% block script %}&lt;/span&gt;
+        &lt;span class="c"&gt;% if clan is not None:&lt;/span&gt;
+            &lt;span class="p"&gt;{{&lt;/span&gt;! &lt;span class="n"&gt;clan&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;generated_js&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compiled&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;
+        &lt;span class="c"&gt;% end&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="c"&gt;% endblock %}&lt;/span&gt;
+
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="c"&gt;% block content %}&lt;/span&gt;
+        &lt;span class="c"&gt;% if clan is not None:&lt;/span&gt;
+            &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;h4&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;Showing&lt;/span&gt; &lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;caption&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{{&lt;/span&gt;! &lt;span class="n"&gt;clan&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;as_text&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;h4&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;{{&lt;/span&gt;! &lt;span class="n"&gt;clan&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;generated_html&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;
+            &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;div&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="c"&gt;% if not clan.trashed:&lt;/span&gt;
+                    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&amp;quot;&lt;span class="n"&gt;btn&lt;/span&gt; &lt;span class="n"&gt;btn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&amp;quot; &lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&amp;quot;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;url_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&amp;quot;&lt;span class="n"&gt;edit&lt;/span&gt;&amp;quot;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;clan&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;&amp;quot;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&amp;quot;&lt;span class="n"&gt;glyphicon&lt;/span&gt; &lt;span class="n"&gt;glyphicon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pencil&lt;/span&gt;&amp;quot;&lt;span class="o"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Edit&lt;/span&gt; &lt;span class="n"&gt;clan&lt;/span&gt;
+                    &lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&amp;quot;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;url_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;list&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;&amp;quot; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&amp;quot;&lt;span class="n"&gt;btn&lt;/span&gt; &lt;span class="n"&gt;btn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&amp;quot;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&amp;quot;&lt;span class="n"&gt;glyphicon&lt;/span&gt; &lt;span class="n"&gt;glyphicon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;th&lt;/span&gt;&amp;quot;&lt;span class="o"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Back&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;List&lt;/span&gt;
+                    &lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="c"&gt;% else:&lt;/span&gt;
+                    &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&amp;quot;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;url_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;list&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;?&lt;span class="n"&gt;trash&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&amp;quot; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&amp;quot;&lt;span class="n"&gt;btn&lt;/span&gt; &lt;span class="n"&gt;btn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&amp;quot;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&amp;quot;&lt;span class="n"&gt;glyphicon&lt;/span&gt; &lt;span class="n"&gt;glyphicon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;th&lt;/span&gt;&amp;quot;&lt;span class="o"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Back&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;List&lt;/span&gt;
+                    &lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="c"&gt;% end&lt;/span&gt;
+            &lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;div&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="c"&gt;% else:&lt;/span&gt;
+            &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;div&lt;/span&gt; &lt;span class="n"&gt;class&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&amp;quot;&lt;span class="n"&gt;alert&lt;/span&gt; &lt;span class="n"&gt;alert&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;danger&lt;/span&gt;&amp;quot;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;Data&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;div&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="c"&gt;% end&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="c"&gt;% endblock %}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Try it out&lt;/h2&gt;
+&lt;p&gt;Now, let's see the generated application in action.&lt;/p&gt;
+&lt;p&gt;The generated appplication:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/kokoropy-generated.png"&gt;&lt;/p&gt;
+&lt;p&gt;Simple List, it also has &lt;code&gt;trash&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/kokoropy-list.png"&gt;&lt;/p&gt;
+&lt;p&gt;Generated form:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/kokoropy-new.png"&gt;&lt;/p&gt;
+&lt;p&gt;More complex form with rich variation of column type and relationship:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/kokoropy-village.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt; Sorry, the richtext area only able to receive ascii character at the moment. I've just realized this when making the screenshot.
+But I'll fix it soon&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Go Frendi Gunawan</dc:creator><pubDate>Mon, 05 Jan 2015 00:00:00 +0700</pubDate><guid>tag:gofrendiasgard.github.io,2015-01-05:blog/2015/01/05/python/</guid></item><item><title>Singleton</title><link>https://gofrendiasgard.github.io/blog/2014/12/11/python/</link><description>&lt;hr /&gt;
 
 
 &lt;p&gt;Some guys in stackoverflow said that most of people who think they need singleton are actually never need it.
@@ -16,7 +384,7 @@ But that's what they said. Sometime you really need singleton to ensure that the
             &lt;span class="n"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__instance&lt;/span&gt;
         &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__instance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;self&lt;/span&gt;
 
-&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
     &lt;span class="nl"&gt;try:&lt;/span&gt;
         &lt;span class="n"&gt;instance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;except&lt;/span&gt; &lt;span class="n"&gt;Singleton&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
@@ -42,14 +410,14 @@ This can ensure that we will only have one single instance of &lt;code&gt;Single
 &lt;h2&gt;a.py&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;singleton&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;
 
-&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;agumon&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;agumon&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2&gt;b.py&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;singleton&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;
 
-&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;birdramon&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;birdramon&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -58,7 +426,7 @@ This can ensure that we will only have one single instance of &lt;code&gt;Single
 &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
 &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;
 
-&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;chakumon&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_instance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;chakumon&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;

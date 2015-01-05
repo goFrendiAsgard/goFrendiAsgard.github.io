@@ -1776,7 +1776,7 @@ But that's what they said. Sometime you really need singleton to ensure that the
             <span class="n">raise</span> <span class="n">Singleton</span><span class="p">.</span><span class="n">__instance</span>
         <span class="n">Singleton</span><span class="p">.</span><span class="n">__instance</span> <span class="o">=</span> <span class="n">self</span>
 
-<span class="n">def</span> <span class="n">make_instance</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="err">&#39;&#39;</span> <span class="p">)</span><span class="o">:</span>
+<span class="n">def</span> <span class="n">make_instance</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="p">)</span><span class="o">:</span>
     <span class="nl">try:</span>
         <span class="n">instance</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">except</span> <span class="n">Singleton</span><span class="p">,</span> <span class="n">s</span><span class="o">:</span>
@@ -1802,14 +1802,14 @@ This can ensure that we will only have one single instance of <code>Singleton</c
 <h2>a.py</h2>
 <div class="highlight"><pre><span class="n">from</span> <span class="n">singleton</span> <span class="n">import</span> <span class="n">make_instance</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">make_instance</span><span class="p">(</span><span class="err">&#39;</span><span class="n">agumon</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">make_instance</span><span class="p">(</span><span class="s">&quot;agumon&quot;</span><span class="p">)</span>
 </pre></div>
 
 
 <h2>b.py</h2>
 <div class="highlight"><pre><span class="n">from</span> <span class="n">singleton</span> <span class="n">import</span> <span class="n">make_instance</span>
 
-<span class="n">b</span> <span class="o">=</span> <span class="n">make_instance</span><span class="p">(</span><span class="err">&#39;</span><span class="n">birdramon</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">make_instance</span><span class="p">(</span><span class="s">&quot;birdramon&quot;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1818,7 +1818,7 @@ This can ensure that we will only have one single instance of <code>Singleton</c
 <span class="n">from</span> <span class="n">a</span> <span class="n">import</span> <span class="n">a</span>
 <span class="n">from</span> <span class="n">b</span> <span class="n">import</span> <span class="n">b</span>
 
-<span class="n">c</span> <span class="o">=</span> <span class="n">make_instance</span><span class="p">(</span><span class="err">&#39;</span><span class="n">chakumon</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">make_instance</span><span class="p">(</span><span class="s">&quot;chakumon&quot;</span><span class="p">)</span>
 
 <span class="n">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
 <span class="n">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">c</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
@@ -1865,6 +1865,9 @@ Right now, you can have a peace in your mind that singleton approach in Python i
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://gofrendiasgard.github.io/blog/2015/01/05/python/">Kokoropy</a>
+      </li>
+      <li class="post">
           <a href="https://gofrendiasgard.github.io/blog/2014/12/11/python/">Singleton</a>
       </li>
       <li class="post">
@@ -1875,9 +1878,6 @@ Right now, you can have a peace in your mind that singleton approach in Python i
       </li>
       <li class="post">
           <a href="https://gofrendiasgard.github.io/blog/2014/12/04/helloworld, ipython/">Hello world</a>
-      </li>
-      <li class="post">
-          <a href="https://gofrendiasgard.github.io/blog/2014/12/04/home/">Home</a>
       </li>
     </ul>
   </section>
@@ -1924,7 +1924,7 @@ Right now, you can have a peace in your mind that singleton approach in Python i
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2014  - Go Frendi Gunawan -
+    Copyright &copy;  2014-2015  - Go Frendi Gunawan -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
     <script type="text/javascript">
