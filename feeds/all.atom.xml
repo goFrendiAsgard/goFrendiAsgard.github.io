@@ -366,8 +366,8 @@ which such a content:&lt;/p&gt;
 &lt;p&gt;&lt;img src="/images/kokoropy-new.png"&gt;&lt;/p&gt;
 &lt;p&gt;More complex form with rich variation of column type and relationship:&lt;/p&gt;
 &lt;p&gt;&lt;img src="/images/kokoropy-village.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt; Sorry, the richtext area only able to receive ascii character at the moment. I've just realized this when making the screenshot.
-But I'll fix it soon&lt;/p&gt;</summary></entry><entry><title>Kokoropy</title><link href="https://gofrendiasgard.github.io/blog/2015/01/05/python/" rel="alternate"></link><updated>2015-01-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2015-01-05:blog/2015/01/05/python/</id><summary type="html">&lt;hr /&gt;
+&lt;p&gt;~~&lt;strong&gt;PS:&lt;/strong&gt; Sorry, the richtext area only able to receive ascii character at the moment. I've just realized this when making the screenshot. But I'll fix it soon~~&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EDIT:&lt;/strong&gt; Has been fixed by now (2015-01-05 17:09)&lt;/p&gt;</summary></entry><entry><title>Kokoropy</title><link href="https://gofrendiasgard.github.io/blog/2015/01/05/python/" rel="alternate"></link><updated>2015-01-05T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2015-01-05:blog/2015/01/05/python/</id><summary type="html">&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt;  kokoropy is still on development stage.&lt;/p&gt;
 
 
@@ -734,8 +734,8 @@ which such a content:&lt;/p&gt;
 &lt;p&gt;&lt;img src="/images/kokoropy-new.png"&gt;&lt;/p&gt;
 &lt;p&gt;More complex form with rich variation of column type and relationship:&lt;/p&gt;
 &lt;p&gt;&lt;img src="/images/kokoropy-village.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt; Sorry, the richtext area only able to receive ascii character at the moment. I've just realized this when making the screenshot.
-But I'll fix it soon&lt;/p&gt;</summary></entry><entry><title>Singleton</title><link href="https://gofrendiasgard.github.io/blog/2014/12/11/python/" rel="alternate"></link><updated>2014-12-11T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-11:blog/2014/12/11/python/</id><summary type="html">&lt;hr /&gt;
+&lt;p&gt;~~&lt;strong&gt;PS:&lt;/strong&gt; Sorry, the richtext area only able to receive ascii character at the moment. I've just realized this when making the screenshot. But I'll fix it soon~~&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EDIT:&lt;/strong&gt; Has been fixed by now (2015-01-05 17:09)&lt;/p&gt;</summary></entry><entry><title>Singleton</title><link href="https://gofrendiasgard.github.io/blog/2014/12/11/python/" rel="alternate"></link><updated>2014-12-11T00:00:00+07:00</updated><author><name>Go Frendi Gunawan</name></author><id>tag:gofrendiasgard.github.io,2014-12-11:blog/2014/12/11/python/</id><summary type="html">&lt;hr /&gt;
 
 
 &lt;p&gt;Some guys in stackoverflow said that most of people who think they need singleton are actually never need it.
