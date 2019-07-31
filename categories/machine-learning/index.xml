@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Hello world</title>
-      <link>http://gofrendiasgard.github.io/posts/test/</link>
-      <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
-      
-      <guid>http://gofrendiasgard.github.io/posts/test/</guid>
-      <description>print(&amp;quot;hello world&amp;quot;)  hello world  </description>
-    </item>
-    
-    <item>
       <title>What is Machine Learning</title>
       <link>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</link>
       <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
