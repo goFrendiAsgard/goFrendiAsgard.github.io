@@ -13,13 +13,22 @@
     
     <item>
       <title>About This Blog</title>
-      <link>http://gofrendiasgard.github.io/posts/home/</link>
+      <link>http://gofrendiasgard.github.io/about/home/</link>
       <pubDate>Wed, 31 Jul 2019 07:41:41 +0700</pubDate>
       
-      <guid>http://gofrendiasgard.github.io/posts/home/</guid>
+      <guid>http://gofrendiasgard.github.io/about/home/</guid>
       <description>Hi, my name is Go Frendi Gunawan. Currently I work as Backend Engineer at kata.ai.
 In this blog, you will find some articles related to software engineering, machine learning, and mathematics.
 The articles are intended for mere mortal. Some basic programming/high school math are going to help, but are not required.</description>
+    </item>
+    
+    <item>
+      <title>What is Machine Learning</title>
+      <link>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</link>
+      <pubDate>Wed, 31 Jul 2019 07:41:41 +0700</pubDate>
+      
+      <guid>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</guid>
+      <description>Lorem Ipsum Dolor Sit Amet, gonna write this later</description>
     </item>
     
   </channel>
