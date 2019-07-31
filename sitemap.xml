@@ -8,6 +8,18 @@
   </url>
   
   <url>
+    <loc>http://gofrendiasgard.github.io/categories/</loc>
+    <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gofrendiasgard.github.io/categories/general/</loc>
+    <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://gofrendiasgard.github.io/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
     <priority>0</priority>
@@ -20,12 +32,20 @@
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/categories/</loc>
+    <loc>http://gofrendiasgard.github.io/tags/</loc>
+    <lastmod>2019-07-31T07:41:41+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/tags/</loc>
+    <loc>http://gofrendiasgard.github.io/tags/about/</loc>
+    <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gofrendiasgard.github.io/tags/general/</loc>
+    <lastmod>2019-07-31T07:41:41+07:00</lastmod>
     <priority>0</priority>
   </url>
   
