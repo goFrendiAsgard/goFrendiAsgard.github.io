@@ -6,10 +6,19 @@
     <description>Recent content on GoFrendi&#39;s Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Jul 2019 07:41:41 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2019 07:48:41 +0700</lastBuildDate>
     
 	<atom:link href="http://gofrendiasgard.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What is Machine Learning</title>
+      <link>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</link>
+      <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
+      
+      <guid>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</guid>
+      <description>Lorem Ipsum Dolor Sit Amet, gonna write this later</description>
+    </item>
     
     <item>
       <title>About This Blog</title>
@@ -20,15 +29,6 @@
       <description>Hi, my name is Go Frendi Gunawan. Currently I work as Backend Engineer at kata.ai.
 In this blog, you will find some articles related to software engineering, machine learning, and mathematics.
 The articles are intended for mere mortal. Some basic programming/high school math are going to help, but are not required.</description>
-    </item>
-    
-    <item>
-      <title>What is Machine Learning</title>
-      <link>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</link>
-      <pubDate>Wed, 31 Jul 2019 07:41:41 +0700</pubDate>
-      
-      <guid>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</guid>
-      <description>Lorem Ipsum Dolor Sit Amet, gonna write this later</description>
     </item>
     
   </channel>
