@@ -20,5 +20,14 @@
       <description>Lorem Ipsum Dolor Sit Amet, gonna write this later</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://gofrendiasgard.github.io/posts/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gofrendiasgard.github.io/posts/test/</guid>
+      <description>print(&amp;quot;hello world&amp;quot;)  hello world   </description>
+    </item>
+    
   </channel>
 </rss>
