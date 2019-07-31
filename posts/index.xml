@@ -17,7 +17,10 @@
       <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
       
       <guid>http://gofrendiasgard.github.io/posts/test/</guid>
-      <description>print(&amp;quot;hello world&amp;quot;)  hello world  </description>
+      <description>First of all, let&amp;rsquo;s try some latex: $\frac{4}{5}$
+Now, I will try to use Python. Let&amp;rsquo;s start with simple hello world
+print(&amp;quot;hello world&amp;quot;)  hello world  Finally, try some matplotlib thing
+import matplotlib.pyplot as plt %matplotlib inline  </description>
     </item>
     
     <item>
