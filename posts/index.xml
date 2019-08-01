@@ -20,7 +20,7 @@
       <description>First of all, let&amp;rsquo;s try some latex: $$\frac{4}{5}$$
 Now, I will try to use Python. Let&amp;rsquo;s start with simple hello world
 print(&amp;quot;hello world&amp;quot;)  hello world  Finally, try some matplotlib thing
-import matplotlib.pyplot as plt import numpy as np %matplotlib inline x = np.linspace(0, 3*np.pi, 500) plt.plot(x, np.sin(x**2)) plt.title(&#39;A simple chirp&#39;) plt.show()   </description>
+import matplotlib.pyplot as plt import numpy as np %matplotlib inline x = np.linspace(0, 3*np.pi, 500) plt.plot(x, np.sin(x**2)) plt.title(&#39;A simple chirp&#39;) plt.show()  </description>
     </item>
     
     <item>
