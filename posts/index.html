@@ -200,7 +200,30 @@ import matplotlib.pyplot as plt import numpy as np %matplotlib inline x = np.lin
 </div>
   </div>
 </footer>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript">
+  
+  const images = document.getElementsByTagName("img");
+  for (const image of images) {
+    const oldSrc = image.src;
+    const correctedSrc = getCorrectedSrc(oldSrc);
+    image.src = correctedSrc;
+  }
+
+  
+  
+  function getCorrectedSrc(oldSrc) {
+    const regex = /(.*)\/([a-z0-9_\- ]*)\/([a-z0-9_\- ]*)_files\/(.*)/gm;
+    const matches = regex.exec(oldSrc);
+    if (matches && matches[2] === matches[3]) {
+      const prefix = matches[1];
+      const title = matches[2];
+      const sufix = matches[4];
+      return [prefix, title+"_files", sufix].join("/");
+    }
+    return oldSrc;
+  }
 </script>
 
     
