@@ -158,33 +158,6 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/test/" class="color-inherit dim link">
-            Hello world
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          First of all, let&rsquo;s try some latex: $$\frac{4}{5}$$
-Now, I will try to use Python. Let&rsquo;s start with simple hello world
-print(&#34;hello world&#34;) hello world  Finally, try some matplotlib thing
-import matplotlib.pyplot as plt import numpy as np %matplotlib inline x = np.linspace(0, 3*np.pi, 500) plt.plot(x, np.sin(x**2)) plt.title(&#39;A simple chirp&#39;) plt.show() 
-        </div>
-          <a href="/posts/test/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/neuralnetwork/" class="color-inherit dim link">
             Neural Network
             </a>
@@ -285,7 +258,7 @@ First of all, let&rsquo;s try to import tensorflow and keras (which is now also 
   
   
   function getCorrectedSrc(oldSrc) {
-    const regex = /(.*)\/([a-z0-9_\- ]*)\/([a-z0-9_\- ]*)_files\/(.*)/gm;
+    const regex = /(.*)\/([a-z0-9_\- ]*)\/([a-z0-9_\- ]*)_files\/(.*)/gmi;
     const matches = regex.exec(oldSrc);
     if (matches && matches[2] === matches[3]) {
       const prefix = matches[1];

@@ -158,31 +158,6 @@ The articles are intended for mere mortal. Some basic programming/high school ma
         
       
         <h2 class="f1">
-          <a href="/tags/hello-world" class="link blue hover-black">
-            Tag: hello-world
-          </a>
-        </h2>
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/test/" class="link black dim">
-        Hello world
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      First of all, let&rsquo;s try some latex: $$\frac{4}{5}$$
-Now, I will try to use Python. Let&rsquo;s start with simple hello world
-print(&#34;hello world&#34;) hello world  Finally, try some matplotlib thing
-import matplotlib.pyplot as plt import numpy as np %matplotlib inline x = np.linspace(0, 3*np.pi, 500) plt.plot(x, np.sin(x**2)) plt.title(&#39;A simple chirp&#39;) plt.show() 
-    </div>
-  </div>
-</div>
-
-        
-      
-        <h2 class="f1">
           <a href="/tags/machine-learning" class="link blue hover-black">
             Tag: machine-learning
           </a>
@@ -282,7 +257,7 @@ First of all, let&rsquo;s try to import tensorflow and keras (which is now also 
   
   
   function getCorrectedSrc(oldSrc) {
-    const regex = /(.*)\/([a-z0-9_\- ]*)\/([a-z0-9_\- ]*)_files\/(.*)/gm;
+    const regex = /(.*)\/([a-z0-9_\- ]*)\/([a-z0-9_\- ]*)_files\/(.*)/gmi;
     const matches = regex.exec(oldSrc);
     if (matches && matches[2] === matches[3]) {
       const prefix = matches[1];

@@ -222,7 +222,7 @@ First of all, let&rsquo;s try to import tensorflow and keras (which is now also 
   
   
   function getCorrectedSrc(oldSrc) {
-    const regex = /(.*)\/([a-z0-9_\- ]*)\/([a-z0-9_\- ]*)_files\/(.*)/gm;
+    const regex = /(.*)\/([a-z0-9_\- ]*)\/([a-z0-9_\- ]*)_files\/(.*)/gmi;
     const matches = regex.exec(oldSrc);
     if (matches && matches[2] === matches[3]) {
       const prefix = matches[1];
