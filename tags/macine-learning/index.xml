@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Machine Learning on GoFrendi&#39;s Articles</title>
-    <link>http://gofrendiasgard.github.io/categories/machine-learning/</link>
-    <description>Recent content in Machine Learning on GoFrendi&#39;s Articles</description>
+    <title>Macine Learning on GoFrendi&#39;s Articles</title>
+    <link>http://gofrendiasgard.github.io/tags/macine-learning/</link>
+    <description>Recent content in Macine Learning on GoFrendi&#39;s Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 31 Jul 2019 07:48:41 +0700</lastBuildDate>
     
-	<atom:link href="http://gofrendiasgard.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gofrendiasgard.github.io/tags/macine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,15 +21,6 @@
 Unlike sklearn.neural_network, tensorflow give us more freedom to set up our neural-network.
 The following implementation was taken directly from https://www.tensorflow.org/tutorials/keras/basic_classification
 First of all, let&amp;rsquo;s try to import tensorflow and keras (which is now also part of tensorflow)</description>
-    </item>
-    
-    <item>
-      <title>What is Machine Learning</title>
-      <link>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</link>
-      <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
-      
-      <guid>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</guid>
-      <description>Lorem Ipsum Dolor Sit Amet, gonna write this later</description>
     </item>
     
   </channel>
