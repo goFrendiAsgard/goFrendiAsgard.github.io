@@ -21,15 +21,16 @@
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/tags/machine-learning/</loc>
+    <loc>http://gofrendiasgard.github.io/tags/macine-learning/</loc>
     <lastmod>2019-07-31T07:48:41+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/tags/macine-learning/</loc>
+    <loc>http://gofrendiasgard.github.io/posts/neuralnetwork/</loc>
     <lastmod>2019-07-31T07:48:41+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -52,13 +53,6 @@
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</loc>
-    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://gofrendiasgard.github.io/about/home/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -72,13 +66,13 @@
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/categories/general/</loc>
+    <loc>http://gofrendiasgard.github.io/tags/general/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/tags/general/</loc>
+    <loc>http://gofrendiasgard.github.io/categories/general/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
     <priority>0</priority>
   </url>

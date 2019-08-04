@@ -23,5 +23,17 @@ The following implementation was taken directly from https://www.tensorflow.org/
 First of all, let&amp;rsquo;s try to import tensorflow and keras (which is now also part of tensorflow)</description>
     </item>
     
+    <item>
+      <title>Neural Network From Scratch</title>
+      <link>http://gofrendiasgard.github.io/posts/neuralnetwork/</link>
+      <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
+      
+      <guid>http://gofrendiasgard.github.io/posts/neuralnetwork/</guid>
+      <description>Implementation with Tensorflow TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and is also used for machine learning applications such as neural networks.
+Unlike sklearn.neural_network, tensorflow give us more freedom to set up our neural-network.
+The following implementation was taken directly from https://www.tensorflow.org/tutorials/keras/basic_classification
+First of all, let&amp;rsquo;s try to import tensorflow and keras (which is now also part of tensorflow)</description>
+    </item>
+    
   </channel>
 </rss>
