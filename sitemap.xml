@@ -34,13 +34,6 @@
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/posts/neuralnetwork/</loc>
-    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://gofrendiasgard.github.io/posts/</loc>
     <lastmod>2019-07-31T07:48:41+07:00</lastmod>
     <priority>0</priority>
@@ -66,13 +59,13 @@
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/tags/general/</loc>
+    <loc>http://gofrendiasgard.github.io/categories/general/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/categories/general/</loc>
+    <loc>http://gofrendiasgard.github.io/tags/general/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
     <priority>0</priority>
   </url>
