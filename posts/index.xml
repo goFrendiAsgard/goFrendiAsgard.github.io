@@ -19,8 +19,8 @@
       <guid>http://gofrendiasgard.github.io/posts/test/</guid>
       <description>First of all, let&amp;rsquo;s try some latex: $$\frac{4}{5}$$
 Now, I will try to use Python. Let&amp;rsquo;s start with simple hello world
-print(&amp;quot;hello world&amp;quot;)  hello world  Finally, try some matplotlib thing
-import matplotlib.pyplot as plt import numpy as np %matplotlib inline x = np.linspace(0, 3*np.pi, 500) plt.plot(x, np.sin(x**2)) plt.title(&#39;A simple chirp&#39;) plt.show()  </description>
+print(&amp;#34;hello world&amp;#34;) hello world  Finally, try some matplotlib thing
+import matplotlib.pyplot as plt import numpy as np %matplotlib inline x = np.linspace(0, 3*np.pi, 500) plt.plot(x, np.sin(x**2)) plt.title(&amp;#39;A simple chirp&amp;#39;) plt.show() </description>
     </item>
     
     <item>
@@ -30,6 +30,18 @@ import matplotlib.pyplot as plt import numpy as np %matplotlib inline x = np.lin
       
       <guid>http://gofrendiasgard.github.io/posts/what-is-machine-learning/</guid>
       <description>Lorem Ipsum Dolor Sit Amet, gonna write this later</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://gofrendiasgard.github.io/posts/neuralnetwork/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gofrendiasgard.github.io/posts/neuralnetwork/</guid>
+      <description>Implementation with Tensorflow TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and is also used for machine learning applications such as neural networks.
+Unlike sklearn.neural_network, tensorflow give us more freedom to set up our neural-network.
+The following implementation was taken directly from https://www.tensorflow.org/tutorials/keras/basic_classification
+First of all, let&amp;rsquo;s try to import tensorflow and keras (which is now also part of tensorflow)</description>
     </item>
     
   </channel>
