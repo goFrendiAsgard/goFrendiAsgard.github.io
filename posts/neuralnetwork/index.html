@@ -47,7 +47,7 @@ First of all, let&rsquo;s try to import tensorflow and keras (which is now also 
 
 <meta itemprop="datePublished" content="2019-07-31T07:48:41&#43;07:00" />
 <meta itemprop="dateModified" content="2019-07-31T07:48:41&#43;07:00" />
-<meta itemprop="wordCount" content="918">
+<meta itemprop="wordCount" content="912">
 
 
 
@@ -263,15 +263,21 @@ which is:  Ankle boot
 
 <p>Finally, let&rsquo;s build our neural network.</p>
 
-<p>First of all, we define 3 layers here:
-* <strong>flatten layer with input_shape = 28x28</strong>. This one will transform our 2 dimensional matrix into 1 dimensional matrix (or a vector). The output of this layer will be an array with 784 elements
-* <strong>dense layer containing 128 neuron with relu activation</strong>. This one will create a layer containing 128 neuron. Each of them is connected to the output of our previous layer (an array containing 784 elements). Each neuron activation is depending on <code>relu</code> function (<a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks">https://en.wikipedia.org/wiki/Rectifier_(neural_networks</a>)
-* <strong>dense layer containing 10 neuron with softmax activation</strong>. Finally, since we have 10 classes, it is natural to have 10 neuron in our output layer. Each neuron should show us how probable is an image belong to a particular class. Finally, we will use softmax to return the prediction result (<a href="https://en.wikipedia.org/wiki/Softmax_function">https://en.wikipedia.org/wiki/Softmax_function</a>)</p>
+<p>First of all, we define 3 layers here:</p>
 
-<p>After defining the layers, we need to define our optimizer, loss function, and metrics:
-* <strong>optimizer</strong>. How to optimize
-* <strong>loss function</strong>. How to calculate error
-* <strong>metrics</strong>. How to measure the quality of the network</p>
+<ul>
+<li>flatten layer with input_shape = 28x28: This one will transform our 2 dimensional matrix into 1 dimensional matrix (or a vector). The output of this layer will be an array with 784 elements</li>
+<li>dense layer containing 128 neuron with relu activation: This one will create a layer containing 128 neuron. Each of them is connected to the output of our previous layer (an array containing 784 elements). Each neuron activation is depending on <code>relu</code> function (<a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks">https://en.wikipedia.org/wiki/Rectifier_(neural_networks</a>)</li>
+<li>dense layer containing 10 neuron with softmax activation: Finally, since we have 10 classes, it is natural to have 10 neuron in our output layer. Each neuron should show us how probable is an image belong to a particular class. Finally, we will use softmax to return the prediction result (<a href="https://en.wikipedia.org/wiki/Softmax_function">https://en.wikipedia.org/wiki/Softmax_function</a>)</li>
+</ul>
+
+<p>After defining the layers, we need to define our optimizer, loss function, and metrics:</p>
+
+<ul>
+<li>optimizer: How to optimize</li>
+<li>loss function: How to calculate error</li>
+<li>metrics: How to measure the quality of the network</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#ff79c6">=</span> keras<span style="color:#ff79c6">.</span>Sequential([
     keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Flatten(input_shape<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">28</span>, <span style="color:#bd93f9">28</span>)),
     keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">128</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>relu),
