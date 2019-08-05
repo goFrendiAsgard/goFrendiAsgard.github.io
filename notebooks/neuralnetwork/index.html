@@ -45,7 +45,7 @@ age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone
 
 <meta itemprop="datePublished" content="2019-07-31T07:48:41&#43;07:00" />
 <meta itemprop="dateModified" content="2019-07-31T07:48:41&#43;07:00" />
-<meta itemprop="wordCount" content="3405">
+<meta itemprop="wordCount" content="1570">
 
 
 
@@ -194,251 +194,22 @@ $$error = |actual_weight - (w1.age + w2.height + w3)|$$</p>
 height <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">170.0</span>
 actual_weight <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">75.0</span>
 best_error <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#6272a4"># error threshold, we are only interested for error that is less or equal to 0</span>
+max_shown_solution <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span> <span style="color:#6272a4"># we just want to show 5 solutions</span>
+shown_solution <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
 
 <span style="color:#ff79c6">for</span> w1 <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">101</span>, <span style="color:#bd93f9">101</span>):
     <span style="color:#ff79c6">for</span> w2 <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">101</span>):
         <span style="color:#ff79c6">for</span> w3 <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">101</span>):
             error <span style="color:#ff79c6">=</span> loss_function(actual_weight, w1, age, w2, height, w3)
-            <span style="color:#ff79c6">if</span> error <span style="color:#ff79c6">&lt;=</span> best_error:
+            <span style="color:#ff79c6">if</span> error <span style="color:#ff79c6">&lt;=</span> best_error <span style="color:#ff79c6">and</span> shown_solution <span style="color:#ff79c6">&lt;</span> max_shown_solution:
                 best_error <span style="color:#ff79c6">=</span> error
+                shown_solution <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
                 <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;error:&#34;</span>, error, <span style="color:#f1fa8c">&#34;w1:&#34;</span>, w1, <span style="color:#f1fa8c">&#34;w2:&#34;</span>, w2, <span style="color:#f1fa8c">&#34;w3:&#34;</span>, w3)</code></pre></div>
 <pre><code>error: 0.0 w1: -101 w2: 30 w3: 25
 error: 0.0 w1: -100 w2: 30 w3: -25
 error: 0.0 w1: -99 w2: 29 w3: 95
 error: 0.0 w1: -99 w2: 30 w3: -75
 error: 0.0 w1: -98 w2: 29 w3: 45
-error: 0.0 w1: -97 w2: 29 w3: -5
-error: 0.0 w1: -96 w2: 29 w3: -55
-error: 0.0 w1: -95 w2: 28 w3: 65
-error: 0.0 w1: -94 w2: 28 w3: 15
-error: 0.0 w1: -93 w2: 28 w3: -35
-error: 0.0 w1: -92 w2: 27 w3: 85
-error: 0.0 w1: -92 w2: 28 w3: -85
-error: 0.0 w1: -91 w2: 27 w3: 35
-error: 0.0 w1: -90 w2: 27 w3: -15
-error: 0.0 w1: -89 w2: 27 w3: -65
-error: 0.0 w1: -88 w2: 26 w3: 55
-error: 0.0 w1: -87 w2: 26 w3: 5
-error: 0.0 w1: -86 w2: 26 w3: -45
-error: 0.0 w1: -85 w2: 25 w3: 75
-error: 0.0 w1: -85 w2: 26 w3: -95
-error: 0.0 w1: -84 w2: 25 w3: 25
-error: 0.0 w1: -83 w2: 25 w3: -25
-error: 0.0 w1: -82 w2: 24 w3: 95
-error: 0.0 w1: -82 w2: 25 w3: -75
-error: 0.0 w1: -81 w2: 24 w3: 45
-error: 0.0 w1: -80 w2: 24 w3: -5
-error: 0.0 w1: -79 w2: 24 w3: -55
-error: 0.0 w1: -78 w2: 23 w3: 65
-error: 0.0 w1: -77 w2: 23 w3: 15
-error: 0.0 w1: -76 w2: 23 w3: -35
-error: 0.0 w1: -75 w2: 22 w3: 85
-error: 0.0 w1: -75 w2: 23 w3: -85
-error: 0.0 w1: -74 w2: 22 w3: 35
-error: 0.0 w1: -73 w2: 22 w3: -15
-error: 0.0 w1: -72 w2: 22 w3: -65
-error: 0.0 w1: -71 w2: 21 w3: 55
-error: 0.0 w1: -70 w2: 21 w3: 5
-error: 0.0 w1: -69 w2: 21 w3: -45
-error: 0.0 w1: -68 w2: 20 w3: 75
-error: 0.0 w1: -68 w2: 21 w3: -95
-error: 0.0 w1: -67 w2: 20 w3: 25
-error: 0.0 w1: -66 w2: 20 w3: -25
-error: 0.0 w1: -65 w2: 19 w3: 95
-error: 0.0 w1: -65 w2: 20 w3: -75
-error: 0.0 w1: -64 w2: 19 w3: 45
-error: 0.0 w1: -63 w2: 19 w3: -5
-error: 0.0 w1: -62 w2: 19 w3: -55
-error: 0.0 w1: -61 w2: 18 w3: 65
-error: 0.0 w1: -60 w2: 18 w3: 15
-error: 0.0 w1: -59 w2: 18 w3: -35
-error: 0.0 w1: -58 w2: 17 w3: 85
-error: 0.0 w1: -58 w2: 18 w3: -85
-error: 0.0 w1: -57 w2: 17 w3: 35
-error: 0.0 w1: -56 w2: 17 w3: -15
-error: 0.0 w1: -55 w2: 17 w3: -65
-error: 0.0 w1: -54 w2: 16 w3: 55
-error: 0.0 w1: -53 w2: 16 w3: 5
-error: 0.0 w1: -52 w2: 16 w3: -45
-error: 0.0 w1: -51 w2: 15 w3: 75
-error: 0.0 w1: -51 w2: 16 w3: -95
-error: 0.0 w1: -50 w2: 15 w3: 25
-error: 0.0 w1: -49 w2: 15 w3: -25
-error: 0.0 w1: -48 w2: 14 w3: 95
-error: 0.0 w1: -48 w2: 15 w3: -75
-error: 0.0 w1: -47 w2: 14 w3: 45
-error: 0.0 w1: -46 w2: 14 w3: -5
-error: 0.0 w1: -45 w2: 14 w3: -55
-error: 0.0 w1: -44 w2: 13 w3: 65
-error: 0.0 w1: -43 w2: 13 w3: 15
-error: 0.0 w1: -42 w2: 13 w3: -35
-error: 0.0 w1: -41 w2: 12 w3: 85
-error: 0.0 w1: -41 w2: 13 w3: -85
-error: 0.0 w1: -40 w2: 12 w3: 35
-error: 0.0 w1: -39 w2: 12 w3: -15
-error: 0.0 w1: -38 w2: 12 w3: -65
-error: 0.0 w1: -37 w2: 11 w3: 55
-error: 0.0 w1: -36 w2: 11 w3: 5
-error: 0.0 w1: -35 w2: 11 w3: -45
-error: 0.0 w1: -34 w2: 10 w3: 75
-error: 0.0 w1: -34 w2: 11 w3: -95
-error: 0.0 w1: -33 w2: 10 w3: 25
-error: 0.0 w1: -32 w2: 10 w3: -25
-error: 0.0 w1: -31 w2: 9 w3: 95
-error: 0.0 w1: -31 w2: 10 w3: -75
-error: 0.0 w1: -30 w2: 9 w3: 45
-error: 0.0 w1: -29 w2: 9 w3: -5
-error: 0.0 w1: -28 w2: 9 w3: -55
-error: 0.0 w1: -27 w2: 8 w3: 65
-error: 0.0 w1: -26 w2: 8 w3: 15
-error: 0.0 w1: -25 w2: 8 w3: -35
-error: 0.0 w1: -24 w2: 7 w3: 85
-error: 0.0 w1: -24 w2: 8 w3: -85
-error: 0.0 w1: -23 w2: 7 w3: 35
-error: 0.0 w1: -22 w2: 7 w3: -15
-error: 0.0 w1: -21 w2: 7 w3: -65
-error: 0.0 w1: -20 w2: 6 w3: 55
-error: 0.0 w1: -19 w2: 6 w3: 5
-error: 0.0 w1: -18 w2: 6 w3: -45
-error: 0.0 w1: -17 w2: 5 w3: 75
-error: 0.0 w1: -17 w2: 6 w3: -95
-error: 0.0 w1: -16 w2: 5 w3: 25
-error: 0.0 w1: -15 w2: 5 w3: -25
-error: 0.0 w1: -14 w2: 4 w3: 95
-error: 0.0 w1: -14 w2: 5 w3: -75
-error: 0.0 w1: -13 w2: 4 w3: 45
-error: 0.0 w1: -12 w2: 4 w3: -5
-error: 0.0 w1: -11 w2: 4 w3: -55
-error: 0.0 w1: -10 w2: 3 w3: 65
-error: 0.0 w1: -9 w2: 3 w3: 15
-error: 0.0 w1: -8 w2: 3 w3: -35
-error: 0.0 w1: -7 w2: 2 w3: 85
-error: 0.0 w1: -7 w2: 3 w3: -85
-error: 0.0 w1: -6 w2: 2 w3: 35
-error: 0.0 w1: -5 w2: 2 w3: -15
-error: 0.0 w1: -4 w2: 2 w3: -65
-error: 0.0 w1: -3 w2: 1 w3: 55
-error: 0.0 w1: -2 w2: 1 w3: 5
-error: 0.0 w1: -1 w2: 1 w3: -45
-error: 0.0 w1: 0 w2: 0 w3: 75
-error: 0.0 w1: 0 w2: 1 w3: -95
-error: 0.0 w1: 1 w2: 0 w3: 25
-error: 0.0 w1: 2 w2: 0 w3: -25
-error: 0.0 w1: 3 w2: -1 w3: 95
-error: 0.0 w1: 3 w2: 0 w3: -75
-error: 0.0 w1: 4 w2: -1 w3: 45
-error: 0.0 w1: 5 w2: -1 w3: -5
-error: 0.0 w1: 6 w2: -1 w3: -55
-error: 0.0 w1: 7 w2: -2 w3: 65
-error: 0.0 w1: 8 w2: -2 w3: 15
-error: 0.0 w1: 9 w2: -2 w3: -35
-error: 0.0 w1: 10 w2: -3 w3: 85
-error: 0.0 w1: 10 w2: -2 w3: -85
-error: 0.0 w1: 11 w2: -3 w3: 35
-error: 0.0 w1: 12 w2: -3 w3: -15
-error: 0.0 w1: 13 w2: -3 w3: -65
-error: 0.0 w1: 14 w2: -4 w3: 55
-error: 0.0 w1: 15 w2: -4 w3: 5
-error: 0.0 w1: 16 w2: -4 w3: -45
-error: 0.0 w1: 17 w2: -5 w3: 75
-error: 0.0 w1: 17 w2: -4 w3: -95
-error: 0.0 w1: 18 w2: -5 w3: 25
-error: 0.0 w1: 19 w2: -5 w3: -25
-error: 0.0 w1: 20 w2: -6 w3: 95
-error: 0.0 w1: 20 w2: -5 w3: -75
-error: 0.0 w1: 21 w2: -6 w3: 45
-error: 0.0 w1: 22 w2: -6 w3: -5
-error: 0.0 w1: 23 w2: -6 w3: -55
-error: 0.0 w1: 24 w2: -7 w3: 65
-error: 0.0 w1: 25 w2: -7 w3: 15
-error: 0.0 w1: 26 w2: -7 w3: -35
-error: 0.0 w1: 27 w2: -8 w3: 85
-error: 0.0 w1: 27 w2: -7 w3: -85
-error: 0.0 w1: 28 w2: -8 w3: 35
-error: 0.0 w1: 29 w2: -8 w3: -15
-error: 0.0 w1: 30 w2: -8 w3: -65
-error: 0.0 w1: 31 w2: -9 w3: 55
-error: 0.0 w1: 32 w2: -9 w3: 5
-error: 0.0 w1: 33 w2: -9 w3: -45
-error: 0.0 w1: 34 w2: -10 w3: 75
-error: 0.0 w1: 34 w2: -9 w3: -95
-error: 0.0 w1: 35 w2: -10 w3: 25
-error: 0.0 w1: 36 w2: -10 w3: -25
-error: 0.0 w1: 37 w2: -11 w3: 95
-error: 0.0 w1: 37 w2: -10 w3: -75
-error: 0.0 w1: 38 w2: -11 w3: 45
-error: 0.0 w1: 39 w2: -11 w3: -5
-error: 0.0 w1: 40 w2: -11 w3: -55
-error: 0.0 w1: 41 w2: -12 w3: 65
-error: 0.0 w1: 42 w2: -12 w3: 15
-error: 0.0 w1: 43 w2: -12 w3: -35
-error: 0.0 w1: 44 w2: -13 w3: 85
-error: 0.0 w1: 44 w2: -12 w3: -85
-error: 0.0 w1: 45 w2: -13 w3: 35
-error: 0.0 w1: 46 w2: -13 w3: -15
-error: 0.0 w1: 47 w2: -13 w3: -65
-error: 0.0 w1: 48 w2: -14 w3: 55
-error: 0.0 w1: 49 w2: -14 w3: 5
-error: 0.0 w1: 50 w2: -14 w3: -45
-error: 0.0 w1: 51 w2: -15 w3: 75
-error: 0.0 w1: 51 w2: -14 w3: -95
-error: 0.0 w1: 52 w2: -15 w3: 25
-error: 0.0 w1: 53 w2: -15 w3: -25
-error: 0.0 w1: 54 w2: -16 w3: 95
-error: 0.0 w1: 54 w2: -15 w3: -75
-error: 0.0 w1: 55 w2: -16 w3: 45
-error: 0.0 w1: 56 w2: -16 w3: -5
-error: 0.0 w1: 57 w2: -16 w3: -55
-error: 0.0 w1: 58 w2: -17 w3: 65
-error: 0.0 w1: 59 w2: -17 w3: 15
-error: 0.0 w1: 60 w2: -17 w3: -35
-error: 0.0 w1: 61 w2: -18 w3: 85
-error: 0.0 w1: 61 w2: -17 w3: -85
-error: 0.0 w1: 62 w2: -18 w3: 35
-error: 0.0 w1: 63 w2: -18 w3: -15
-error: 0.0 w1: 64 w2: -18 w3: -65
-error: 0.0 w1: 65 w2: -19 w3: 55
-error: 0.0 w1: 66 w2: -19 w3: 5
-error: 0.0 w1: 67 w2: -19 w3: -45
-error: 0.0 w1: 68 w2: -20 w3: 75
-error: 0.0 w1: 68 w2: -19 w3: -95
-error: 0.0 w1: 69 w2: -20 w3: 25
-error: 0.0 w1: 70 w2: -20 w3: -25
-error: 0.0 w1: 71 w2: -21 w3: 95
-error: 0.0 w1: 71 w2: -20 w3: -75
-error: 0.0 w1: 72 w2: -21 w3: 45
-error: 0.0 w1: 73 w2: -21 w3: -5
-error: 0.0 w1: 74 w2: -21 w3: -55
-error: 0.0 w1: 75 w2: -22 w3: 65
-error: 0.0 w1: 76 w2: -22 w3: 15
-error: 0.0 w1: 77 w2: -22 w3: -35
-error: 0.0 w1: 78 w2: -23 w3: 85
-error: 0.0 w1: 78 w2: -22 w3: -85
-error: 0.0 w1: 79 w2: -23 w3: 35
-error: 0.0 w1: 80 w2: -23 w3: -15
-error: 0.0 w1: 81 w2: -23 w3: -65
-error: 0.0 w1: 82 w2: -24 w3: 55
-error: 0.0 w1: 83 w2: -24 w3: 5
-error: 0.0 w1: 84 w2: -24 w3: -45
-error: 0.0 w1: 85 w2: -25 w3: 75
-error: 0.0 w1: 85 w2: -24 w3: -95
-error: 0.0 w1: 86 w2: -25 w3: 25
-error: 0.0 w1: 87 w2: -25 w3: -25
-error: 0.0 w1: 88 w2: -26 w3: 95
-error: 0.0 w1: 88 w2: -25 w3: -75
-error: 0.0 w1: 89 w2: -26 w3: 45
-error: 0.0 w1: 90 w2: -26 w3: -5
-error: 0.0 w1: 91 w2: -26 w3: -55
-error: 0.0 w1: 92 w2: -27 w3: 65
-error: 0.0 w1: 93 w2: -27 w3: 15
-error: 0.0 w1: 94 w2: -27 w3: -35
-error: 0.0 w1: 95 w2: -28 w3: 85
-error: 0.0 w1: 95 w2: -27 w3: -85
-error: 0.0 w1: 96 w2: -28 w3: 35
-error: 0.0 w1: 97 w2: -28 w3: -15
-error: 0.0 w1: 98 w2: -28 w3: -65
-error: 0.0 w1: 99 w2: -29 w3: 55
-error: 0.0 w1: 100 w2: -29 w3: 5
 </code></pre>
 
 <p>Perfect, we have several predictors!!!</p>
@@ -492,7 +263,7 @@ $$prediction_weight = 1375$$</p>
 
 <p>This is what a single neuron in neural network do !!!</p>
 
-<p><img src="https://gofrendiasgard.github.io/images/perceptron.jpg" alt="" /></p>
+<p><img src="http://gofrendiasgard.github.io/images/perceptron.jpg" alt="" /></p>
 
 <h1 id="neural-network-implementation-using-tensorflow">Neural Network implementation using Tensorflow</h1>
 
