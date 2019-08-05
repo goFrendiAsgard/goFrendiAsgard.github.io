@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>GoFrendi&#39;s Articles  | Neural Network From Scratch</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Neural Network From Scratch" />
+<meta property="og:description" content="The Problem Artificial neural network is no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out magic numbers in order to find out the best classifier or regressor.
+Suppose we have the following data:
+age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone whose age is 40, and height is 180." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://gofrendiasgard.github.io/notebooks/neuralnetwork/" />
+<meta property="article:published_time" content="2019-07-31T07:48:41&#43;07:00"/>
+<meta property="article:modified_time" content="2019-07-31T07:48:41&#43;07:00"/>
+
+<meta itemprop="name" content="Neural Network From Scratch">
+<meta itemprop="description" content="The Problem Artificial neural network is no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out magic numbers in order to find out the best classifier or regressor.
+Suppose we have the following data:
+age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone whose age is 40, and height is 180.">
+
+
+<meta itemprop="datePublished" content="2019-07-31T07:48:41&#43;07:00" />
+<meta itemprop="dateModified" content="2019-07-31T07:48:41&#43;07:00" />
+<meta itemprop="wordCount" content="3406">
+
+
+
+<meta itemprop="keywords" content="Macine Learning," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Neural Network From Scratch"/>
+<meta name="twitter:description" content="The Problem Artificial neural network is no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out magic numbers in order to find out the best classifier or regressor.
+Suppose we have the following data:
+age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone whose age is 40, and height is 180."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://gofrendiasgard.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      GoFrendi&#39;s Articles
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="Abouts page">
+              Abouts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notebooks/" title="Notebooks page">
+              Notebooks
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+<a href="https://facebook.com/gofrendi" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://twitter.com/goFrendiAsgard" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        NOTEBOOKS
+      </p>
+      <h1 class="f1 athelas mb1">Neural Network From Scratch</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-07-31T07:48:41&#43;07:00">July 31, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="the-problem">The Problem</h1>
+
+<p>Artificial neural network is no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out <code>magic numbers</code> in order to find out the best <code>classifier</code> or <code>regressor</code>.</p>
+
+<p>Suppose we have the following data:</p>
+
+<pre><code>age height weight
+50  170    75
+40  180    ?
+</code></pre>
+
+<p>Now, we want to know the weight of someone whose age is <code>40</code>, and height is <code>180</code>.</p>
+
+<p>This is a regression problem. Mathematically you can formulate the problem as follow:</p>
+
+<p>$$weight = w1.age + w2.height + w3$$</p>
+
+<p>Now our goal is to find out 3 magic numbers, <code>w1</code>, <code>w2</code>, and <code>w3</code>.</p>
+
+<h1 id="a-simple-approach-non-neural-network">A simple approach (Non-neural-network)</h1>
+
+<p>You might be tempted to solve the equation using pure <code>algebra</code>. Since we have single data with three variables (aka: the magic numbers), I think we can&rsquo;t solve the equation with pure algebra.</p>
+
+<p>So, let&rsquo;s solve the using brute-force experiments!!!</p>
+
+<h2 id="finding-the-regressor">Finding the regressor</h2>
+
+<p>First of all, we have to define our <code>loss function</code> (how far we are from the target). In our case, the loss function is as follow:</p>
+
+<p>$$error = |actual_weight - predicted_weight|$$
+$$error = |actual_weight - (w1.age + w2.height + w3)|$$</p>
+
+<p>Let&rsquo;s implement the loss function in Python:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">loss_function</span>(actual_weight, w1, age, w2, height, w3):
+    error <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">abs</span>(actual_weight <span style="color:#ff79c6">-</span> (w1<span style="color:#ff79c6">*</span>age <span style="color:#ff79c6">+</span> w2<span style="color:#ff79c6">*</span>height <span style="color:#ff79c6">+</span> w3))
+    <span style="color:#ff79c6">return</span> error</code></pre></div>
+<p>Now, let&rsquo;s try to assign <code>1</code>-<code>100</code> to <code>w1</code>, <code>w2</code>, and <code>w3</code> in order to get the best numbers for each of them</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">age <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">50.0</span>
+height <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">170.0</span>
+actual_weight <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">75.0</span>
+best_error <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#6272a4"># error threshold, we are only interested for error that is less or equal to 0</span>
+
+<span style="color:#ff79c6">for</span> w1 <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">101</span>, <span style="color:#bd93f9">101</span>):
+    <span style="color:#ff79c6">for</span> w2 <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">101</span>):
+        <span style="color:#ff79c6">for</span> w3 <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">101</span>):
+            error <span style="color:#ff79c6">=</span> loss_function(actual_weight, w1, age, w2, height, w3)
+            <span style="color:#ff79c6">if</span> error <span style="color:#ff79c6">&lt;=</span> best_error:
+                best_error <span style="color:#ff79c6">=</span> error
+                <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;error:&#34;</span>, error, <span style="color:#f1fa8c">&#34;w1:&#34;</span>, w1, <span style="color:#f1fa8c">&#34;w2:&#34;</span>, w2, <span style="color:#f1fa8c">&#34;w3:&#34;</span>, w3)</code></pre></div>
+<pre><code>error: 0.0 w1: -101 w2: 30 w3: 25
+error: 0.0 w1: -100 w2: 30 w3: -25
+error: 0.0 w1: -99 w2: 29 w3: 95
+error: 0.0 w1: -99 w2: 30 w3: -75
+error: 0.0 w1: -98 w2: 29 w3: 45
+error: 0.0 w1: -97 w2: 29 w3: -5
+error: 0.0 w1: -96 w2: 29 w3: -55
+error: 0.0 w1: -95 w2: 28 w3: 65
+error: 0.0 w1: -94 w2: 28 w3: 15
+error: 0.0 w1: -93 w2: 28 w3: -35
+error: 0.0 w1: -92 w2: 27 w3: 85
+error: 0.0 w1: -92 w2: 28 w3: -85
+error: 0.0 w1: -91 w2: 27 w3: 35
+error: 0.0 w1: -90 w2: 27 w3: -15
+error: 0.0 w1: -89 w2: 27 w3: -65
+error: 0.0 w1: -88 w2: 26 w3: 55
+error: 0.0 w1: -87 w2: 26 w3: 5
+error: 0.0 w1: -86 w2: 26 w3: -45
+error: 0.0 w1: -85 w2: 25 w3: 75
+error: 0.0 w1: -85 w2: 26 w3: -95
+error: 0.0 w1: -84 w2: 25 w3: 25
+error: 0.0 w1: -83 w2: 25 w3: -25
+error: 0.0 w1: -82 w2: 24 w3: 95
+error: 0.0 w1: -82 w2: 25 w3: -75
+error: 0.0 w1: -81 w2: 24 w3: 45
+error: 0.0 w1: -80 w2: 24 w3: -5
+error: 0.0 w1: -79 w2: 24 w3: -55
+error: 0.0 w1: -78 w2: 23 w3: 65
+error: 0.0 w1: -77 w2: 23 w3: 15
+error: 0.0 w1: -76 w2: 23 w3: -35
+error: 0.0 w1: -75 w2: 22 w3: 85
+error: 0.0 w1: -75 w2: 23 w3: -85
+error: 0.0 w1: -74 w2: 22 w3: 35
+error: 0.0 w1: -73 w2: 22 w3: -15
+error: 0.0 w1: -72 w2: 22 w3: -65
+error: 0.0 w1: -71 w2: 21 w3: 55
+error: 0.0 w1: -70 w2: 21 w3: 5
+error: 0.0 w1: -69 w2: 21 w3: -45
+error: 0.0 w1: -68 w2: 20 w3: 75
+error: 0.0 w1: -68 w2: 21 w3: -95
+error: 0.0 w1: -67 w2: 20 w3: 25
+error: 0.0 w1: -66 w2: 20 w3: -25
+error: 0.0 w1: -65 w2: 19 w3: 95
+error: 0.0 w1: -65 w2: 20 w3: -75
+error: 0.0 w1: -64 w2: 19 w3: 45
+error: 0.0 w1: -63 w2: 19 w3: -5
+error: 0.0 w1: -62 w2: 19 w3: -55
+error: 0.0 w1: -61 w2: 18 w3: 65
+error: 0.0 w1: -60 w2: 18 w3: 15
+error: 0.0 w1: -59 w2: 18 w3: -35
+error: 0.0 w1: -58 w2: 17 w3: 85
+error: 0.0 w1: -58 w2: 18 w3: -85
+error: 0.0 w1: -57 w2: 17 w3: 35
+error: 0.0 w1: -56 w2: 17 w3: -15
+error: 0.0 w1: -55 w2: 17 w3: -65
+error: 0.0 w1: -54 w2: 16 w3: 55
+error: 0.0 w1: -53 w2: 16 w3: 5
+error: 0.0 w1: -52 w2: 16 w3: -45
+error: 0.0 w1: -51 w2: 15 w3: 75
+error: 0.0 w1: -51 w2: 16 w3: -95
+error: 0.0 w1: -50 w2: 15 w3: 25
+error: 0.0 w1: -49 w2: 15 w3: -25
+error: 0.0 w1: -48 w2: 14 w3: 95
+error: 0.0 w1: -48 w2: 15 w3: -75
+error: 0.0 w1: -47 w2: 14 w3: 45
+error: 0.0 w1: -46 w2: 14 w3: -5
+error: 0.0 w1: -45 w2: 14 w3: -55
+error: 0.0 w1: -44 w2: 13 w3: 65
+error: 0.0 w1: -43 w2: 13 w3: 15
+error: 0.0 w1: -42 w2: 13 w3: -35
+error: 0.0 w1: -41 w2: 12 w3: 85
+error: 0.0 w1: -41 w2: 13 w3: -85
+error: 0.0 w1: -40 w2: 12 w3: 35
+error: 0.0 w1: -39 w2: 12 w3: -15
+error: 0.0 w1: -38 w2: 12 w3: -65
+error: 0.0 w1: -37 w2: 11 w3: 55
+error: 0.0 w1: -36 w2: 11 w3: 5
+error: 0.0 w1: -35 w2: 11 w3: -45
+error: 0.0 w1: -34 w2: 10 w3: 75
+error: 0.0 w1: -34 w2: 11 w3: -95
+error: 0.0 w1: -33 w2: 10 w3: 25
+error: 0.0 w1: -32 w2: 10 w3: -25
+error: 0.0 w1: -31 w2: 9 w3: 95
+error: 0.0 w1: -31 w2: 10 w3: -75
+error: 0.0 w1: -30 w2: 9 w3: 45
+error: 0.0 w1: -29 w2: 9 w3: -5
+error: 0.0 w1: -28 w2: 9 w3: -55
+error: 0.0 w1: -27 w2: 8 w3: 65
+error: 0.0 w1: -26 w2: 8 w3: 15
+error: 0.0 w1: -25 w2: 8 w3: -35
+error: 0.0 w1: -24 w2: 7 w3: 85
+error: 0.0 w1: -24 w2: 8 w3: -85
+error: 0.0 w1: -23 w2: 7 w3: 35
+error: 0.0 w1: -22 w2: 7 w3: -15
+error: 0.0 w1: -21 w2: 7 w3: -65
+error: 0.0 w1: -20 w2: 6 w3: 55
+error: 0.0 w1: -19 w2: 6 w3: 5
+error: 0.0 w1: -18 w2: 6 w3: -45
+error: 0.0 w1: -17 w2: 5 w3: 75
+error: 0.0 w1: -17 w2: 6 w3: -95
+error: 0.0 w1: -16 w2: 5 w3: 25
+error: 0.0 w1: -15 w2: 5 w3: -25
+error: 0.0 w1: -14 w2: 4 w3: 95
+error: 0.0 w1: -14 w2: 5 w3: -75
+error: 0.0 w1: -13 w2: 4 w3: 45
+error: 0.0 w1: -12 w2: 4 w3: -5
+error: 0.0 w1: -11 w2: 4 w3: -55
+error: 0.0 w1: -10 w2: 3 w3: 65
+error: 0.0 w1: -9 w2: 3 w3: 15
+error: 0.0 w1: -8 w2: 3 w3: -35
+error: 0.0 w1: -7 w2: 2 w3: 85
+error: 0.0 w1: -7 w2: 3 w3: -85
+error: 0.0 w1: -6 w2: 2 w3: 35
+error: 0.0 w1: -5 w2: 2 w3: -15
+error: 0.0 w1: -4 w2: 2 w3: -65
+error: 0.0 w1: -3 w2: 1 w3: 55
+error: 0.0 w1: -2 w2: 1 w3: 5
+error: 0.0 w1: -1 w2: 1 w3: -45
+error: 0.0 w1: 0 w2: 0 w3: 75
+error: 0.0 w1: 0 w2: 1 w3: -95
+error: 0.0 w1: 1 w2: 0 w3: 25
+error: 0.0 w1: 2 w2: 0 w3: -25
+error: 0.0 w1: 3 w2: -1 w3: 95
+error: 0.0 w1: 3 w2: 0 w3: -75
+error: 0.0 w1: 4 w2: -1 w3: 45
+error: 0.0 w1: 5 w2: -1 w3: -5
+error: 0.0 w1: 6 w2: -1 w3: -55
+error: 0.0 w1: 7 w2: -2 w3: 65
+error: 0.0 w1: 8 w2: -2 w3: 15
+error: 0.0 w1: 9 w2: -2 w3: -35
+error: 0.0 w1: 10 w2: -3 w3: 85
+error: 0.0 w1: 10 w2: -2 w3: -85
+error: 0.0 w1: 11 w2: -3 w3: 35
+error: 0.0 w1: 12 w2: -3 w3: -15
+error: 0.0 w1: 13 w2: -3 w3: -65
+error: 0.0 w1: 14 w2: -4 w3: 55
+error: 0.0 w1: 15 w2: -4 w3: 5
+error: 0.0 w1: 16 w2: -4 w3: -45
+error: 0.0 w1: 17 w2: -5 w3: 75
+error: 0.0 w1: 17 w2: -4 w3: -95
+error: 0.0 w1: 18 w2: -5 w3: 25
+error: 0.0 w1: 19 w2: -5 w3: -25
+error: 0.0 w1: 20 w2: -6 w3: 95
+error: 0.0 w1: 20 w2: -5 w3: -75
+error: 0.0 w1: 21 w2: -6 w3: 45
+error: 0.0 w1: 22 w2: -6 w3: -5
+error: 0.0 w1: 23 w2: -6 w3: -55
+error: 0.0 w1: 24 w2: -7 w3: 65
+error: 0.0 w1: 25 w2: -7 w3: 15
+error: 0.0 w1: 26 w2: -7 w3: -35
+error: 0.0 w1: 27 w2: -8 w3: 85
+error: 0.0 w1: 27 w2: -7 w3: -85
+error: 0.0 w1: 28 w2: -8 w3: 35
+error: 0.0 w1: 29 w2: -8 w3: -15
+error: 0.0 w1: 30 w2: -8 w3: -65
+error: 0.0 w1: 31 w2: -9 w3: 55
+error: 0.0 w1: 32 w2: -9 w3: 5
+error: 0.0 w1: 33 w2: -9 w3: -45
+error: 0.0 w1: 34 w2: -10 w3: 75
+error: 0.0 w1: 34 w2: -9 w3: -95
+error: 0.0 w1: 35 w2: -10 w3: 25
+error: 0.0 w1: 36 w2: -10 w3: -25
+error: 0.0 w1: 37 w2: -11 w3: 95
+error: 0.0 w1: 37 w2: -10 w3: -75
+error: 0.0 w1: 38 w2: -11 w3: 45
+error: 0.0 w1: 39 w2: -11 w3: -5
+error: 0.0 w1: 40 w2: -11 w3: -55
+error: 0.0 w1: 41 w2: -12 w3: 65
+error: 0.0 w1: 42 w2: -12 w3: 15
+error: 0.0 w1: 43 w2: -12 w3: -35
+error: 0.0 w1: 44 w2: -13 w3: 85
+error: 0.0 w1: 44 w2: -12 w3: -85
+error: 0.0 w1: 45 w2: -13 w3: 35
+error: 0.0 w1: 46 w2: -13 w3: -15
+error: 0.0 w1: 47 w2: -13 w3: -65
+error: 0.0 w1: 48 w2: -14 w3: 55
+error: 0.0 w1: 49 w2: -14 w3: 5
+error: 0.0 w1: 50 w2: -14 w3: -45
+error: 0.0 w1: 51 w2: -15 w3: 75
+error: 0.0 w1: 51 w2: -14 w3: -95
+error: 0.0 w1: 52 w2: -15 w3: 25
+error: 0.0 w1: 53 w2: -15 w3: -25
+error: 0.0 w1: 54 w2: -16 w3: 95
+error: 0.0 w1: 54 w2: -15 w3: -75
+error: 0.0 w1: 55 w2: -16 w3: 45
+error: 0.0 w1: 56 w2: -16 w3: -5
+error: 0.0 w1: 57 w2: -16 w3: -55
+error: 0.0 w1: 58 w2: -17 w3: 65
+error: 0.0 w1: 59 w2: -17 w3: 15
+error: 0.0 w1: 60 w2: -17 w3: -35
+error: 0.0 w1: 61 w2: -18 w3: 85
+error: 0.0 w1: 61 w2: -17 w3: -85
+error: 0.0 w1: 62 w2: -18 w3: 35
+error: 0.0 w1: 63 w2: -18 w3: -15
+error: 0.0 w1: 64 w2: -18 w3: -65
+error: 0.0 w1: 65 w2: -19 w3: 55
+error: 0.0 w1: 66 w2: -19 w3: 5
+error: 0.0 w1: 67 w2: -19 w3: -45
+error: 0.0 w1: 68 w2: -20 w3: 75
+error: 0.0 w1: 68 w2: -19 w3: -95
+error: 0.0 w1: 69 w2: -20 w3: 25
+error: 0.0 w1: 70 w2: -20 w3: -25
+error: 0.0 w1: 71 w2: -21 w3: 95
+error: 0.0 w1: 71 w2: -20 w3: -75
+error: 0.0 w1: 72 w2: -21 w3: 45
+error: 0.0 w1: 73 w2: -21 w3: -5
+error: 0.0 w1: 74 w2: -21 w3: -55
+error: 0.0 w1: 75 w2: -22 w3: 65
+error: 0.0 w1: 76 w2: -22 w3: 15
+error: 0.0 w1: 77 w2: -22 w3: -35
+error: 0.0 w1: 78 w2: -23 w3: 85
+error: 0.0 w1: 78 w2: -22 w3: -85
+error: 0.0 w1: 79 w2: -23 w3: 35
+error: 0.0 w1: 80 w2: -23 w3: -15
+error: 0.0 w1: 81 w2: -23 w3: -65
+error: 0.0 w1: 82 w2: -24 w3: 55
+error: 0.0 w1: 83 w2: -24 w3: 5
+error: 0.0 w1: 84 w2: -24 w3: -45
+error: 0.0 w1: 85 w2: -25 w3: 75
+error: 0.0 w1: 85 w2: -24 w3: -95
+error: 0.0 w1: 86 w2: -25 w3: 25
+error: 0.0 w1: 87 w2: -25 w3: -25
+error: 0.0 w1: 88 w2: -26 w3: 95
+error: 0.0 w1: 88 w2: -25 w3: -75
+error: 0.0 w1: 89 w2: -26 w3: 45
+error: 0.0 w1: 90 w2: -26 w3: -5
+error: 0.0 w1: 91 w2: -26 w3: -55
+error: 0.0 w1: 92 w2: -27 w3: 65
+error: 0.0 w1: 93 w2: -27 w3: 15
+error: 0.0 w1: 94 w2: -27 w3: -35
+error: 0.0 w1: 95 w2: -28 w3: 85
+error: 0.0 w1: 95 w2: -27 w3: -85
+error: 0.0 w1: 96 w2: -28 w3: 35
+error: 0.0 w1: 97 w2: -28 w3: -15
+error: 0.0 w1: 98 w2: -28 w3: -65
+error: 0.0 w1: 99 w2: -29 w3: 55
+error: 0.0 w1: 100 w2: -29 w3: 5
+</code></pre>
+
+<p>Perfect, we have several predictors!!!</p>
+
+<p>Let&rsquo;s take the first one: <code>w1=-100</code>, <code>w2=30</code>, and <code>w3=-25</code></p>
+
+<p>For <code>age=50</code>, <code>height=170</code>, we get</p>
+
+<p>$$prediction_weight = -100 . 50 + 30 . 170 - 25 . 1$$
+$$prediction_weight = -5000 + 5100 - 25$$
+$$prediction_weight = 75$$</p>
+
+<p>The <code>prediction_weight</code> is equal to <code>actual_weight</code>!!!</p>
+
+<h2 id="using-the-regressor">Using the regressor</h2>
+
+<p>Finally, for <code>age=40</code> and <code>weight=180</code>, we get this:</p>
+
+<p>$$prediction_weight = -100.40 + 30.180 - 25.1$$
+$$prediction_weight = -4000 + 5400 - 25$$
+$$prediction_weight = 1375$$</p>
+
+<p>Well, not so make sense, probably we need to use another available predictor.</p>
+
+<p><strong>Note:</strong> If your problem can be perfectly solved with pure-algebra/brute-force. Just use them for your own good. Neural network or any other machine learning algorithm, should only be used if the solution is not obvious.</p>
+
+<h2 id="what-just-happened">What just happened?</h2>
+
+<p>We have just jump into a problem named <code>overfitting</code>. Overfitting is a problem where our predictor/regressor is correct for the training data, but incorrect for the testing data.</p>
+
+<p>Another problems with our approach are:</p>
+
+<ul>
+<li>we naively believe that w1, w2, and w3 are integer</li>
+<li>we naively believe that the predictor is a straight linear line. Probably we need some logarithm, power, and other eccentric operations in order to get the correct predictor/classifier</li>
+</ul>
+
+<p>Neural networks can definitely solve our two last problems. Overfitting is still a common problem in machine learning.</p>
+
+<h1 id="neural-network-approach">Neural Network approach</h1>
+
+<p>As already stated, neural network is no magic.</p>
+
+<p>In our previous approach, the regressor is formulated as follow:</p>
+
+<p>$$weight = w1.age + w2.height + w3$$</p>
+
+<p>Suppose we have a function <code>f</code> to process the result, the regressor should looks like this:</p>
+
+<p>$$weight = f(w1.age + w2.height + w3)$$</p>
+
+<p>This is what a single neuron in neural network do !!!</p>
+
+<p>![]()</p>
+
+<h1 id="neural-network-implementation-using-tensorflow">Neural Network implementation using Tensorflow</h1>
+
+<p>TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and is also used for machine learning applications such as neural networks.</p>
+
+<p>Unlike <code>sklearn.neural_network</code>, tensorflow give us more freedom to set up our neural-network.</p>
+
+<p>First of all, let&rsquo;s try to import tensorflow and keras (which is now also part of tensorflow)</p>
+
+<h2 id="importing-tensorflow-and-keras">Importing Tensorflow and Keras</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># TensorFlow and tf.keras</span>
+<span style="color:#ff79c6">import</span> tensorflow <span style="color:#ff79c6">as</span> tf
+<span style="color:#ff79c6">from</span> tensorflow <span style="color:#ff79c6">import</span> keras
+
+<span style="color:#6272a4"># Helper libraries</span>
+<span style="color:#ff79c6">import</span> numpy <span style="color:#ff79c6">as</span> np
+<span style="color:#ff79c6">import</span> matplotlib.pyplot <span style="color:#ff79c6">as</span> plt</code></pre></div>
+<h2 id="explore-the-dataset">Explore the dataset</h2>
+
+<p>We will try to perform classification task on mnist&rsquo;s dataset (<a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>). The dataset contains of <code>70000</code> gray-scale images. Each image has <code>28 x 28</code> dimension and belong to one (and only one) of the following 10 classes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">class_names <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;zero&#39;</span>, <span style="color:#f1fa8c">&#39;one&#39;</span>, <span style="color:#f1fa8c">&#39;two&#39;</span>, <span style="color:#f1fa8c">&#39;three&#39;</span>, <span style="color:#f1fa8c">&#39;four&#39;</span>, <span style="color:#f1fa8c">&#39;five&#39;</span>, <span style="color:#f1fa8c">&#39;six&#39;</span>, <span style="color:#f1fa8c">&#39;seven&#39;</span>, <span style="color:#f1fa8c">&#39;eight&#39;</span>, <span style="color:#f1fa8c">&#39;nine&#39;</span>]</code></pre></div>
+<p>Now, let&rsquo;s download <code>fashion_mnist</code> dataset from <code>keras.datasets</code> and split them into <code>train</code> and <code>test</code> set. By default, the dataset contains of <code>60000</code> training set and <code>10000</code> test set.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mnist <span style="color:#ff79c6">=</span> keras<span style="color:#ff79c6">.</span>datasets<span style="color:#ff79c6">.</span>mnist
+
+(train_images, train_labels), (test_images, test_labels) <span style="color:#ff79c6">=</span> mnist<span style="color:#ff79c6">.</span>load_data()</code></pre></div>
+<p>Let&rsquo;s explore the data a little bit</p>
+
+<p>Here is a bit information about our <code>train_labels</code>. It is a one-dimension array with 60000 elements</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">train_labels</code></pre></div>
+<pre><code>array([5, 0, 4, ..., 5, 6, 8], dtype=uint8)
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">train_labels<span style="color:#ff79c6">.</span>shape</code></pre></div>
+<pre><code>(60000,)
+</code></pre>
+
+<p>Now, let&rsquo;s explore our <code>train_images</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">train_images</code></pre></div>
+<pre><code>array([[[0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        ...,
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0]],
+
+       [[0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        ...,
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0]],
+
+       [[0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        ...,
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0]],
+
+       ...,
+
+       [[0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        ...,
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0]],
+
+       [[0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        ...,
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0]],
+
+       [[0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        ...,
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0],
+        [0, 0, 0, ..., 0, 0, 0]]], dtype=uint8)
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">train_images<span style="color:#ff79c6">.</span>shape</code></pre></div>
+<pre><code>(60000, 28, 28)
+</code></pre>
+
+<p>Just to make sure, let&rsquo;s see our first image and label in detail</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">index <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+label <span style="color:#ff79c6">=</span> train_labels[index]
+image <span style="color:#ff79c6">=</span> train_images[index]
+
+<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;label: &#34;</span>, label) <span style="color:#6272a4"># this is the first train_labels</span>
+<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;which is: &#34;</span>, class_names[label]) <span style="color:#6272a4"># use our pre-defined class_names to get textual representation of the label</span>
+plt<span style="color:#ff79c6">.</span>figure()
+plt<span style="color:#ff79c6">.</span>imshow(image) <span style="color:#6272a4"># if you just want to see the matrix representation of the image, use `image` instead</span>
+plt<span style="color:#ff79c6">.</span>show()</code></pre></div>
+<pre><code>label:  5
+which is:  five
+</code></pre>
+
+<p><img src="neuralnetwork_files/neuralnetwork_23_1.png" alt="png" /></p>
+
+<h2 id="configuring-the-neural-network-model">Configuring the neural network model</h2>
+
+<p>Finally, let&rsquo;s build our neural network.</p>
+
+<p>First of all, we define 3 layers here:</p>
+
+<ul>
+<li>flatten layer with input_shape = 28x28: This one will transform our 2 dimensional matrix into 1 dimensional matrix (or a vector). The output of this layer will be an array with 784 elements</li>
+<li>dense layer containing 1024 neuron with sigmoid activation: This one will create a layer containing 128 neuron. Each of them is connected to the output of our previous layer (an array containing 784 elements). Each neuron activation is depending on <code>sigmoid</code> function (<a href="https://en.wikipedia.org/wiki/Sigmoid_function">https://en.wikipedia.org/wiki/Sigmoid_function</a>)</li>
+<li>dense layer containing 10 neuron with softmax activation: Finally, since we have 10 classes, it is natural to have 10 neuron in our output layer. Each neuron should show us how probable is an image belong to a particular class. Finally, we will use softmax to return the prediction result (<a href="https://en.wikipedia.org/wiki/Softmax_function">https://en.wikipedia.org/wiki/Softmax_function</a>)</li>
+</ul>
+
+<p>After defining the layers, we need to define our optimizer, loss function, and metrics:</p>
+
+<ul>
+<li>optimizer: How to optimize. We use adam optimization (<a href="https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/">https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/</a>)</li>
+<li>loss function: How to calculate error</li>
+<li>metrics: How to measure the quality of the network</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#ff79c6">=</span> keras<span style="color:#ff79c6">.</span>Sequential([
+    keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Flatten(input_shape<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">28</span>, <span style="color:#bd93f9">28</span>)),
+    keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">1024</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>sigmoid),
+    keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">10</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>softmax)
+])
+model<span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">compile</span>(optimizer<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;adam&#39;</span>,
+              loss<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;sparse_categorical_crossentropy&#39;</span>,
+              metrics<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;accuracy&#39;</span>])</code></pre></div>
+<h2 id="train-the-neural-network-model">Train the neural network model</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#ff79c6">.</span>fit(train_images, train_labels, epochs<span style="color:#ff79c6">=</span><span style="color:#bd93f9">5</span>)
+test_loss, test_acc <span style="color:#ff79c6">=</span> model<span style="color:#ff79c6">.</span>evaluate(test_images, test_labels)
+<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#39;Test accuracy:&#39;</span>, test_acc)</code></pre></div>
+<pre><code>Train on 60000 samples
+Epoch 1/5
+60000/60000 [==============================] - 8s 133us/sample - loss: 0.3687 - accuracy: 0.8954
+Epoch 2/5
+60000/60000 [==============================] - 8s 129us/sample - loss: 0.2767 - accuracy: 0.9184
+Epoch 3/5
+60000/60000 [==============================] - 8s 131us/sample - loss: 0.2467 - accuracy: 0.9273
+Epoch 4/5
+60000/60000 [==============================] - 8s 132us/sample - loss: 0.2285 - accuracy: 0.9304
+Epoch 5/5
+60000/60000 [==============================] - 8s 132us/sample - loss: 0.2158 - accuracy: 0.9337
+10000/10000 [==============================] - 1s 71us/sample - loss: 0.1969 - accuracy: 0.9367
+Test accuracy: 0.9367
+</code></pre>
+
+<h2 id="prediction">Prediction</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">predictions <span style="color:#ff79c6">=</span> model<span style="color:#ff79c6">.</span>predict(test_images)
+np<span style="color:#ff79c6">.</span>argmax(predictions[<span style="color:#bd93f9">0</span>])
+
+index <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+prediction_label <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>argmax(predictions[<span style="color:#bd93f9">0</span>])
+target_label <span style="color:#ff79c6">=</span> test_labels[index]
+image <span style="color:#ff79c6">=</span> test_images[index]
+
+<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;target label: &#34;</span>, target_label, class_names[target_label])
+<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;prediction label: &#34;</span>, prediction_label, class_names[prediction_label])
+plt<span style="color:#ff79c6">.</span>figure()
+plt<span style="color:#ff79c6">.</span>imshow(image) <span style="color:#6272a4"># if you just want to see the matrix representation of the image, use `image` instead</span>
+plt<span style="color:#ff79c6">.</span>show()</code></pre></div>
+<pre><code>target label:  7 seven
+prediction label:  7 seven
+</code></pre>
+
+<p><img src="neuralnetwork_files/neuralnetwork_29_1.png" alt="png" /></p>
+
+<h1 id="further-discussion">Further discussion</h1>
+
+<p>For classical machine learning (as this one), data preprocessing is quite important. Please look at this: <a href="https://github.com/shayan09/MNIST-Handwriting-Recognition-using-Keras/blob/master/Basic%20Keras%20NN.ipynb">https://github.com/shayan09/MNIST-Handwriting-Recognition-using-Keras/blob/master/Basic%20Keras%20NN.ipynb</a> for comparison.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/macine-learning" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Macine Learning</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://gofrendiasgard.github.io/" >
+    &copy; 2019 GoFrendi&#39;s Articles
+  </a>
+    <div>
+
+
+<a href="https://facebook.com/gofrendi" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://twitter.com/goFrendiAsgard" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript">
+  
+  const images = document.getElementsByTagName("img");
+  for (const image of images) {
+    const oldSrc = image.src;
+    const correctedSrc = getCorrectedSrc(oldSrc);
+    image.src = correctedSrc;
+  }
+
+  
+  
+  function getCorrectedSrc(oldSrc) {
+    const regex = /(.*)\/([a-z0-9_\- ]*)\/([a-z0-9_\- ]*)_files\/(.*)/gmi;
+    const matches = regex.exec(oldSrc);
+    if (matches && matches[2] === matches[3]) {
+      const prefix = matches[1];
+      const title = matches[2];
+      const sufix = matches[4];
+      return [prefix, title+"_files", sufix].join("/");
+    }
+    return oldSrc;
+  }
+</script>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

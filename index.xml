@@ -13,14 +13,13 @@
     
     <item>
       <title>Neural Network From Scratch</title>
-      <link>http://gofrendiasgard.github.io/posts/neuralnetwork/</link>
+      <link>http://gofrendiasgard.github.io/notebooks/neuralnetwork/</link>
       <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
       
-      <guid>http://gofrendiasgard.github.io/posts/neuralnetwork/</guid>
-      <description>Implementation with Tensorflow TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and is also used for machine learning applications such as neural networks.
-Unlike sklearn.neural_network, tensorflow give us more freedom to set up our neural-network.
-The following implementation was taken directly from https://www.tensorflow.org/tutorials/keras/basic_classification
-First of all, let&amp;rsquo;s try to import tensorflow and keras (which is now also part of tensorflow)</description>
+      <guid>http://gofrendiasgard.github.io/notebooks/neuralnetwork/</guid>
+      <description>The Problem Artificial neural network is no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out magic numbers in order to find out the best classifier or regressor.
+Suppose we have the following data:
+age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone whose age is 40, and height is 180.</description>
     </item>
     
     <item>
@@ -32,6 +31,15 @@ First of all, let&amp;rsquo;s try to import tensorflow and keras (which is now a
       <description>Hi, my name is Go Frendi Gunawan. Currently I work as Backend Engineer at kata.ai.
 In this blog, you will find some articles related to software engineering, machine learning, and mathematics.
 The articles are intended for mere mortal. Some basic programming/high school math are going to help, but are not required.</description>
+    </item>
+    
+    <item>
+      <title>Solid Principle</title>
+      <link>http://gofrendiasgard.github.io/posts/solid-principle/</link>
+      <pubDate>Wed, 31 Jul 2019 07:41:41 +0700</pubDate>
+      
+      <guid>http://gofrendiasgard.github.io/posts/solid-principle/</guid>
+      <description></description>
     </item>
     
   </channel>

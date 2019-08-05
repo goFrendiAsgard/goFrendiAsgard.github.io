@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on GoFrendi&#39;s Articles</title>
-    <link>http://gofrendiasgard.github.io/posts/</link>
-    <description>Recent content in Posts on GoFrendi&#39;s Articles</description>
+    <title>Software Engineering on GoFrendi&#39;s Articles</title>
+    <link>http://gofrendiasgard.github.io/categories/software-engineering/</link>
+    <description>Recent content in Software Engineering on GoFrendi&#39;s Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 31 Jul 2019 07:41:41 +0700</lastBuildDate>
     
-	<atom:link href="http://gofrendiasgard.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gofrendiasgard.github.io/categories/software-engineering/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
