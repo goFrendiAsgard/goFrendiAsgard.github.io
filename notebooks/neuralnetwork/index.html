@@ -9,7 +9,7 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.56.3" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -29,30 +29,29 @@
     
 
     <meta property="og:title" content="Neural Network From Scratch" />
-<meta property="og:description" content="The Problem Artificial neural network is no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out magic numbers in order to find out the best classifier or regressor.
+<meta property="og:description" content="The Problem Artificial neural network has no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out special numbers in order to find out the best classifier or regressor.
 Suppose we have the following data:
 age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone whose age is 40, and height is 180." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://gofrendiasgard.github.io/notebooks/neuralnetwork/" />
-<meta property="article:published_time" content="2019-07-31T07:48:41&#43;07:00"/>
-<meta property="article:modified_time" content="2019-07-31T07:48:41&#43;07:00"/>
-
+<meta property="article:published_time" content="2019-07-31T07:48:41+07:00" />
+<meta property="article:modified_time" content="2019-07-31T07:48:41+07:00" />
 <meta itemprop="name" content="Neural Network From Scratch">
-<meta itemprop="description" content="The Problem Artificial neural network is no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out magic numbers in order to find out the best classifier or regressor.
+<meta itemprop="description" content="The Problem Artificial neural network has no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out special numbers in order to find out the best classifier or regressor.
 Suppose we have the following data:
 age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone whose age is 40, and height is 180.">
 
 
 <meta itemprop="datePublished" content="2019-07-31T07:48:41&#43;07:00" />
 <meta itemprop="dateModified" content="2019-07-31T07:48:41&#43;07:00" />
-<meta itemprop="wordCount" content="1570">
+<meta itemprop="wordCount" content="1918">
 
 
 
 <meta itemprop="keywords" content="Macine Learning," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Neural Network From Scratch"/>
-<meta name="twitter:description" content="The Problem Artificial neural network is no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out magic numbers in order to find out the best classifier or regressor.
+<meta name="twitter:description" content="The Problem Artificial neural network has no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out special numbers in order to find out the best classifier or regressor.
 Suppose we have the following data:
 age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone whose age is 40, and height is 180."/>
 
@@ -155,7 +154,7 @@ age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone
 
 <h1 id="the-problem">The Problem</h1>
 
-<p>Artificial neural network is no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out <code>magic numbers</code> in order to find out the best <code>classifier</code> or <code>regressor</code>.</p>
+<p>Artificial neural network has no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out <code>special numbers</code> in order to find out the best <code>classifier</code> or <code>regressor</code>.</p>
 
 <p>Suppose we have the following data:</p>
 
@@ -174,9 +173,9 @@ age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone
 
 <h1 id="a-simple-approach-non-neural-network">A simple approach (Non-neural-network)</h1>
 
-<p>You might be tempted to solve the equation using pure <code>algebra</code>. Since we have single data with three variables (aka: the magic numbers), I think we can&rsquo;t solve the equation with pure algebra.</p>
+<p>You might be tempted to solve the equation using pure <code>algebra</code>. Since we have single data with three variables (aka: the special numbers), we can&rsquo;t solve the equation with pure algebra.</p>
 
-<p>So, let&rsquo;s solve the using brute-force experiments!!!</p>
+<p>So, let&rsquo;s solve the equation using brute-force experiments!!!</p>
 
 <h2 id="finding-the-regressor">Finding the regressor</h2>
 
@@ -240,14 +239,18 @@ $$prediction_weight = 1375$$</p>
 
 <p>We have just jump into a problem named <code>overfitting</code>. Overfitting is a problem where our predictor/regressor is correct for the training data, but incorrect for the testing data.</p>
 
-<p>Another problems with our approach are:</p>
+<p>Technically, the problem with our approach are:</p>
 
 <ul>
+<li>overfitting</li>
 <li>we naively believe that w1, w2, and w3 are integer</li>
 <li>we naively believe that the predictor is a straight linear line. Probably we need some logarithm, power, and other eccentric operations in order to get the correct predictor/classifier</li>
+<li>we naively believe that we can try all possible solutions</li>
 </ul>
 
-<p>Neural networks can definitely solve our two last problems. Overfitting is still a common problem in machine learning.</p>
+<p>Neural networks can only solve the three last problems.</p>
+
+<p>Overfitting is still a common problem in machine learning. Unfortunately, the only way to deal with overfitting is by provide more <code>training data</code>.</p>
 
 <h1 id="neural-network-approach">Neural Network approach</h1>
 
@@ -264,6 +267,86 @@ $$prediction_weight = 1375$$</p>
 <p>This is what a single neuron in neural network do !!!</p>
 
 <p><img src="http://gofrendiasgard.github.io/images/perceptron.jpg" alt="" /></p>
+
+<h2 id="feed-forward">Feed Forward</h2>
+
+<p>The process of feed forward is as simple as</p>
+
+<p>$$weight = f(w1.age + w2.height + w3)$$</p>
+
+<p>Or, to make it more general we can write the equation as follow:</p>
+
+<p>$$y = f(\Sigma^{n}_{i=1}w_ix_i)$$</p>
+
+<p>For the sake of simplicity, we can break down the equation as follow:</p>
+
+<p>$$y = f(net)$$</p>
+
+<p>where</p>
+
+<p>$$net = \Sigma^{n}_{i=1}w_ix_i$$1</p>
+
+<p>We will use this later for back-propagation.</p>
+
+<p>The <code>w</code>s are random numbers, while <code>f</code> can be any function. The most commonly used activation function are enlisted here: <a href="https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6">https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6</a></p>
+
+<p>Suppose we have the following data:</p>
+
+<pre><code>x1 x2 target
+0  1  0.3
+1  0  0.7
+</code></pre>
+
+<p>and the following configuration:</p>
+
+<pre><code>w1 = 0.1
+w2 = 0.2
+w3 = 0.1
+f = sigmoid
+</code></pre>
+
+<p>Since sigmoid function is described as follow:</p>
+
+<p>$$f(x) = \frac{1}{1+e^x}$$</p>
+
+<p>Then, we can calculate <code>y</code> as follow:</p>
+
+<p>$$y = f(net) = \frac{1}{1+e^{net}}$$</p>
+
+<p>where <code>net</code> is</p>
+
+<p>$$net = \Sigma^{n}_{i=1}w_ix_i = w_1x_1 + w_2 x_2 + w_3$$</p>
+
+<p>In some literature, you will find <code>b</code> (stand for bias) instead of <code>w3</code>. Don&rsquo;t worry, you can even think <code>w3</code> as <code>w3.x3</code> where <code>x3</code> is <code>1</code>.</p>
+
+<p>Finally, for <code>x1=0</code>, <code>x2=1</code>, <code>target=0.3</code>, <code>w1 = 0.1</code>, <code>w2 = 0.2</code>, and <code>w3 = 0.1</code> we get this:</p>
+
+<p>$$y = f(net)$$</p>
+
+<p>and</p>
+
+<p>$$net=w_1x_1 + w_2x_2 + w_3$$</p>
+
+<p>thus</p>
+
+<p>$$y = \frac{1}{1+e^{(0.1 x 0 + 0.2 x 1 + 0.1)}}$$</p>
+
+<p>Calculating the equation give us:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> math
+y <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">/</span>(<span style="color:#bd93f9">1</span><span style="color:#ff79c6">+</span>math<span style="color:#ff79c6">.</span>exp(<span style="color:#bd93f9">0.1</span> <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">0.2</span> <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">0.1</span>))
+y</code></pre></div>
+<pre><code>0.425557483188341
+</code></pre>
+
+<p>Comparing the <code>target</code> and <code>y</code>, we can find that the result is not so good. Our <code>target</code> is <code>0.3</code>, while <code>y</code> is <code>0.426</code></p>
+
+<h2 id="back-propagation">Back propagation</h2>
+
+<p>Back propagation is a process to adjust weight (w1, w2, and w3) in order to reduce the error.</p>
+
+<p>If we think <code>x1</code>, <code>x2</code>, and <code>x3</code> as a vector. We will need at least two information to adjust <code>w1</code>, <code>w2</code>, and <code>w3</code>:
+* how much should they change: we can set a <code>learning rate</code> for this
+* to what direction: we do it by calculating `derivat</p>
 
 <h1 id="neural-network-implementation-using-tensorflow">Neural Network implementation using Tensorflow</h1>
 
@@ -369,7 +452,7 @@ plt<span style="color:#ff79c6">.</span>show()</code></pre></div>
 which is:  five
 </code></pre>
 
-<p><img src="neuralnetwork_files/neuralnetwork_23_1.png" alt="png" /></p>
+<p><img src="neuralnetwork_files/neuralnetwork_26_1.png" alt="png" /></p>
 
 <h2 id="configuring-the-neural-network-model">Configuring the neural network model</h2>
 
@@ -388,16 +471,18 @@ which is:  five
 <ul>
 <li>optimizer: How to optimize. We use adam optimization (<a href="https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/">https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/</a>)</li>
 <li>loss function: How to calculate error</li>
-<li>metrics: How to measure the quality of the network</li>
-</ul>
+
+<li><p>metrics: How to measure the quality of the network</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#ff79c6">=</span> keras<span style="color:#ff79c6">.</span>Sequential([
-    keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Flatten(input_shape<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">28</span>, <span style="color:#bd93f9">28</span>)),
-    keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">1024</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>sigmoid),
-    keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">10</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>softmax)
+keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Flatten(input_shape<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">28</span>, <span style="color:#bd93f9">28</span>)),
+keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">1024</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>sigmoid),
+keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">10</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>softmax)
 ])
-model<span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">compile</span>(optimizer<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;adam&#39;</span>,
-              loss<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;sparse_categorical_crossentropy&#39;</span>,
-              metrics<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;accuracy&#39;</span>])</code></pre></div>
+model<span style="color:#ff79c6">.</span>compile(optimizer<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;adam&#39;</span>,
+          loss<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;sparse_categorical_crossentropy&#39;</span>,
+          metrics<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;accuracy&#39;</span>])</code></pre></div></li>
+</ul>
+
 <h2 id="train-the-neural-network-model">Train the neural network model</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#ff79c6">.</span>fit(train_images, train_labels, epochs<span style="color:#ff79c6">=</span><span style="color:#bd93f9">5</span>)
 test_loss, test_acc <span style="color:#ff79c6">=</span> model<span style="color:#ff79c6">.</span>evaluate(test_images, test_labels)
@@ -435,7 +520,7 @@ plt<span style="color:#ff79c6">.</span>show()</code></pre></div>
 prediction label:  7 seven
 </code></pre>
 
-<p><img src="neuralnetwork_files/neuralnetwork_29_1.png" alt="png" /></p>
+<p><img src="neuralnetwork_files/neuralnetwork_32_1.png" alt="png" /></p>
 
 <h1 id="further-discussion">Further discussion</h1>
 
