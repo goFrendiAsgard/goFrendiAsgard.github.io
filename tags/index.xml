@@ -6,19 +6,10 @@
     <description>Recent content in Tags on GoFrendi&#39;s Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Jul 2019 07:48:41 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2019 07:41:41 +0700</lastBuildDate>
     
 	<atom:link href="http://gofrendiasgard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Macine Learning</title>
-      <link>http://gofrendiasgard.github.io/tags/macine-learning/</link>
-      <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
-      
-      <guid>http://gofrendiasgard.github.io/tags/macine-learning/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>General</title>
@@ -26,6 +17,15 @@
       <pubDate>Wed, 31 Jul 2019 07:41:41 +0700</pubDate>
       
       <guid>http://gofrendiasgard.github.io/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Macine Learning</title>
+      <link>http://gofrendiasgard.github.io/tags/macine-learning/</link>
+      <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
+      
+      <guid>http://gofrendiasgard.github.io/tags/macine-learning/</guid>
       <description></description>
     </item>
     

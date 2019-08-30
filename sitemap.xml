@@ -3,46 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://gofrendiasgard.github.io/categories/</loc>
-    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gofrendiasgard.github.io/</loc>
-    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gofrendiasgard.github.io/categories/machine-learning/</loc>
-    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gofrendiasgard.github.io/tags/macine-learning/</loc>
-    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://gofrendiasgard.github.io/notebooks/neuralnetwork/</loc>
     <lastmod>2019-07-31T07:48:41+07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://gofrendiasgard.github.io/notebooks/</loc>
-    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gofrendiasgard.github.io/tags/</loc>
-    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -53,46 +17,93 @@
   </url>
   
   <url>
+    <loc>http://gofrendiasgard.github.io/posts/solid-principle/</loc>
+    <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://gofrendiasgard.github.io/about/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/categories/general/</loc>
-    <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <loc>http://gofrendiasgard.github.io/categories/</loc>
+    <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://gofrendiasgard.github.io/tags/general/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gofrendiasgard.github.io/categories/general/</loc>
+    <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gofrendiasgard.github.io/</loc>
+    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gofrendiasgard.github.io/categories/machine-learning/</loc>
+    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gofrendiasgard.github.io/tags/macine-learning/</loc>
+    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gofrendiasgard.github.io/notebooks/</loc>
+    <lastmod>2019-07-31T07:48:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://gofrendiasgard.github.io/posts/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gofrendiasgard.github.io/categories/software-engineering/</loc>
-    <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://gofrendiasgard.github.io/tags/software-engineering/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gofrendiasgard.github.io/posts/solid-principle/</loc>
+    <loc>http://gofrendiasgard.github.io/categories/software-engineering/</loc>
     <lastmod>2019-07-31T07:41:41+07:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gofrendiasgard.github.io/tags/</loc>
+    <lastmod>2019-07-31T07:41:41+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
   </url>
   
 </urlset>

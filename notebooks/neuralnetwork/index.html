@@ -5,11 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
     <title>GoFrendi&#39;s Articles  | Neural Network From Scratch</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.40.1" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -34,8 +31,23 @@ Suppose we have the following data:
 age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone whose age is 40, and height is 180." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://gofrendiasgard.github.io/notebooks/neuralnetwork/" />
-<meta property="article:published_time" content="2019-07-31T07:48:41+07:00" />
-<meta property="article:modified_time" content="2019-07-31T07:48:41+07:00" />
+
+
+
+<meta property="article:published_time" content="2019-07-31T07:48:41&#43;07:00"/>
+
+<meta property="article:modified_time" content="2019-07-31T07:48:41&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
 <meta itemprop="name" content="Neural Network From Scratch">
 <meta itemprop="description" content="The Problem Artificial neural network has no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out special numbers in order to find out the best classifier or regressor.
 Suppose we have the following data:
@@ -44,7 +56,7 @@ age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone
 
 <meta itemprop="datePublished" content="2019-07-31T07:48:41&#43;07:00" />
 <meta itemprop="dateModified" content="2019-07-31T07:48:41&#43;07:00" />
-<meta itemprop="wordCount" content="1918">
+<meta itemprop="wordCount" content="2013">
 
 
 
@@ -181,8 +193,8 @@ age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone
 
 <p>First of all, we have to define our <code>loss function</code> (how far we are from the target). In our case, the loss function is as follow:</p>
 
-<p>$$error = |actual_weight - predicted_weight|$$
-$$error = |actual_weight - (w1.age + w2.height + w3)|$$</p>
+<p>$$error = |actualWeight - predictedWeight|$$
+$$error = |actualWeight - (w1.age + w2.height + w3)|$$</p>
 
 <p>Let&rsquo;s implement the loss function in Python:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">loss_function</span>(actual_weight, w1, age, w2, height, w3):
@@ -217,9 +229,9 @@ error: 0.0 w1: -98 w2: 29 w3: 45
 
 <p>For <code>age=50</code>, <code>height=170</code>, we get</p>
 
-<p>$$prediction_weight = -100 . 50 + 30 . 170 - 25 . 1$$
-$$prediction_weight = -5000 + 5100 - 25$$
-$$prediction_weight = 75$$</p>
+<p>$$predictionWeight = -100 . 50 + 30 . 170 - 25 . 1$$
+$$predictionWeight = -5000 + 5100 - 25$$
+$$predictionWeight = 75$$</p>
 
 <p>The <code>prediction_weight</code> is equal to <code>actual_weight</code>!!!</p>
 
@@ -227,9 +239,9 @@ $$prediction_weight = 75$$</p>
 
 <p>Finally, for <code>age=40</code> and <code>weight=180</code>, we get this:</p>
 
-<p>$$prediction_weight = -100.40 + 30.180 - 25.1$$
-$$prediction_weight = -4000 + 5400 - 25$$
-$$prediction_weight = 1375$$</p>
+<p>$$predictionWeight = -100.40 + 30.180 - 25.1$$
+$$predictionWeight = -4000 + 5400 - 25$$
+$$predictionWeight = 1375$$</p>
 
 <p>Well, not so make sense, probably we need to use another available predictor.</p>
 
@@ -340,13 +352,28 @@ y</code></pre></div>
 
 <p>Comparing the <code>target</code> and <code>y</code>, we can find that the result is not so good. Our <code>target</code> is <code>0.3</code>, while <code>y</code> is <code>0.426</code></p>
 
+<p>To calculate the error we usually use this formula:</p>
+
+<p>$$E(y) = \frac{1}{2}(target-y)^2$$</p>
+
+<p>We need to square <code>target-y</code> to avoid negative number. While <code>1/2</code> is a math trick to make derivative of <code>E</code> easier to calculate.</p>
+
 <h2 id="back-propagation">Back propagation</h2>
 
 <p>Back propagation is a process to adjust weight (w1, w2, and w3) in order to reduce the error.</p>
 
-<p>If we think <code>x1</code>, <code>x2</code>, and <code>x3</code> as a vector. We will need at least two information to adjust <code>w1</code>, <code>w2</code>, and <code>w3</code>:
-* how much should they change: we can set a <code>learning rate</code> for this
-* to what direction: we do it by calculating `derivat</p>
+<p>If we think <code>x1</code>, <code>x2</code>, and <code>x3</code> as a vector. We will need at least two information to adjust <code>w1</code>, <code>w2</code>, and <code>w3</code>:</p>
+
+<ul>
+<li>how much should they change: we can set a <code>learning rate</code> for this purpose. Learning rate can be any number. The bigger the learning rate, the faster the learning process. However, it will prone to oscilation.</li>
+<li>to what direction: we do it by calculating <code>derivative</code></li>
+</ul>
+
+<p>To calculate the new value of <code>x1</code>, <code>x2</code>, and <code>x3</code> we can use these formulas:</p>
+
+<p>$$\Delta w1 = -learningRate * \frac{dE}{df} * \frac{df}{dw1}$$
+$$\Delta w2 = -learningRate * \frac{dE}{df} * \frac{df}{dw2}$$
+$$\Delta w3 = -learningRate * \frac{dE}{df} * \frac{df}{dw3}$$</p>
 
 <h1 id="neural-network-implementation-using-tensorflow">Neural Network implementation using Tensorflow</h1>
 
@@ -471,18 +498,16 @@ which is:  five
 <ul>
 <li>optimizer: How to optimize. We use adam optimization (<a href="https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/">https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/</a>)</li>
 <li>loss function: How to calculate error</li>
-
-<li><p>metrics: How to measure the quality of the network</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#ff79c6">=</span> keras<span style="color:#ff79c6">.</span>Sequential([
-keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Flatten(input_shape<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">28</span>, <span style="color:#bd93f9">28</span>)),
-keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">1024</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>sigmoid),
-keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">10</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>softmax)
-])
-model<span style="color:#ff79c6">.</span>compile(optimizer<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;adam&#39;</span>,
-          loss<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;sparse_categorical_crossentropy&#39;</span>,
-          metrics<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;accuracy&#39;</span>])</code></pre></div></li>
+<li>metrics: How to measure the quality of the network</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#ff79c6">=</span> keras<span style="color:#ff79c6">.</span>Sequential([
+    keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Flatten(input_shape<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">28</span>, <span style="color:#bd93f9">28</span>)),
+    keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">1024</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>sigmoid),
+    keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(<span style="color:#bd93f9">10</span>, activation<span style="color:#ff79c6">=</span>tf<span style="color:#ff79c6">.</span>nn<span style="color:#ff79c6">.</span>softmax)
+])
+model<span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">compile</span>(optimizer<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;adam&#39;</span>,
+              loss<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;sparse_categorical_crossentropy&#39;</span>,
+              metrics<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;accuracy&#39;</span>])</code></pre></div>
 <h2 id="train-the-neural-network-model">Train the neural network model</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#ff79c6">.</span>fit(train_images, train_labels, epochs<span style="color:#ff79c6">=</span><span style="color:#bd93f9">5</span>)
 test_loss, test_acc <span style="color:#ff79c6">=</span> model<span style="color:#ff79c6">.</span>evaluate(test_images, test_labels)
