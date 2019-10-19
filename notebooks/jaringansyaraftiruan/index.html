@@ -54,7 +54,7 @@
 
 <meta itemprop="datePublished" content="2019-07-31T07:48:41&#43;07:00" />
 <meta itemprop="dateModified" content="2019-07-31T07:48:41&#43;07:00" />
-<meta itemprop="wordCount" content="2554">
+<meta itemprop="wordCount" content="3025">
 
 
 
@@ -243,7 +243,7 @@ c = -100
 y = 63
 </code></pre>
 
-<p>Jadi tinggi badan Cecep adalah 63 cm.</p>
+<p>Jadi berat badan Cecep adalah 63 kg.</p>
 
 <p>Teknik yang baru kita lakukan tadi disebut teknik <code>subtitusi</code>. Teknik ini cukup berguna untuk melakukan berbagai macam konversi linear saat kita lupa &ldquo;rumus resmi&rdquo; nya. Rumus konversi Celcius-Fahrenhait-Reamur, atau tingkat-kemurnian-emas (dalam persen) ke karat, dan sebagainya. Saat berhadapan dengan kasus-kasus seperti itu, kita hanya butuh kertas dan pensil. Tidak butuh AI :)</p>
 
@@ -273,6 +273,8 @@ y = 63
 </code></pre>
 
 <p><img src="http://gofrendiasgard.github.io/images/algebra-less-than-line.PNG" alt="" /></p>
+
+<p>Fakta-fakta menarik ini akan membantu kita untuk memahami bahasan selanjutnya.</p>
 
 <h1 id="regresi-vs-klasifikasi">Regresi VS Klasifikasi</h1>
 
@@ -347,7 +349,7 @@ Ical   | 180        | 120       | 1.5                 | Obesitas
 
 <p>Ada berbagai model statistik untuk menghitung peluang, tapi tidak ada yang 100% akurat. Maka dalam dunia yang tidak ideal ini, perlu sekali bagi kita untuk berkompromi dan men-toleransi banyak hal.</p>
 
-<p>Salah satu cara untuk menerapkan <code>tolearansi</code> pada matematika adalah dengan membuat <code>error function</code> atau <code>loss function</code>. Tujuan kita pun bergeser, bukan lagi menebak secara akurat, namun menebak dengan kesalahan seminimal mungkin. Salah satu <code>error function</code> yang paling primitif dan cukup sering dipakai adalah:</p>
+<p>Salah satu cara untuk menerapkan <code>toleransi</code> pada matematika adalah dengan membuat <code>error function</code> atau <code>loss function</code>. Tujuan kita pun bergeser, bukan lagi menebak secara akurat, namun menebak dengan kesalahan seminimal mungkin. Salah satu <code>error function</code> yang paling primitif dan cukup sering dipakai adalah:</p>
 
 <p>$$E=\sqrt{(Target-Output)^2}$$</p>
 
@@ -496,6 +498,66 @@ o = 1 / [1 + e^-(165 * 0.3 + 3 * 0.2 + 0.1)]
 <p>JST menjawab pertanyaan pertama dengan menyediakan satu parameter yang disebut <code>learning rate</code>.</p>
 
 <p>Untuk pertanyaan kedua, jawabannya ternyata jauh lebih kompleks, karena kita membutuhkan perhitungan kalkulus. Sebelum kita melangkah lebih jauh, mari kita lihat, bagaimana kalkulus bisa membantu.</p>
+
+<h3 id="kalkulus-dan-fungsi-turunan">Kalkulus dan Fungsi Turunan</h3>
+
+<p>Konsep kalkulus pertama kali diperkenalkan oleh Newton untuk menghitung perubahan sesaat. Sebelum kita membicarakan tentang perubahan sesaat.</p>
+
+<p>Semisal ada fungsi <code>f(x) = x^2</code>, maka untuk <code>x = {0 .. 4}</code>, kita bisa memperoleh data perubahan nilai <code>f(x)</code> sebagai berikut</p>
+
+<pre><code>x_i | y_i = f(x_i)    | Delta = y_(i+1) - y_i
+---------------------------------------------
+0   | 0  = 0^2        | 1
+1   | 1  = 1^2 = 0+1  | 3
+2   | 4  = 2^2 = 1+3  | 5
+3   | 9  = 3^2 = 4+5  | 7
+4   | 16 = 4^2 = 9+7  | 9
+</code></pre>
+
+<p>Jika kita generalisasi, maka kita akan temukan bahwa</p>
+
+<p>$$\Delta = \frac{f(x_i + h) - f(x_i)}{h}$$</p>
+
+<p>Mari kita buktikan. Dalam kasus kita ini, karena <code>h = 1</code>, maka untuk <code>x = 2</code>, seharusnya kita akan ketemukan <code>Delta = 5</code></p>
+
+<pre><code>Delta = [f(2+1) - f(2)] / 1
+Delta = [f(3) - f(2)] / 1
+Delta = (3^2 - 2^2) / 1
+Delta = (9 - 4) / 1
+Delta = 5
+</code></pre>
+
+<p>Terbukti.</p>
+
+<p>Nah konsep perubahan sesaat sebenarnya mirip dengan konsep yang sudah kita jabarkan di atas. Hanya saja kali ini nilai <code>h</code> nya mendekati nol. Mengapa mendekati nol? Karena kita tidak mungkin menghitung perubahan nilai <code>f(x)</code> jika perubahan <code>x</code> nya sendiri adalan nol. Ibarat kita melihat foto sebuah mobil, dan disuruh mengira-ngira kecepatannya. Tidak mungkin bisa. Setidaknya kita butuh 2 foto. Foto mobil saat ini, dan foto beberapa mili-detik setelahnya. Kecepatan bisa ditentukan dengan cara menghitung perubahan posisi mobil dibagi dengan perubahan waktu pengambilan foto.</p>
+
+<p><img src="https://1.bp.blogspot.com/-z0MS_ogXHSo/UZPXglI1TyI/AAAAAAAAKxQ/GJJkeY7Ho-I/s1600/Audi+Car+(7).jpg" alt="" /></p>
+
+<p>Oleh sebab itu rumus untuk menghitung Delta perlu kita ubah, sehingga nilai <code>h</code> nya kecil sekali (mendekati nol). Kebetulan dalam matematika ada konsep <code>limit</code> (mendekati namun tak sampai :( ). Oleh karena itu, rumus menghitung delta bisa kita tulis sebagai berikut:</p>
+
+<p>$$\Delta = Limit _{h -&gt; 0} \frac{f(x_i + h) - f(x_i)}{h}$$</p>
+
+<p>Formula untuk menghitung Delta inilah yang kemudian kita kenal dengan <code>derivative</code> atau <code>fungsi turunan</code>. Singkatnya, fungsi turunan adalah fungsi untuk menghitung perubahan sesaat.</p>
+
+<p>Mari kita lihat contoh perhitungan untuk mencari fungsi turunan dari <code>f(x) = x^2</code>:</p>
+
+<p>$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{f(x + h) - f(x)}{h}$$
+$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{(x + h)^2 - (x)^2}{h}$$
+$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{(x + h).(x + h) - x^2}{h}$$
+$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{x^2 + x_i.h + x.h + h^2 - x^2}{h}$$
+$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{x^2 + 2.x_i.h + h^2 - x^2}{h}$$
+$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{2.x.h + h^2}{h}$$
+$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{h.(2.x+h)}{h}$$
+$$f&rsquo;(x) = Limit _{h -&gt; 0} 2.x+h$$
+$$f&rsquo;(x) = 2.x$$</p>
+
+<p>Perhitungan di atas selaras dengan rumus turunan untuk fungsi pemangkatan:</p>
+
+<p>$$f(x) = x^r, f&rsquo;(x) = r.x^{r-1}$$</p>
+
+<p>Dalam prakteknya, Kita perlu mencari fungsi turunan terhadap setiap nilai <code>w</code> dari fungsi ini:</p>
+
+<p>$$E = \frac{1}{2}.(t-f(\Sigma^n_{k=1}i_k.W_k))^2$$</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"></code></pre></div><ul class="pa0">
   
    <li class="list">
