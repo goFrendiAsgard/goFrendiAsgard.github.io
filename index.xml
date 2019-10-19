@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Jaringan Syaraf Tiruan</title>
+      <link>http://gofrendiasgard.github.io/notebooks/jaringansyaraftiruan/</link>
+      <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
+      
+      <guid>http://gofrendiasgard.github.io/notebooks/jaringansyaraftiruan/</guid>
+      <description>Jaringan Syaraf Tiruan Ada banyak mitos yang beredar tentang Jaringan Syaraf Tiruan (JST). Misalnya: * JST mampu membuat sistem yang secerdas manusia. * JST memberikan akurasi yang lebih tinggi daripada pemrograman konvensional. * JST dan Kecerdasan Buatan (AI) akan mengambil alih dunia.
+Mitos-mitos tersebut sebenarnya cukup menyesatkan. Di satu sisi, hal ini membuat banyak orang menjadi khawatir akan perkembangan AI. Sementara di sisi lain, ada juga mereka yang berharap terlalu banyak pada AI.</description>
+    </item>
+    
+    <item>
       <title>Neural Network From Scratch</title>
       <link>http://gofrendiasgard.github.io/notebooks/neuralnetwork/</link>
       <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
@@ -30,16 +40,7 @@ age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone
       <guid>http://gofrendiasgard.github.io/about/home/</guid>
       <description>Hi, my name is Go Frendi Gunawan. Currently I work as Backend Engineer at kata.ai.
 In this blog, you will find some articles related to software engineering, machine learning, and mathematics.
-The articles are intended for mere mortal. Some basic programming/high school math are going to help, but are not required.</description>
-    </item>
-    
-    <item>
-      <title>Solid Principle</title>
-      <link>http://gofrendiasgard.github.io/posts/solid-principle/</link>
-      <pubDate>Wed, 31 Jul 2019 07:41:41 +0700</pubDate>
-      
-      <guid>http://gofrendiasgard.github.io/posts/solid-principle/</guid>
-      <description></description>
+The articles are intended for Indonesian-young-audience. Some basic programming/high school math are going to help, but are not required.</description>
     </item>
     
   </channel>

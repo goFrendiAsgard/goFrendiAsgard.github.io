@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>GoFrendi&#39;s Articles  | Jaringan Syaraf Tiruan</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.40.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Jaringan Syaraf Tiruan" />
+<meta property="og:description" content="Jaringan Syaraf Tiruan Ada banyak mitos yang beredar tentang Jaringan Syaraf Tiruan (JST). Misalnya: * JST mampu membuat sistem yang secerdas manusia. * JST memberikan akurasi yang lebih tinggi daripada pemrograman konvensional. * JST dan Kecerdasan Buatan (AI) akan mengambil alih dunia.
+Mitos-mitos tersebut sebenarnya cukup menyesatkan. Di satu sisi, hal ini membuat banyak orang menjadi khawatir akan perkembangan AI. Sementara di sisi lain, ada juga mereka yang berharap terlalu banyak pada AI." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://gofrendiasgard.github.io/notebooks/jaringansyaraftiruan/" />
+
+
+
+<meta property="article:published_time" content="2019-07-31T07:48:41&#43;07:00"/>
+
+<meta property="article:modified_time" content="2019-07-31T07:48:41&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Jaringan Syaraf Tiruan">
+<meta itemprop="description" content="Jaringan Syaraf Tiruan Ada banyak mitos yang beredar tentang Jaringan Syaraf Tiruan (JST). Misalnya: * JST mampu membuat sistem yang secerdas manusia. * JST memberikan akurasi yang lebih tinggi daripada pemrograman konvensional. * JST dan Kecerdasan Buatan (AI) akan mengambil alih dunia.
+Mitos-mitos tersebut sebenarnya cukup menyesatkan. Di satu sisi, hal ini membuat banyak orang menjadi khawatir akan perkembangan AI. Sementara di sisi lain, ada juga mereka yang berharap terlalu banyak pada AI.">
+
+
+<meta itemprop="datePublished" content="2019-07-31T07:48:41&#43;07:00" />
+<meta itemprop="dateModified" content="2019-07-31T07:48:41&#43;07:00" />
+<meta itemprop="wordCount" content="912">
+
+
+
+<meta itemprop="keywords" content="Macine Learning," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Jaringan Syaraf Tiruan"/>
+<meta name="twitter:description" content="Jaringan Syaraf Tiruan Ada banyak mitos yang beredar tentang Jaringan Syaraf Tiruan (JST). Misalnya: * JST mampu membuat sistem yang secerdas manusia. * JST memberikan akurasi yang lebih tinggi daripada pemrograman konvensional. * JST dan Kecerdasan Buatan (AI) akan mengambil alih dunia.
+Mitos-mitos tersebut sebenarnya cukup menyesatkan. Di satu sisi, hal ini membuat banyak orang menjadi khawatir akan perkembangan AI. Sementara di sisi lain, ada juga mereka yang berharap terlalu banyak pada AI."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://gofrendiasgard.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      GoFrendi&#39;s Articles
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="Abouts page">
+              Abouts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/notebooks/" title="Notebooks page">
+              Notebooks
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+<a href="https://facebook.com/gofrendi" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://twitter.com/goFrendiAsgard" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        NOTEBOOKS
+      </p>
+      <h1 class="f1 athelas mb1">Jaringan Syaraf Tiruan</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-07-31T07:48:41&#43;07:00">July 31, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="jaringan-syaraf-tiruan">Jaringan Syaraf Tiruan</h1>
+
+<p>Ada banyak mitos yang beredar tentang Jaringan Syaraf Tiruan (JST). Misalnya:
+* JST mampu membuat sistem yang secerdas manusia.
+* JST memberikan akurasi yang lebih tinggi daripada pemrograman konvensional.
+* JST dan Kecerdasan Buatan (AI) akan mengambil alih dunia.</p>
+
+<p>Mitos-mitos tersebut sebenarnya cukup menyesatkan. Di satu sisi, hal ini membuat banyak orang menjadi khawatir akan perkembangan AI. Sementara di sisi lain, ada juga mereka yang berharap terlalu banyak pada AI.</p>
+
+<p>Dalam artikel ini, saya ingin menunjukkan bagaimana sebenarnya cara kerja JST secara teknis. Harapannya. Setelah teman-teman membaca artikel ini, teman-teman tidak lagi merasa takut atau berharap terlalu banyak pada AI dan JST.</p>
+
+<h1 id="jaringan-syaraf-tiruan-vs-jaringan-syaraf-asli">Jaringan Syaraf Tiruan VS Jaringan Syaraf Asli</h1>
+
+<p>Banyak penulis yang mengawali pembahasannya dengan menganalogikan JST dan jaringan syaraf manusia. Walaupun tidak salah, namun pembahasan tersebut kerap mengarahkan pembaca pada harapan yang berlebihan.</p>
+
+<p>Misalnya begini: &ldquo;Oh, karena saya bisa jatuh cinta, maka JST pun juga akan bisa jatuh cinta&rdquo;.</p>
+
+<p>Tentu saja tidak benar. Kalau mau jujur, sampai saat ini pun kita tidak terlalu tahu bagaimana otak bekerja. Kita bahkan belum bisa memformulasikan &ldquo;apa itu kesadaran&rdquo;. Dan JST (sekalipun terinspirasi oleh jaringan syaraf asli), sebenarnya memiliki kapabilitas yang jauh di bawah manusia.</p>
+
+<p>Sebelum kita lanjutkan pada pembahasan yang lebih detail, mari kita mulai dengan permasalahan sederhana.</p>
+
+<h1 id="permasalahan-berat-badan-ideal">Permasalahan Berat Badan Ideal</h1>
+
+<p>Anton, Budi, dan Cecep masing-masing mengaku memiliki berat badan ideal. Dari penampakan mereka, tampaknya ketiga orang tersebut tidak berbohong.</p>
+
+<p>Anton memiliki tinggi badan 165 cm dan berat badan 65 kg, sedangkan Budi memiliki tinggi badan 170 cm dan berat badan 70 kg.</p>
+
+<p>Permasalahannya, Si Cecep lupa berapa berat badannya, dan dia hanya ingat tinggi badannya 163 cm. Tanpa memakai timbangan, bisakah kita mengira-ngira berat badan Cecep?</p>
+
+<p>Nah, permasalahan ini sebenarnya bisa diselesaikan dengan aljabar sederhana, selama kita mampu memodelkan persamaannya. Untungnya dalam kasus ini, permodelannya cukup sederhana. (Konon, entah benar atau tidak, permodelan berat badan ideal untuk orang yang tingginya di atas 150 cm itu sesuai dengan fungsi linear).</p>
+
+<p>Misalnya kita anggap berat badan adalah <code>y</code>, sedangkan tinggi badan adalah <code>x</code>. Maka berat badan ideal bisa ditentukan dengan rumus <code>y = mx + c</code> di mana <code>m</code> dan <code>c</code> adalah angka-angka dengan nilai tertentu.</p>
+
+<p>Oke, tampaknya alam semesta tidak terlalu berpihak pada kita. Karena untuk menentuka berat badan Cecep (<code>y-cecep</code>), kita tidak bisa hanya mengandalkan tinggi nya saja (<code>x-cecep</code>). Sebaliknya, kita harus tahu juga nilai <code>m</code> dan <code>c</code> yang ideal.</p>
+
+<p>Untungnya, kita punya Anton dan Budi. Karena rumus berat badan ideal itu seharusnya sama untuk setiap orang, maka nilai <code>m</code> dan <code>c</code> untuk Anton dan Buid, harusnya berlaku pula untuk Cecep.</p>
+
+<p>Mari kita coba:</p>
+
+<pre><code>y = mx + c, di mana y adalah berat badan, sedangkan x adalah tinggi badan.
+Maka
+   Untuk Anton: 65 = m * 165 + c
+   Untuk Budi : 70 = m * 170 + c
+</code></pre>
+
+<p>Mari kita fokus ke Anton dulu:</p>
+
+<pre><code>65 = (m * 165) + c
+c = 65 - (m * 165)
+</code></pre>
+
+<p>Hmm&hellip; tidak terlalu membantu, tapi setidaknya kita tahu bagaimana hubungan antara <code>c</code> dan <code>m</code>. Sekarang, mari kita fokus ke Budi:</p>
+
+<pre><code>70 = m * 170 + c
+</code></pre>
+
+<p>Karena <code>c = 65 - (m * 165)</code>, maka kita bisa tulis ulang persamaan berat badan Budi dengan mengganti nilai <code>c</code> sehingga menjadi seperti ini:</p>
+
+<pre><code>70 = (m * 170) + 65 - (m * 165)
+70 - 65 = (m * 170) - (m * 165)
+5 = m * (170 * 165)
+5 = m * 5
+m = 5/5
+m = 1
+</code></pre>
+
+<p>Oke, sekarang kita tahu nilai <code>m</code>. Mari kita lanjutkan dengan mencari nilai <code>c</code>. Kita bisa kembali lagi fokus ke salah satu, Anton atau Budi. Lagi-lagi karena nilai <code>m</code> dan <code>c</code> untuk kedua persamaan tersebut sama persis, maka tidak masalah memilih Anton atau Budi. Untuk kali ini kita pilih Anton.</p>
+
+<pre><code>65 = m * 165 + c
+65 = 1 * 165 + c
+65 = 165 + c
+c = 65 - 165
+c = -100
+</code></pre>
+
+<p>Nah, akhirnya kita menemukan nilai <code>m</code> dan <code>c</code>. Dari sini kita bisa simpulkan bahwa rumus berat badan ideal untuk orang yang tingginya di atas 150 cm adalah <code>y = (1 * x) - 100</code>, di mana <code>y</code> adalah berat badan, dan <code>x</code> adalah tinggi badan.</p>
+
+<p>Akhirnya, dengan rumus berat badan ideal yang sudah kita temukan tadi, kita bisa menemukan berat badan Cecep. Karena tinggi badan Cecep adalah 163 cm, maka:</p>
+
+<pre><code>y = (1 * 163) - 100
+y = 63
+</code></pre>
+
+<p>Jadi tinggi badan Cecep adalah 63 cm.</p>
+
+<p>Teknik yang baru kita lakukan tadi disebut teknik <code>subtitusi</code>. Teknik ini cukup berguna untuk melakukan berbagai macam konversi linear saat kita lupa &ldquo;rumus resmi&rdquo; nya. Rumus konversi Celcius-Fahrenhait-Reamur, atau tingkat-kemurnian-emas (dalam persen) ke karat, dan sebagainya. Saat berhadapan dengan kasus-kasus seperti itu, kita hanya butuh kertas dan pensil. Tidak butuh AI :)</p>
+
+<p>Sedikit fakta menarik, ternyata perhitungan kita barusan, sesuai dengan artikel ini: <a href="https://lifestyle.kompas.com/read/2017/08/21/081619320/begini-cara-menghitung-berat-badan-ideal-anda">https://lifestyle.kompas.com/read/2017/08/21/081619320/begini-cara-menghitung-berat-badan-ideal-anda</a>. Tentu saja, karena saya sudah mencocokkan angka-angkanya terlebih dahulu :)</p>
+
+<h1 id="lebih-jauh-dengan-permasalahan-berat-badan-ideal">Lebih Jauh dengan Permasalahan Berat Badan Ideal</h1>
+
+<p>Berat badan ideal adalah masalah kita semua. Sedikit saja kita kurang bergerak dan terlalu banyak makan, maka kita akan jadi terlalu gemuk. Sebaliknya, jika kita makan terlalu sedikit, maka kita akan jadi terlalu kurus. Dalam hal ini memiliki berat badan ideal itu bisa dianalogikan seperti berjalan di atas seutas tali tipis, sedikit terlalu ke kiri, atau sedikit terlalu ke kanan, maka kita akan jatuh ke dalam lembah <code>obesitas</code> atau <code>mal-nutrisi</code>.</p>
+
+<p>Nah, menariknya, analogi yang saya tulis barusan tadi ternyata persis sama dengan permodelan matematika yang ada:</p>
+
+<pre><code>y = 1 * m - 100
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"></code></pre></div><ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/macine-learning" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Macine Learning</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/notebooks/neuralnetwork/">Neural Network From Scratch</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://gofrendiasgard.github.io/" >
+    &copy; 2019 GoFrendi&#39;s Articles
+  </a>
+    <div>
+
+
+<a href="https://facebook.com/gofrendi" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://twitter.com/goFrendiAsgard" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript">
+  
+  const images = document.getElementsByTagName("img");
+  for (const image of images) {
+    const oldSrc = image.src;
+    const correctedSrc = getCorrectedSrc(oldSrc);
+    image.src = correctedSrc;
+  }
+
+  
+  
+  function getCorrectedSrc(oldSrc) {
+    const regex = /(.*)\/([a-z0-9_\- ]*)\/([a-z0-9_\- ]*)_files\/(.*)/gmi;
+    const matches = regex.exec(oldSrc);
+    if (matches && matches[2] === matches[3]) {
+      const prefix = matches[1];
+      const title = matches[2];
+      const sufix = matches[4];
+      return [prefix, title+"_files", sufix].join("/");
+    }
+    return oldSrc;
+  }
+</script>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
