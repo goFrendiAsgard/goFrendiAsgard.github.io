@@ -54,7 +54,7 @@
 
 <meta itemprop="datePublished" content="2019-07-31T07:48:41&#43;07:00" />
 <meta itemprop="dateModified" content="2019-07-31T07:48:41&#43;07:00" />
-<meta itemprop="wordCount" content="2457">
+<meta itemprop="wordCount" content="2534">
 
 
 
@@ -433,9 +433,14 @@ Total           |   0 (Loh???)    | 32 (Seharusnya begini)
 
 <p>Kembali lagi ke kasus awal (dengan sedikit modifikasi):</p>
 
-<pre><code>Nama  | Tinggi (i_1) | Porsi makan (i_2) | Berat (t)
------------------------------------------------------
-Anton | 165          | 3                 | 65
+<pre><code>Kategori:
+  0   : mal-nutrisi
+  0.5 : ideal
+  1   : obesitas
+
+Nama  | Tinggi (i_1) | Porsi makan (i_2) | Kategori (t)
+-------------------------------------------------------
+Anton | 165          | 3                 | 0.5 (ideal)
 </code></pre>
 
 <p>Maka kita bisa menghitung nilai <code>y</code> dengan cara berikut:</p>
@@ -478,6 +483,19 @@ o = 1 / [1 + e^-(165 * 0.3 + 3 * 0.2 + 0.1)]
 </code></pre>
 
 <h2 id="back-propagation">Back Propagation</h2>
+
+<p>Jika diperhatikan, tentu saja hasil perhitungan feed-forward ini meleset jauh. Tapi jangan khawatir. JST punya mekanisme untuk memperbaiki nilai <code>W</code> sehingga nantinya nilai output yang dihasilkan akan mendekati target.</p>
+
+<p>Untuk memperbaiki nilai <code>W</code>, maka kita butuh dua macam informasi:</p>
+
+<ul>
+<li>Seberapa besar nilai <code>W</code></li>
+<li>Bagaimana kita harus mengubah nilai <code>W</code></li>
+</ul>
+
+<p>JST menjawab pertanyaan pertama dengan menyediakan satu parameter yang disebut <code>learning rate</code>.</p>
+
+<p>Untuk pertanyaan kedua, jawabannya ternyata</p>
 <ul class="pa0">
   
    <li class="list">
