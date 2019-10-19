@@ -54,7 +54,7 @@
 
 <meta itemprop="datePublished" content="2019-07-31T07:48:41&#43;07:00" />
 <meta itemprop="dateModified" content="2019-07-31T07:48:41&#43;07:00" />
-<meta itemprop="wordCount" content="3025">
+<meta itemprop="wordCount" content="3615">
 
 
 
@@ -435,14 +435,9 @@ Total           |   0 (Loh???)    | 32 (Seharusnya begini)
 
 <p>Kembali lagi ke kasus awal (dengan sedikit modifikasi):</p>
 
-<pre><code>Kategori:
-  0   : mal-nutrisi
-  0.5 : ideal
-  1   : obesitas
-
-Nama  | Tinggi (i_1) | Porsi makan (i_2) | Kategori (t)
--------------------------------------------------------
-Anton | 165          | 3                 | 0.5 (ideal)
+<pre><code>Nama  | Tinggi (i_1) | Porsi makan (i_2) | Berat (t)
+----------------------------------------------------
+Anton | 165          | 3                 | 65
 </code></pre>
 
 <p>Maka kita bisa menghitung nilai <code>y</code> dengan cara berikut:</p>
@@ -470,18 +465,46 @@ Anton | 165          | 3                 | 0.5 (ideal)
 
 <p>Untuk menghindari <code>vanishing gradient problem</code>, umumnya praktisi deep learning lebih menyukai <code>ReLu</code> atau <code>Leaky ReLu</code>. Kedua fungsi ini juga kerap dipilih karena perhitungannya yang sederhana.</p>
 
-<p>Ok, kembali ke kasus awal. Semisal kita memilih fungsi <code>logistic</code>, maka kita harus melakukan ini:</p>
+<p>Ok, kembali ke kasus awal. Semisal kita memilih fungsi <code>ReLu</code>, maka kita harus melakukan ini:</p>
 
 <pre><code>y = 165 * 0.3 + 3 * 0.2 + 0.1
 
 o = f(y)
-o = 1 / [1 + e^-(165 * 0.3 + 3 * 0.2 + 0.1)]
+o = y (karena y tidak kurang dari nol)
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> math
+i1 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">165</span>
+i2 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span>
+w1 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.3</span>
+w2 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.2</span>
+w3 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.1</span>
+o <span style="color:#ff79c6">=</span> i1 <span style="color:#ff79c6">*</span> w1 <span style="color:#ff79c6">+</span> i2 <span style="color:#ff79c6">*</span> w2 <span style="color:#ff79c6">+</span> w3
+<span style="color:#ff79c6">print</span>(o)</code></pre></div>
+<pre><code>50.2
 </code></pre>
 
-<p><code>e</code> sendiri adalah bilangan euler yang nilainya mendekati <code>2.718</code> (<a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">https://en.wikipedia.org/wiki/E_(mathematical_constant)</a>)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> math
-<span style="color:#bd93f9">1</span><span style="color:#ff79c6">/</span>(<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> math<span style="color:#ff79c6">.</span>exp(<span style="color:#bd93f9">165</span> <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">0.3</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">3</span> <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">0.2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">0.1</span>))</code></pre></div>
-<pre><code>1.5791268155225368e-22
+<h3 id="perhitungan-error">Perhitungan Error</h3>
+
+<p>Setelah perhitungan <code>feed forward</code> selesai. Langkah selanjutnya adalah menghitung error.</p>
+
+<p>Formula yang umum dipakai untuk menghitung error adalah adalah:</p>
+
+<p>$$E = \frac{1}{2}.(t - o)^2$$</p>
+
+<p>Jika diperhatikan, formula ini agak berbeda dari <code>error function</code> yang pernah kita bahas di bagian sebelumnya. Perbedaan tersebut memang disengaja untuk memudahkan perhitungan. Dasar pemikirannya adalah untuk memperbaiki <code>error</code>, kita tidak perlu tahu pasti nilai error nya. Kita cukup tahu kira-kira semenyimpang apa kondisi kita saat ini dibandingkan dengan kondisi seharusnya.</p>
+
+<p>Simplifikasi yang dilakukan pada <code>error function</code> yang telah dimodifikasi ini antara lain:</p>
+
+<ul>
+<li>Tidak ada akar kuadrat, karena perhitungan akar kuadrat cukup mahal/susah.</li>
+<li>Ada penambahan pengali <code>1/2</code>. Penambahan ini dimaksudkan supaya perhitungan fungsi turunan pada saat propagasi balik akan menjadi lebih mudah.</li>
+</ul>
+
+<p>Dalam kasus perceptron tunggal ini, kita bisa menghitung nilai error sebagai berikut</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">65</span>
+error <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.5</span> <span style="color:#ff79c6">*</span> (t <span style="color:#ff79c6">-</span> o)<span style="color:#ff79c6">**</span><span style="color:#bd93f9">2</span>
+<span style="color:#ff79c6">print</span>(error)</code></pre></div>
+<pre><code>109.51999999999995
 </code></pre>
 
 <h2 id="back-propagation">Back Propagation</h2>
@@ -537,27 +560,129 @@ Delta = 5
 
 <p>$$\Delta = Limit _{h -&gt; 0} \frac{f(x_i + h) - f(x_i)}{h}$$</p>
 
-<p>Formula untuk menghitung Delta inilah yang kemudian kita kenal dengan <code>derivative</code> atau <code>fungsi turunan</code>. Singkatnya, fungsi turunan adalah fungsi untuk menghitung perubahan sesaat.</p>
+<p>Formula untuk menghitung <code>Delta</code> inilah yang kemudian kita kenal dengan <code>derivative</code> atau <code>fungsi turunan</code>. Singkatnya, fungsi turunan adalah fungsi untuk menghitung perubahan sesaat.</p>
 
 <p>Mari kita lihat contoh perhitungan untuk mencari fungsi turunan dari <code>f(x) = x^2</code>:</p>
 
-<p>$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{f(x + h) - f(x)}{h}$$
-$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{(x + h)^2 - (x)^2}{h}$$
-$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{(x + h).(x + h) - x^2}{h}$$
-$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{x^2 + x_i.h + x.h + h^2 - x^2}{h}$$
-$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{x^2 + 2.x_i.h + h^2 - x^2}{h}$$
-$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{2.x.h + h^2}{h}$$
-$$f&rsquo;(x) = Limit _{h -&gt; 0} \frac{h.(2.x+h)}{h}$$
-$$f&rsquo;(x) = Limit _{h -&gt; 0} 2.x+h$$
-$$f&rsquo;(x) = 2.x$$</p>
+<p>$$\frac{\delta f(x)}{\delta x} = f&rsquo;(x) = Limit _{h -&gt; 0} \frac{f(x + h) - f(x)}{h}$$
+$$\frac{\delta f(x)}{\delta x} = f&rsquo;(x) = Limit _{h -&gt; 0} \frac{(x + h)^2 - (x)^2}{h}$$
+$$\frac{\delta f(x)}{\delta x} = f&rsquo;(x) = Limit _{h -&gt; 0} \frac{(x + h).(x + h) - x^2}{h}$$
+$$\frac{\delta f(x)}{\delta x} = f&rsquo;(x) = Limit _{h -&gt; 0} \frac{x^2 + x_i.h + x.h + h^2 - x^2}{h}$$
+$$\frac{\delta f(x)}{\delta x} = f&rsquo;(x) = Limit _{h -&gt; 0} \frac{x^2 + 2.x_i.h + h^2 - x^2}{h}$$
+$$\frac{\delta f(x)}{\delta x} = f&rsquo;(x) = Limit _{h -&gt; 0} \frac{2.x.h + h^2}{h}$$
+$$\frac{\delta f(x)}{\delta x} = f&rsquo;(x) = Limit _{h -&gt; 0} \frac{h.(2.x+h)}{h}$$
+$$\frac{\delta f(x)}{\delta x} = f&rsquo;(x) = Limit _{h -&gt; 0} 2.x+h$$
+$$\frac{\delta f(x)}{\delta x} = f&rsquo;(x) = 2.x$$</p>
 
 <p>Perhitungan di atas selaras dengan rumus turunan untuk fungsi pemangkatan:</p>
 
-<p>$$f(x) = x^r, f&rsquo;(x) = r.x^{r-1}$$</p>
+<p>Untuk
+$$f(x) = x^r$$</p>
+
+<p>Maka
+$$\frac{\delta f(x)}{\delta(x)} = f&rsquo;(x) = r.x^{r-1}$$</p>
 
 <p>Dalam prakteknya, Kita perlu mencari fungsi turunan terhadap setiap nilai <code>w</code> dari fungsi ini:</p>
 
-<p>$$E = \frac{1}{2}.(t-f(\Sigma^n_{k=1}i_k.W_k))^2$$</p>
+<p>$$E = \frac{1}{2}.(t - o)^2$$
+$$E = \frac{1}{2}.(t-f(\Sigma^n_{k=1}i_k.W_k))^2$$</p>
+
+<p>Cukup sulit tampaknya :(</p>
+
+<h3 id="teorema-rantai">Teorema Rantai</h3>
+
+<p>Untungnya, dalam matematika dikenal teorema rantai. Secara sederhana, kita sering melihat implementasi teorema rantai dalam perkalian pecahan:</p>
+
+<p>$$\frac{1}{2}.\frac{2}{x}.\frac{x}{y}.\frac{y}{3} = \frac{1}{3}$$</p>
+
+<p>Kita bisa yakin hasil akhir dari perhitungan tersebut adalah <code>1/3</code>, sekalipun kita tidak tahu nilai <code>x</code> dan <code>y</code>.</p>
+
+<p>Teorema rantai bisa juga kita gunakan untuk menghitung <code>turunan</code>. Dalam kasus kita, di mana ada <code>W_1</code>, <code>W_2</code>, dan <code>W3</code>, maka:</p>
+
+<p>$$\frac{\delta E}{\delta W_1} = \frac{\delta E}{\delta f} . \frac{\delta o}{\delta y} . \frac{\delta y}{\delta W_1}$$
+$$\frac{\delta E}{\delta W_2} = \frac{\delta E}{\delta f} . \frac{\delta o}{\delta y} . \frac{\delta y}{\delta W_2}$$
+$$\frac{\delta E}{\delta W_2} = \frac{\delta E}{\delta f} . \frac{\delta o}{\delta y} . \frac{\delta y}{\delta W_3}$$</p>
+
+<h3 id="perubahan-nilai-w">Perubahan Nilai W</h3>
+
+<p>Setelah menghitung arah perubahan W melalui teorema rantai, langkah selanjutnya adalah menghitung perubahan <code>W</code>:</p>
+
+<p>$$\Delta W_1 = - learningRate.\frac{\delta E}{\delta W_1}$$
+$$\Delta W_2 = - learningRate.\frac{\delta E}{\delta W_2}$$
+$$\Delta W_3 = - learningRate.\frac{\delta E}{\delta W_3}$$</p>
+
+<p>Setelah menghitung perubahan nilai W, langkah selanjutnya adalah menghitung nilai W yang baru:</p>
+
+<p>$$W&rsquo;_1 = W_1 + \Delta W_1$$
+$$W&rsquo;_2 = W_2 + \Delta W_2$$
+$$W&rsquo;_3 = W_3 + \Delta W_3$$</p>
+
+<h1 id="tensorflow">Tensorflow</h1>
+
+<p>Mari kita coba menggunakan JST untuk kasus berikut:</p>
+
+<pre><code>Nama  | Tinggi (i_1) | Porsi makan (i_2) | Berat (t)
+----------------------------------------------------
+Anton | 165          | 3                 | 65
+Budi  | 170          | 2                 | 70
+Cecep | 163          | 3                 | ?
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># TensorFlow and tf.keras</span>
+<span style="color:#ff79c6">import</span> tensorflow <span style="color:#ff79c6">as</span> tf
+<span style="color:#ff79c6">import</span> numpy <span style="color:#ff79c6">as</span> np
+
+inputs <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>asarray([[<span style="color:#bd93f9">165</span>, <span style="color:#bd93f9">3</span>], [<span style="color:#bd93f9">170</span>, <span style="color:#bd93f9">2</span>]])
+targets <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>asarray([[<span style="color:#bd93f9">65</span> ], [<span style="color:#bd93f9">70</span> ]])
+
+model <span style="color:#ff79c6">=</span> tf<span style="color:#ff79c6">.</span>keras<span style="color:#ff79c6">.</span>Sequential([
+    tf<span style="color:#ff79c6">.</span>keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(units<span style="color:#ff79c6">=</span><span style="color:#bd93f9">3</span>, input_shape<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">2</span>, ), activation<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;relu&#39;</span>),
+    tf<span style="color:#ff79c6">.</span>keras<span style="color:#ff79c6">.</span>layers<span style="color:#ff79c6">.</span>Dense(units<span style="color:#ff79c6">=</span><span style="color:#bd93f9">1</span>, activation<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;relu&#39;</span>)
+])
+
+<span style="color:#6272a4">#Train the model</span>
+model<span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">compile</span>(optimizer<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;sgd&#39;</span>,
+              loss<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;mean_squared_error&#39;</span>,
+              metrics<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;accuracy&#39;</span>])
+model<span style="color:#ff79c6">.</span>fit(inputs, targets, epochs<span style="color:#ff79c6">=</span><span style="color:#bd93f9">5</span>)
+
+model<span style="color:#ff79c6">.</span>predict(np<span style="color:#ff79c6">.</span>asarray([[<span style="color:#bd93f9">163</span>,<span style="color:#bd93f9">3</span>]]))</code></pre></div>
+<pre><code>Train on 2 samples
+Epoch 1/5
+2/2 [==============================] - 0s 231ms/sample - loss: 4562.5000 - accuracy: 0.0000e+00
+Epoch 2/5
+2/2 [==============================] - 0s 2ms/sample - loss: 4562.5000 - accuracy: 0.0000e+00
+Epoch 3/5
+2/2 [==============================] - 0s 3ms/sample - loss: 4562.5000 - accuracy: 0.0000e+00
+Epoch 4/5
+2/2 [==============================] - 0s 2ms/sample - loss: 4562.5000 - accuracy: 0.0000e+00
+Epoch 5/5
+2/2 [==============================] - 0s 2ms/sample - loss: 4562.5000 - accuracy: 0.0000e+00
+
+
+
+
+
+array([[0.]], dtype=float32)
+</code></pre>
+
+<p>Tampaknya untuk kasus ini, dengan data yang sangat sedikit, JST tidak menunjukkan performa yang baik</p>
+
+<h1 id="jst-untuk-citra">JST Untuk Citra</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># TensorFlow and tf.keras</span>
+<span style="color:#ff79c6">import</span> tensorflow <span style="color:#ff79c6">as</span> tf
+<span style="color:#ff79c6">from</span> tensorflow <span style="color:#ff79c6">import</span> keras
+
+<span style="color:#6272a4"># Helper libraries</span>
+<span style="color:#ff79c6">import</span> numpy <span style="color:#ff79c6">as</span> np
+<span style="color:#ff79c6">import</span> matplotlib.pyplot <span style="color:#ff79c6">as</span> plt</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">class_names <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;zero&#39;</span>, <span style="color:#f1fa8c">&#39;one&#39;</span>, <span style="color:#f1fa8c">&#39;two&#39;</span>, <span style="color:#f1fa8c">&#39;three&#39;</span>, <span style="color:#f1fa8c">&#39;four&#39;</span>, <span style="color:#f1fa8c">&#39;five&#39;</span>, <span style="color:#f1fa8c">&#39;six&#39;</span>, <span style="color:#f1fa8c">&#39;seven&#39;</span>, <span style="color:#f1fa8c">&#39;eight&#39;</span>, <span style="color:#f1fa8c">&#39;nine&#39;</span>]</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mnist <span style="color:#ff79c6">=</span> keras<span style="color:#ff79c6">.</span>datasets<span style="color:#ff79c6">.</span>mnist
+
+(train_images, train_labels), (test_images, test_labels) <span style="color:#ff79c6">=</span> mnist<span style="color:#ff79c6">.</span>load_data()</code></pre></div>
+<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+11493376/11490434 [==============================] - 697s 61us/step
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">train_labels</code></pre></div>
+<pre><code>array([5, 0, 4, ..., 5, 6, 8], dtype=uint8)
+</code></pre>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"></code></pre></div><ul class="pa0">
   
    <li class="list">
