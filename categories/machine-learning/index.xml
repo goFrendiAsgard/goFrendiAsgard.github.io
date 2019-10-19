@@ -21,16 +21,5 @@
  JST mampu membuat sistem yang secerdas manusia. JST memberikan akurasi yang lebih tinggi daripada pemrograman konvensional. JST dan Kecerdasan Buatan (AI) akan mengambil alih dunia. JST meningkatkan akurasi sistem. JST itu cepat.  Mitos-mitos tersebut sebenarnya cukup menyesatkan. Di satu sisi, hal ini membuat banyak orang menjadi khawatir akan perkembangan AI. Sementara di sisi lain, ada juga mereka yang berharap terlalu banyak pada AI.</description>
     </item>
     
-    <item>
-      <title>Neural Network From Scratch</title>
-      <link>http://gofrendiasgard.github.io/notebooks/neuralnetwork/</link>
-      <pubDate>Wed, 31 Jul 2019 07:48:41 +0700</pubDate>
-      
-      <guid>http://gofrendiasgard.github.io/notebooks/neuralnetwork/</guid>
-      <description>The Problem Artificial neural network has no magic. The main purpose of neural network (and any classical machine learning algorithm) is to find out special numbers in order to find out the best classifier or regressor.
-Suppose we have the following data:
-age height weight 50 170 75 40 180 ?  Now, we want to know the weight of someone whose age is 40, and height is 180.</description>
-    </item>
-    
   </channel>
 </rss>
